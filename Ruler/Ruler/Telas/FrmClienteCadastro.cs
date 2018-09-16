@@ -15,6 +15,7 @@ namespace Ruler.Telas
 {
     public partial class FrmClienteCadastro : Form
     {
+        private FrmInicio inicio;
         Conexao con = new Conexao();
         Cliente cliente = new Cliente();
 
@@ -22,8 +23,9 @@ namespace Ruler.Telas
 
         public const string select_cliente = "select * from Tbl_Cliente";
         
-        public FrmClienteCadastro()
+        public FrmClienteCadastro(FrmInicio frm)
         {
+            inicio = frm;
             InitializeComponent();
         }
 
@@ -81,19 +83,16 @@ namespace Ruler.Telas
         }
          
         private void btn_voltar_Click(object sender, EventArgs e)
-        {
-            this.Visible = false;
-
-            FrmInicio inicio = new FrmInicio();
-
+        {            
             inicio.Show();
+            this.Close();
         }
 
         private void btn_pesquisar_Click(object sender, EventArgs e)
         {
             this.Visible = false;
 
-            FrmClientePesquisa pesquisarCliente = new FrmClientePesquisa();
+            FrmClientePesquisa pesquisarCliente = new FrmClientePesquisa(inicio);
 
             pesquisarCliente.Show();
         }

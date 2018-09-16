@@ -15,6 +15,7 @@ namespace Ruler
 {
     public partial class FrmCadastro : Form
     {
+        private FrmInicio inicio;
         public const string insert_produto = "insert into Tbl_Produto(Nome, valor, valor_dolar) values(@name, @preco1, @preco2)";
 
         /*public const string update;
@@ -33,9 +34,9 @@ namespace Ruler
         //ID variable used in Updating and Deleting Record  
         int ID = 0;
 
-        public FrmCadastro()
+        public FrmCadastro(FrmInicio frm)
         {
-
+            inicio = frm;
             InitializeComponent();
 
         }
@@ -110,7 +111,7 @@ namespace Ruler
         private void btn_pesquisar_Click(object sender, EventArgs e)
         {
             this.Visible = false;
-            FrmPesquisa pesquisa = new FrmPesquisa();
+            FrmPesquisa pesquisa = new FrmPesquisa(inicio);
                       
             pesquisa.Show();
 
@@ -119,11 +120,8 @@ namespace Ruler
 
         private void btn_voltar_Click(object sender, EventArgs e)
         {
-            this.Visible = false;
-            
-            FrmInicio inicio = new FrmInicio();
-
             inicio.Show();
+            this.Close();
         }
     }
 }

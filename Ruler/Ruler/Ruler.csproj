@@ -46,8 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Dados\Cliente.cs" />
-    <Compile Include="Dados\Produto.cs" />
+    <Compile Include="Model\Cliente.cs" />
+    <Compile Include="Model\Produto.cs" />
     <Compile Include="Persistence\ClientePst.cs" />
     <Compile Include="Persistence\Conexao.cs" />
     <Compile Include="Persistence\ConfigPst.cs" />

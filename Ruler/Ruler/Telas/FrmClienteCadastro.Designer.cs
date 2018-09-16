@@ -45,6 +45,7 @@
             // 
             // btn_pesquisar
             // 
+            this.btn_pesquisar.Enabled = false;
             this.btn_pesquisar.Location = new System.Drawing.Point(115, 162);
             this.btn_pesquisar.Name = "btn_pesquisar";
             this.btn_pesquisar.Size = new System.Drawing.Size(70, 30);

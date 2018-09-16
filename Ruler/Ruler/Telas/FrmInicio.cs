@@ -19,35 +19,36 @@ namespace Ruler.Telas
                  
         private void cadastrarTSMI_Click(object sender, EventArgs e)
         {
-            this.Visible = false;
+            FrmCadastro cadastrar = new FrmCadastro(this);
 
-            FrmCadastro cadastrar = new FrmCadastro();
+            this.Hide();
 
-            cadastrar.Show();
+            cadastrar.ShowDialog();
         }
 
         private void cadastrar_cliTSMI_Click(object sender, EventArgs e)
         {
-            this.Visible = false;
+            
 
-            FrmClienteCadastro cadastrarCliente = new FrmClienteCadastro();
+            FrmClienteCadastro cadastrarCliente = new FrmClienteCadastro(this);
+            this.Hide();
 
             cadastrarCliente.Show();
         }
         
         private void pesquisarTSMI_Click_1(object sender, EventArgs e)
         {
-            this.Visible = false;
-            FrmPesquisa pesquisa = new FrmPesquisa();
+            
+            FrmPesquisa pesquisa = new FrmPesquisa(this);
+            this.Hide();
 
             pesquisa.Show();
         }
 
         private void pesquisarToolStripMenuItem1_Click_1(object sender, EventArgs e)
         {
-            this.Visible = false;
-
-            FrmClientePesquisa pesquisarCliente = new FrmClientePesquisa();
+            FrmClientePesquisa pesquisarCliente = new FrmClientePesquisa(this);
+            this.Hide();
 
             pesquisarCliente.Show();
         }

@@ -1,0 +1,13 @@
+C:\Users\marlo\source\repos\Ruler\Ruler\bin\Release\Ruler.exe.config
+C:\Users\marlo\source\repos\Ruler\Ruler\bin\Release\Ruler.exe
+C:\Users\marlo\source\repos\Ruler\Ruler\bin\Release\Ruler.pdb
+C:\Users\marlo\source\repos\Ruler\Ruler\obj\Release\Ruler.Telas.FrmClienteCadastro.resources
+C:\Users\marlo\source\repos\Ruler\Ruler\obj\Release\Ruler.Telas.FrmClientePesquisa.resources
+C:\Users\marlo\source\repos\Ruler\Ruler\obj\Release\Ruler.Telas.FrmInicio.resources
+C:\Users\marlo\source\repos\Ruler\Ruler\obj\Release\Ruler.FrmCadastro.resources
+C:\Users\marlo\source\repos\Ruler\Ruler\obj\Release\Ruler.FrmPesquisa.resources
+C:\Users\marlo\source\repos\Ruler\Ruler\obj\Release\Ruler.Properties.Resources.resources
+C:\Users\marlo\source\repos\Ruler\Ruler\obj\Release\Ruler.csproj.GenerateResource.cache
+C:\Users\marlo\source\repos\Ruler\Ruler\obj\Release\Ruler.csproj.CoreCompileInputs.cache
+C:\Users\marlo\source\repos\Ruler\Ruler\obj\Release\Ruler.exe
+C:\Users\marlo\source\repos\Ruler\Ruler\obj\Release\Ruler.pdb

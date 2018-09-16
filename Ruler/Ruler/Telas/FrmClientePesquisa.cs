@@ -15,6 +15,8 @@ namespace Ruler.Telas
     public partial class FrmClientePesquisa : Form
     {
 
+        private FrmInicio inicio;
+
         public const string criarUpdate = "update Tbl_Cliente set nome = @coluna1, telefone = @coluna2, debito = @coluna3 where id_Cliente = @coluna4";
         
         public const string select_cliente = "select * from Tbl_Cliente";
@@ -23,8 +25,9 @@ namespace Ruler.Telas
         Cliente cliente;
 
 
-        public FrmClientePesquisa()
+        public FrmClientePesquisa(FrmInicio frm)
         {
+            inicio = frm;
             InitializeComponent();
         }
 
@@ -83,11 +86,10 @@ namespace Ruler.Telas
 
         private void btn_voltar_Click_1(object sender, EventArgs e)
         {
-            this.Visible = false;
-
-            FrmInicio inicio = new FrmInicio();
-
+                       
             inicio.Show();
+
+            this.Close();
         }
     }
 }

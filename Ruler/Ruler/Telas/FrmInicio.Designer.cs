@@ -170,35 +170,37 @@
             // cadastrar_cliTSMI
             // 
             this.cadastrar_cliTSMI.Name = "cadastrar_cliTSMI";
-            this.cadastrar_cliTSMI.Size = new System.Drawing.Size(180, 22);
+            this.cadastrar_cliTSMI.Size = new System.Drawing.Size(124, 22);
             this.cadastrar_cliTSMI.Text = "Cadastrar";
             this.cadastrar_cliTSMI.Click += new System.EventHandler(this.cadastrar_cliTSMI_Click);
             // 
             // pesquisarToolStripMenuItem1
             // 
             this.pesquisarToolStripMenuItem1.Name = "pesquisarToolStripMenuItem1";
-            this.pesquisarToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.pesquisarToolStripMenuItem1.Size = new System.Drawing.Size(124, 22);
             this.pesquisarToolStripMenuItem1.Text = "Pesquisar";
             this.pesquisarToolStripMenuItem1.Click += new System.EventHandler(this.pesquisarToolStripMenuItem1_Click_1);
             // 
             // btn_vender
             // 
+            this.btn_vender.Enabled = false;
             this.btn_vender.Font = new System.Drawing.Font("Microsoft Sans Serif", 35.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_vender.Location = new System.Drawing.Point(138, 230);
             this.btn_vender.Name = "btn_vender";
             this.btn_vender.Size = new System.Drawing.Size(225, 140);
             this.btn_vender.TabIndex = 6;
-            this.btn_vender.Text = "Vendas";
+            this.btn_vender.Text = "Pedidos";
             this.btn_vender.UseVisualStyleBackColor = true;
             // 
             // btn_compras
             // 
+            this.btn_compras.Enabled = false;
             this.btn_compras.Font = new System.Drawing.Font("Microsoft Sans Serif", 35.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_compras.Location = new System.Drawing.Point(422, 230);
             this.btn_compras.Name = "btn_compras";
             this.btn_compras.Size = new System.Drawing.Size(225, 140);
             this.btn_compras.TabIndex = 7;
-            this.btn_compras.Text = "Compras";
+            this.btn_compras.Text = "Estoque";
             this.btn_compras.UseVisualStyleBackColor = true;
             // 
             // FrmInicio

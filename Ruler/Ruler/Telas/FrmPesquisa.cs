@@ -16,6 +16,8 @@ namespace Ruler
 {
     public partial class FrmPesquisa : Form
     {
+        private FrmInicio inicio;
+
         public const string select_produto = "select * from Tbl_Produto";
         public const string insert_produto = "insert into Tbl_Produto(Nome, valor, valor_dolar) values(@name, @preco1, @preco2)";
 
@@ -33,8 +35,9 @@ namespace Ruler
         SqlDataAdapter adapt;
 
         int ID = 0;
-        public FrmPesquisa()
+        public FrmPesquisa(FrmInicio frm)
         {
+            inicio = frm;
             InitializeComponent();
         }
 
@@ -106,11 +109,8 @@ namespace Ruler
 
         private void btn_voltar_Click(object sender, EventArgs e)
         {
-            this.Visible = false;
-
-            FrmInicio inicio = new FrmInicio();
-
             inicio.Show();
+            this.Close();
         }
     }
 }
