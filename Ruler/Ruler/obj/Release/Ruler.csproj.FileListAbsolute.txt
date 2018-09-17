@@ -11,3 +11,5 @@ C:\Users\marlo\source\repos\Ruler\Ruler\obj\Release\Ruler.csproj.GenerateResourc
 C:\Users\marlo\source\repos\Ruler\Ruler\obj\Release\Ruler.csproj.CoreCompileInputs.cache
 C:\Users\marlo\source\repos\Ruler\Ruler\obj\Release\Ruler.exe
 C:\Users\marlo\source\repos\Ruler\Ruler\obj\Release\Ruler.pdb
+C:\Users\marlo\source\repos\Ruler\Ruler\obj\Release\Ruler.csprojAssemblyReference.cache
+C:\Users\marlo\source\repos\Ruler\Ruler\obj\Release\Ruler.Telas.FrmEstoque.resources

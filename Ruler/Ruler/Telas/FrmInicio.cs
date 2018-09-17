@@ -52,5 +52,13 @@ namespace Ruler.Telas
 
             pesquisarCliente.Show();
         }
+
+        private void btn_estoque_Click(object sender, EventArgs e)
+        {
+            FrmEstoque estoque = new FrmEstoque(this);
+            this.Hide();
+
+            estoque.Show();
+        }
     }
 }

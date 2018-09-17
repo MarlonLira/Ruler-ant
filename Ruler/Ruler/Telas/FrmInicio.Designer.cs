@@ -45,7 +45,7 @@
             this.cadastrar_cliTSMI = new System.Windows.Forms.ToolStripMenuItem();
             this.pesquisarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.btn_vender = new System.Windows.Forms.Button();
-            this.btn_compras = new System.Windows.Forms.Button();
+            this.btn_estoque = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -192,23 +192,23 @@
             this.btn_vender.Text = "Pedidos";
             this.btn_vender.UseVisualStyleBackColor = true;
             // 
-            // btn_compras
+            // btn_estoque
             // 
-            this.btn_compras.Enabled = false;
-            this.btn_compras.Font = new System.Drawing.Font("Microsoft Sans Serif", 35.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_compras.Location = new System.Drawing.Point(422, 230);
-            this.btn_compras.Name = "btn_compras";
-            this.btn_compras.Size = new System.Drawing.Size(225, 140);
-            this.btn_compras.TabIndex = 7;
-            this.btn_compras.Text = "Estoque";
-            this.btn_compras.UseVisualStyleBackColor = true;
+            this.btn_estoque.Font = new System.Drawing.Font("Microsoft Sans Serif", 35.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_estoque.Location = new System.Drawing.Point(422, 230);
+            this.btn_estoque.Name = "btn_estoque";
+            this.btn_estoque.Size = new System.Drawing.Size(225, 140);
+            this.btn_estoque.TabIndex = 7;
+            this.btn_estoque.Text = "Estoque";
+            this.btn_estoque.UseVisualStyleBackColor = true;
+            this.btn_estoque.Click += new System.EventHandler(this.btn_estoque_Click);
             // 
             // FrmInicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(804, 461);
-            this.Controls.Add(this.btn_compras);
+            this.Controls.Add(this.btn_estoque);
             this.Controls.Add(this.btn_vender);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -243,6 +243,6 @@
         private System.Windows.Forms.ToolStripMenuItem comprasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem vendasToolStripMenuItem;
         private System.Windows.Forms.Button btn_vender;
-        private System.Windows.Forms.Button btn_compras;
+        private System.Windows.Forms.Button btn_estoque;
     }
 }

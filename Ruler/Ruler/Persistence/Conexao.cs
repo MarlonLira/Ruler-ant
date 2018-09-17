@@ -80,6 +80,24 @@ namespace Ruler.Persistence
             
         }
 
+        public void openCon(string tabela, string colun, string colun2, string colun3, string colun4, string colun5)
+        {
+            string insertAux = tabela;
+
+            con = new SqlConnection(createCon);
+            cmd = new SqlCommand(insertAux, con);
+
+            cmd.Parameters.AddWithValue("@coluna1", colun);
+            cmd.Parameters.AddWithValue("@coluna2", colun2);
+            cmd.Parameters.AddWithValue("@coluna3", colun3);
+            cmd.Parameters.AddWithValue("@coluna4", colun4);
+            cmd.Parameters.AddWithValue("@coluna5", colun5);
+
+            con.Open();
+            cmd.ExecuteNonQuery();
+
+        }
+
 
         public void openAdpter(string tabela)
         {
