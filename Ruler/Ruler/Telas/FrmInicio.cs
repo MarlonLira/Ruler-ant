@@ -60,5 +60,21 @@ namespace Ruler.Telas
 
             estoque.Show();
         }
+
+        private void btn_cadastro_estoque_Click(object sender, EventArgs e)
+        {
+            FrmEstoque estoque = new FrmEstoque(this);
+            this.Hide();
+
+            estoque.Show();
+        }
+
+        private void btn_pesquisar_estoque_Click(object sender, EventArgs e)
+        {
+            FrmEstoquePesquisa estoquePesquisa = new FrmEstoquePesquisa(this);
+            this.Hide();
+
+            estoquePesquisa.Show();
+        }
     }
 }

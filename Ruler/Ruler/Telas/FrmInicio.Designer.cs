@@ -46,6 +46,10 @@
             this.pesquisarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.btn_vender = new System.Windows.Forms.Button();
             this.btn_estoque = new System.Windows.Forms.Button();
+            this.btn_cadastro_estoque = new System.Windows.Forms.Button();
+            this.btn_pesquisar_estoque = new System.Windows.Forms.Button();
+            this.btn_pesquisar_pedidos = new System.Windows.Forms.Button();
+            this.btn_cadastrar_pedidos = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -170,19 +174,20 @@
             // cadastrar_cliTSMI
             // 
             this.cadastrar_cliTSMI.Name = "cadastrar_cliTSMI";
-            this.cadastrar_cliTSMI.Size = new System.Drawing.Size(124, 22);
+            this.cadastrar_cliTSMI.Size = new System.Drawing.Size(180, 22);
             this.cadastrar_cliTSMI.Text = "Cadastrar";
             this.cadastrar_cliTSMI.Click += new System.EventHandler(this.cadastrar_cliTSMI_Click);
             // 
             // pesquisarToolStripMenuItem1
             // 
             this.pesquisarToolStripMenuItem1.Name = "pesquisarToolStripMenuItem1";
-            this.pesquisarToolStripMenuItem1.Size = new System.Drawing.Size(124, 22);
+            this.pesquisarToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.pesquisarToolStripMenuItem1.Text = "Pesquisar";
             this.pesquisarToolStripMenuItem1.Click += new System.EventHandler(this.pesquisarToolStripMenuItem1_Click_1);
             // 
             // btn_vender
             // 
+            this.btn_vender.BackColor = System.Drawing.SystemColors.ControlDark;
             this.btn_vender.Enabled = false;
             this.btn_vender.Font = new System.Drawing.Font("Microsoft Sans Serif", 35.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_vender.Location = new System.Drawing.Point(138, 230);
@@ -190,24 +195,73 @@
             this.btn_vender.Size = new System.Drawing.Size(225, 140);
             this.btn_vender.TabIndex = 6;
             this.btn_vender.Text = "Pedidos";
-            this.btn_vender.UseVisualStyleBackColor = true;
+            this.btn_vender.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btn_vender.UseVisualStyleBackColor = false;
             // 
             // btn_estoque
             // 
+            this.btn_estoque.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.btn_estoque.Enabled = false;
+            this.btn_estoque.FlatAppearance.BorderSize = 2;
             this.btn_estoque.Font = new System.Drawing.Font("Microsoft Sans Serif", 35.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_estoque.Location = new System.Drawing.Point(422, 230);
             this.btn_estoque.Name = "btn_estoque";
             this.btn_estoque.Size = new System.Drawing.Size(225, 140);
             this.btn_estoque.TabIndex = 7;
             this.btn_estoque.Text = "Estoque";
-            this.btn_estoque.UseVisualStyleBackColor = true;
+            this.btn_estoque.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btn_estoque.UseVisualStyleBackColor = false;
             this.btn_estoque.Click += new System.EventHandler(this.btn_estoque_Click);
+            // 
+            // btn_cadastro_estoque
+            // 
+            this.btn_cadastro_estoque.Location = new System.Drawing.Point(439, 321);
+            this.btn_cadastro_estoque.Name = "btn_cadastro_estoque";
+            this.btn_cadastro_estoque.Size = new System.Drawing.Size(75, 36);
+            this.btn_cadastro_estoque.TabIndex = 8;
+            this.btn_cadastro_estoque.Text = "Cadastrar";
+            this.btn_cadastro_estoque.UseVisualStyleBackColor = true;
+            this.btn_cadastro_estoque.Click += new System.EventHandler(this.btn_cadastro_estoque_Click);
+            // 
+            // btn_pesquisar_estoque
+            // 
+            this.btn_pesquisar_estoque.Location = new System.Drawing.Point(551, 321);
+            this.btn_pesquisar_estoque.Name = "btn_pesquisar_estoque";
+            this.btn_pesquisar_estoque.Size = new System.Drawing.Size(75, 36);
+            this.btn_pesquisar_estoque.TabIndex = 9;
+            this.btn_pesquisar_estoque.Text = "Pesquisar";
+            this.btn_pesquisar_estoque.UseVisualStyleBackColor = true;
+            this.btn_pesquisar_estoque.Click += new System.EventHandler(this.btn_pesquisar_estoque_Click);
+            // 
+            // btn_pesquisar_pedidos
+            // 
+            this.btn_pesquisar_pedidos.Enabled = false;
+            this.btn_pesquisar_pedidos.Location = new System.Drawing.Point(270, 321);
+            this.btn_pesquisar_pedidos.Name = "btn_pesquisar_pedidos";
+            this.btn_pesquisar_pedidos.Size = new System.Drawing.Size(75, 36);
+            this.btn_pesquisar_pedidos.TabIndex = 11;
+            this.btn_pesquisar_pedidos.Text = "Pesquisar";
+            this.btn_pesquisar_pedidos.UseVisualStyleBackColor = true;
+            // 
+            // btn_cadastrar_pedidos
+            // 
+            this.btn_cadastrar_pedidos.Enabled = false;
+            this.btn_cadastrar_pedidos.Location = new System.Drawing.Point(158, 321);
+            this.btn_cadastrar_pedidos.Name = "btn_cadastrar_pedidos";
+            this.btn_cadastrar_pedidos.Size = new System.Drawing.Size(75, 36);
+            this.btn_cadastrar_pedidos.TabIndex = 10;
+            this.btn_cadastrar_pedidos.Text = "Cadastrar";
+            this.btn_cadastrar_pedidos.UseVisualStyleBackColor = true;
             // 
             // FrmInicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(804, 461);
+            this.Controls.Add(this.btn_pesquisar_pedidos);
+            this.Controls.Add(this.btn_cadastrar_pedidos);
+            this.Controls.Add(this.btn_pesquisar_estoque);
+            this.Controls.Add(this.btn_cadastro_estoque);
             this.Controls.Add(this.btn_estoque);
             this.Controls.Add(this.btn_vender);
             this.Controls.Add(this.panel2);
@@ -244,5 +298,9 @@
         private System.Windows.Forms.ToolStripMenuItem vendasToolStripMenuItem;
         private System.Windows.Forms.Button btn_vender;
         private System.Windows.Forms.Button btn_estoque;
+        private System.Windows.Forms.Button btn_cadastro_estoque;
+        private System.Windows.Forms.Button btn_pesquisar_estoque;
+        private System.Windows.Forms.Button btn_pesquisar_pedidos;
+        private System.Windows.Forms.Button btn_cadastrar_pedidos;
     }
 }

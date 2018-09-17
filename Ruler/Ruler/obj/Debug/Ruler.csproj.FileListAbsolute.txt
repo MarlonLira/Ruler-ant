@@ -13,3 +13,4 @@ C:\Users\marlo\source\repos\Ruler\Ruler\obj\Debug\Ruler.Telas.FrmInicio.resource
 C:\Users\marlo\source\repos\Ruler\Ruler\obj\Debug\Ruler.Telas.FrmClienteCadastro.resources
 C:\Users\marlo\source\repos\Ruler\Ruler\obj\Debug\Ruler.Telas.FrmClientePesquisa.resources
 C:\Users\marlo\source\repos\Ruler\Ruler\obj\Debug\Ruler.Telas.FrmEstoque.resources
+C:\Users\marlo\source\repos\Ruler\Ruler\obj\Debug\Ruler.Telas.FrmEstoquePesquisa.resources

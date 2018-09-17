@@ -72,6 +72,12 @@
     <Compile Include="Telas\FrmClientePesquisa.Designer.cs">
       <DependentUpon>FrmClientePesquisa.cs</DependentUpon>
     </Compile>
+    <Compile Include="Telas\FrmEstoquePesquisa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\FrmEstoquePesquisa.Designer.cs">
+      <DependentUpon>FrmEstoquePesquisa.cs</DependentUpon>
+    </Compile>
     <Compile Include="Telas\FrmInicio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,6 +111,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\FrmClientePesquisa.resx">
       <DependentUpon>FrmClientePesquisa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\FrmEstoquePesquisa.resx">
+      <DependentUpon>FrmEstoquePesquisa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\FrmInicio.resx">
       <DependentUpon>FrmInicio.cs</DependentUpon>
