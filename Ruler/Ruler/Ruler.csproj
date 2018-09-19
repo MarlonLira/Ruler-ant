@@ -48,11 +48,13 @@
   <ItemGroup>
     <Compile Include="Model\Cliente.cs" />
     <Compile Include="Model\Estoque.cs" />
+    <Compile Include="Model\Pedido.cs" />
     <Compile Include="Model\Produto.cs" />
     <Compile Include="Persistence\ClientePst.cs" />
     <Compile Include="Persistence\Conexao.cs" />
     <Compile Include="Persistence\ConfigPst.cs" />
     <Compile Include="Persistence\EstoquePst.cs" />
+    <Compile Include="Persistence\PedidoPst.cs" />
     <Compile Include="Persistence\ProdutoPst.cs" />
     <Compile Include="Telas\FrmEstoque.cs">
       <SubType>Form</SubType>
@@ -90,6 +92,12 @@
     <Compile Include="Telas\FrmCadastro.Designer.cs">
       <DependentUpon>FrmCadastro.cs</DependentUpon>
     </Compile>
+    <Compile Include="Telas\FrmPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\FrmPedido.Designer.cs">
+      <DependentUpon>FrmPedido.cs</DependentUpon>
+    </Compile>
     <Compile Include="Telas\FrmPesquisa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +128,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\FrmCadastro.resx">
       <DependentUpon>FrmCadastro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\FrmPedido.resx">
+      <DependentUpon>FrmPedido.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\FrmPesquisa.resx">
       <DependentUpon>FrmPesquisa.cs</DependentUpon>

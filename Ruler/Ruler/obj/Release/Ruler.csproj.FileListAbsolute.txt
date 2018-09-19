@@ -14,3 +14,4 @@ C:\Users\marlo\source\repos\Ruler\Ruler\obj\Release\Ruler.pdb
 C:\Users\marlo\source\repos\Ruler\Ruler\obj\Release\Ruler.csprojAssemblyReference.cache
 C:\Users\marlo\source\repos\Ruler\Ruler\obj\Release\Ruler.Telas.FrmEstoque.resources
 C:\Users\marlo\source\repos\Ruler\Ruler\obj\Release\Ruler.Telas.FrmEstoquePesquisa.resources
+C:\Users\marlo\source\repos\Ruler\Ruler\obj\Release\Ruler.Telas.FrmPedido.resources

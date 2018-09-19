@@ -20,5 +20,10 @@ namespace Ruler.Dados
             this.id = id;
             this.valor_dolar = valor_dolar;
         }
+
+        public override string ToString()
+        {
+            return base.ToString();
+        }
     }
 }

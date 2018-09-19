@@ -76,5 +76,22 @@ namespace Ruler.Telas
 
             estoquePesquisa.Show();
         }
+
+        private void btn_pesquisar_pedidos_Click(object sender, EventArgs e)
+        {
+            FrmPedido pedido = new FrmPedido(this);
+            this.Hide();
+            pedido.Show();
+
+        }
+
+        private void btn_cadastrar_pedidos_Click(object sender, EventArgs e)
+        {
+            FrmPedido pedido = new FrmPedido(this);
+            this.Hide();
+            pedido.Show();
+        }
+
+        
     }
 }

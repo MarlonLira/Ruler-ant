@@ -85,10 +85,8 @@ namespace Ruler.Telas
         }
 
         private void btn_voltar_Click_1(object sender, EventArgs e)
-        {
-                       
+        {         
             inicio.Show();
-
             this.Close();
         }
     }

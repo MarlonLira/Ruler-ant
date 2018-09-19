@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace Ruler.Dados
 {
     class Cliente
@@ -41,6 +36,11 @@ namespace Ruler.Dados
 
         public Cliente()
         {
+        }
+
+        public override string ToString()
+        {
+            return base.ToString();
         }
     }
 }
