@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btn_pesquisa = new System.Windows.Forms.Button();
             this.btn_voltar = new System.Windows.Forms.Button();
             this.btn_cadastrar = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
@@ -59,6 +60,7 @@
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.groupBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.groupBox1.Controls.Add(this.btn_pesquisa);
             this.groupBox1.Controls.Add(this.btn_voltar);
             this.groupBox1.Controls.Add(this.btn_cadastrar);
             this.groupBox1.Controls.Add(this.groupBox5);
@@ -73,6 +75,19 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cadastro de Pedidos";
+            // 
+            // btn_pesquisa
+            // 
+            this.btn_pesquisa.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btn_pesquisa.FlatAppearance.BorderSize = 4;
+            this.btn_pesquisa.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.btn_pesquisa.Location = new System.Drawing.Point(564, 81);
+            this.btn_pesquisa.Name = "btn_pesquisa";
+            this.btn_pesquisa.Size = new System.Drawing.Size(104, 30);
+            this.btn_pesquisa.TabIndex = 92;
+            this.btn_pesquisa.Text = "Pesquisar Pedidos";
+            this.btn_pesquisa.UseVisualStyleBackColor = true;
+            this.btn_pesquisa.Click += new System.EventHandler(this.btn_pesquisa_Click);
             // 
             // btn_voltar
             // 
@@ -95,6 +110,7 @@
             this.btn_cadastrar.TabIndex = 90;
             this.btn_cadastrar.Text = "Cadastrar Pedido";
             this.btn_cadastrar.UseVisualStyleBackColor = true;
+            this.btn_cadastrar.Click += new System.EventHandler(this.btn_cadastrar_Click);
             // 
             // groupBox5
             // 
@@ -113,7 +129,7 @@
             this.groupBox3.Controls.Add(this.data_saida);
             this.groupBox3.Location = new System.Drawing.Point(434, 37);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(131, 143);
+            this.groupBox3.Size = new System.Drawing.Size(124, 143);
             this.groupBox3.TabIndex = 88;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Datas";
@@ -259,6 +275,7 @@
             this.dataGridView1.RowHeadersWidth = 40;
             this.dataGridView1.Size = new System.Drawing.Size(546, 193);
             this.dataGridView1.TabIndex = 60;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // FrmPedido
             // 
@@ -301,5 +318,6 @@
         private System.Windows.Forms.Label lbl_produto;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btn_pesquisa;
     }
 }

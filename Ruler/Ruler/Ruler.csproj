@@ -56,6 +56,12 @@
     <Compile Include="Persistence\EstoquePst.cs" />
     <Compile Include="Persistence\PedidoPst.cs" />
     <Compile Include="Persistence\ProdutoPst.cs" />
+    <Compile Include="Telas\FrmBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\FrmBase.Designer.cs">
+      <DependentUpon>FrmBase.cs</DependentUpon>
+    </Compile>
     <Compile Include="Telas\FrmEstoque.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +117,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>rulerDataSet.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Telas\FrmBase.resx">
+      <DependentUpon>FrmBase.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Telas\FrmEstoque.resx">
       <DependentUpon>FrmEstoque.cs</DependentUpon>
     </EmbeddedResource>

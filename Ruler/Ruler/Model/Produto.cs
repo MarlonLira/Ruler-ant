@@ -8,10 +8,15 @@ namespace Ruler.Dados
 {
     class Produto
     {
-        private string nome { get; set; }
-        private double valor { get; set; }
-        private int id { get; set; }
-        private double valor_dolar { get; set; }
+        private string nome;
+        private double valor;
+        private int id;
+        private double valor_dolar;
+
+        public string Nome { get => nome; set => nome = value; }
+        public double Valor { get => valor; set => valor = value; }
+        public int Id { get => id; set => id = value; }
+        public double Valor_dolar { get => valor_dolar; set => valor_dolar = value; }
 
         public Produto(string nome, double valor, int id, double valor_dolar)
         {
@@ -20,6 +25,7 @@ namespace Ruler.Dados
             this.id = id;
             this.valor_dolar = valor_dolar;
         }
+              
 
         public override string ToString()
         {

@@ -70,6 +70,7 @@ namespace Ruler.Telas
             {
 
                 estoque = new EstoquePst(txt_Nome.Text, double.Parse(txt_real.Text), double.Parse(txt_dolar.Text), int.Parse(txt_quantidade.Text), int.Parse(txt_id.Text));
+
                 con.openCon(criarInsert, estoque.Nome_produto, estoque.Valor_produto.ToString(), estoque.Valor_produto_dolar.ToString(), estoque.Quantidade_produto.ToString(), estoque.Id_produto.ToString());
 
                 con.closeCon();

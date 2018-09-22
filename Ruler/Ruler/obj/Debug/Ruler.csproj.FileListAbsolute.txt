@@ -15,3 +15,4 @@ C:\Users\marlo\source\repos\Ruler\Ruler\obj\Debug\Ruler.Telas.FrmClientePesquisa
 C:\Users\marlo\source\repos\Ruler\Ruler\obj\Debug\Ruler.Telas.FrmEstoque.resources
 C:\Users\marlo\source\repos\Ruler\Ruler\obj\Debug\Ruler.Telas.FrmEstoquePesquisa.resources
 C:\Users\marlo\source\repos\Ruler\Ruler\obj\Debug\Ruler.Telas.FrmPedido.resources
+C:\Users\marlo\source\repos\Ruler\Ruler\obj\Debug\Ruler.Telas.FrmBase.resources
