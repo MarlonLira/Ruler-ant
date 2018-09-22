@@ -14,7 +14,7 @@ namespace Ruler
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmInicio());
+            Application.Run(new FrmBaseT());
         }
     }
 }
