@@ -13,7 +13,7 @@ namespace Ruler.Dados
         public int Id { get => id; set => id = value; }
         public double Debito { get => debito; set => debito = value; }
 
-        public Cliente(string nome, string telefone, int id, double debito)
+        public Cliente(int id, string nome, string telefone, double debito)
         {
             this.nome = nome;
             this.telefone = telefone;
@@ -34,10 +34,8 @@ namespace Ruler.Dados
             this.debito = debito;
         }
 
-        public Cliente()
-        {
-        }
-
+        public Cliente() { }
+                
         public override string ToString()
         {
             return base.ToString();

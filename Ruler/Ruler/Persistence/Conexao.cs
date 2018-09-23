@@ -23,6 +23,15 @@ namespace Ruler.Persistence
             con = new SqlConnection(createCon);
             con.Open();
         }
+
+        public void openCon(string script)
+        {
+            con = new SqlConnection(createCon);
+            cmd = new SqlCommand(script, con);
+            con.Open();
+            cmd.ExecuteNonQuery();
+        }
+
         public void openCon(string tabela ,string colun, string colun2)
         {
                      

@@ -41,8 +41,6 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.produtosTSMI = new System.Windows.Forms.ToolStripMenuItem();
-            this.cadastrarTSMI = new System.Windows.Forms.ToolStripMenuItem();
-            this.pesquisarTSMI = new System.Windows.Forms.ToolStripMenuItem();
             this.relatoriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.movimentacaoTSMI = new System.Windows.Forms.ToolStripMenuItem();
             this.comprasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -195,33 +193,17 @@
             this.menuStrip1.Location = new System.Drawing.Point(18, 16);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.menuStrip1.Size = new System.Drawing.Size(207, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(327, 24);
             this.menuStrip1.Stretch = false;
             this.menuStrip1.TabIndex = 5;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // produtosTSMI
             // 
-            this.produtosTSMI.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cadastrarTSMI,
-            this.pesquisarTSMI});
             this.produtosTSMI.Name = "produtosTSMI";
             this.produtosTSMI.Size = new System.Drawing.Size(67, 20);
             this.produtosTSMI.Text = "Produtos";
-            // 
-            // cadastrarTSMI
-            // 
-            this.cadastrarTSMI.Name = "cadastrarTSMI";
-            this.cadastrarTSMI.Size = new System.Drawing.Size(180, 22);
-            this.cadastrarTSMI.Text = "Cadastrar";
-            this.cadastrarTSMI.Click += new System.EventHandler(this.cadastrarTSMI_Click);
-            // 
-            // pesquisarTSMI
-            // 
-            this.pesquisarTSMI.Name = "pesquisarTSMI";
-            this.pesquisarTSMI.Size = new System.Drawing.Size(180, 22);
-            this.pesquisarTSMI.Text = "Pesquisar";
-            this.pesquisarTSMI.Click += new System.EventHandler(this.pesquisarTSMI_Click_1);
+            this.produtosTSMI.Click += new System.EventHandler(this.produtosTSMI_Click);
             // 
             // relatoriosToolStripMenuItem
             // 
@@ -264,14 +246,14 @@
             // cadastrar_cliTSMI
             // 
             this.cadastrar_cliTSMI.Name = "cadastrar_cliTSMI";
-            this.cadastrar_cliTSMI.Size = new System.Drawing.Size(180, 22);
+            this.cadastrar_cliTSMI.Size = new System.Drawing.Size(124, 22);
             this.cadastrar_cliTSMI.Text = "Cadastrar";
             this.cadastrar_cliTSMI.Click += new System.EventHandler(this.cadastrar_cliTSMI_Click);
             // 
             // pesquisarToolStripMenuItem1
             // 
             this.pesquisarToolStripMenuItem1.Name = "pesquisarToolStripMenuItem1";
-            this.pesquisarToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.pesquisarToolStripMenuItem1.Size = new System.Drawing.Size(124, 22);
             this.pesquisarToolStripMenuItem1.Text = "Pesquisar";
             this.pesquisarToolStripMenuItem1.Click += new System.EventHandler(this.pesquisarToolStripMenuItem1_Click_1);
             // 
@@ -310,8 +292,6 @@
         private System.Windows.Forms.GroupBox groupBox2;
         public System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem produtosTSMI;
-        private System.Windows.Forms.ToolStripMenuItem cadastrarTSMI;
-        private System.Windows.Forms.ToolStripMenuItem pesquisarTSMI;
         private System.Windows.Forms.ToolStripMenuItem relatoriosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem movimentacaoTSMI;
         private System.Windows.Forms.ToolStripMenuItem comprasToolStripMenuItem;

@@ -367,11 +367,9 @@ namespace Ruler {
             
             private global::System.Data.DataColumn columnnome_produto;
             
-            private global::System.Data.DataColumn columnvalor_produto;
-            
-            private global::System.Data.DataColumn columnvalor_produto_dolar;
-            
             private global::System.Data.DataColumn columnid_produto;
+            
+            private global::System.Data.DataColumn columnquantidade_produto;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
@@ -424,25 +422,17 @@ namespace Ruler {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn valor_produtoColumn {
-                get {
-                    return this.columnvalor_produto;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn valor_produto_dolarColumn {
-                get {
-                    return this.columnvalor_produto_dolar;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public global::System.Data.DataColumn id_produtoColumn {
                 get {
                     return this.columnid_produto;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn quantidade_produtoColumn {
+                get {
+                    return this.columnquantidade_produto;
                 }
             }
             
@@ -483,16 +473,15 @@ namespace Ruler {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public Tbl_EstoqueRow AddTbl_EstoqueRow(string nome_produto, decimal valor_produto, decimal valor_produto_dolar, Tbl_ProdutoRow parentTbl_ProdutoRowByFK__Tbl_Estoq__id_pr__182C9B23) {
+            public Tbl_EstoqueRow AddTbl_EstoqueRow(string nome_produto, Tbl_ProdutoRow parentTbl_ProdutoRowByFK__Tbl_Estoq__id_pr__182C9B23, int quantidade_produto) {
                 Tbl_EstoqueRow rowTbl_EstoqueRow = ((Tbl_EstoqueRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         nome_produto,
-                        valor_produto,
-                        valor_produto_dolar,
-                        null};
+                        null,
+                        quantidade_produto};
                 if ((parentTbl_ProdutoRowByFK__Tbl_Estoq__id_pr__182C9B23 != null)) {
-                    columnValuesArray[4] = parentTbl_ProdutoRowByFK__Tbl_Estoq__id_pr__182C9B23[0];
+                    columnValuesArray[2] = parentTbl_ProdutoRowByFK__Tbl_Estoq__id_pr__182C9B23[0];
                 }
                 rowTbl_EstoqueRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowTbl_EstoqueRow);
@@ -525,9 +514,8 @@ namespace Ruler {
             internal void InitVars() {
                 this.columnid_estoque = base.Columns["id_estoque"];
                 this.columnnome_produto = base.Columns["nome_produto"];
-                this.columnvalor_produto = base.Columns["valor_produto"];
-                this.columnvalor_produto_dolar = base.Columns["valor_produto_dolar"];
                 this.columnid_produto = base.Columns["id_produto"];
+                this.columnquantidade_produto = base.Columns["quantidade_produto"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -537,12 +525,10 @@ namespace Ruler {
                 base.Columns.Add(this.columnid_estoque);
                 this.columnnome_produto = new global::System.Data.DataColumn("nome_produto", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnnome_produto);
-                this.columnvalor_produto = new global::System.Data.DataColumn("valor_produto", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnvalor_produto);
-                this.columnvalor_produto_dolar = new global::System.Data.DataColumn("valor_produto_dolar", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnvalor_produto_dolar);
                 this.columnid_produto = new global::System.Data.DataColumn("id_produto", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnid_produto);
+                this.columnquantidade_produto = new global::System.Data.DataColumn("quantidade_produto", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnquantidade_produto);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid_estoque}, true));
                 this.columnid_estoque.AutoIncrement = true;
@@ -553,7 +539,6 @@ namespace Ruler {
                 this.columnid_estoque.Unique = true;
                 this.columnnome_produto.AllowDBNull = false;
                 this.columnnome_produto.MaxLength = 15;
-                this.columnvalor_produto.AllowDBNull = false;
                 this.columnid_produto.AllowDBNull = false;
             }
             
@@ -1351,39 +1336,28 @@ namespace Ruler {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public decimal valor_produto {
-                get {
-                    return ((decimal)(this[this.tableTbl_Estoque.valor_produtoColumn]));
-                }
-                set {
-                    this[this.tableTbl_Estoque.valor_produtoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public decimal valor_produto_dolar {
-                get {
-                    try {
-                        return ((decimal)(this[this.tableTbl_Estoque.valor_produto_dolarColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("O valor da coluna \'valor_produto_dolar\' na tabela \'Tbl_Estoque\' é DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableTbl_Estoque.valor_produto_dolarColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public int id_produto {
                 get {
                     return ((int)(this[this.tableTbl_Estoque.id_produtoColumn]));
                 }
                 set {
                     this[this.tableTbl_Estoque.id_produtoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int quantidade_produto {
+                get {
+                    try {
+                        return ((int)(this[this.tableTbl_Estoque.quantidade_produtoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'quantidade_produto\' na tabela \'Tbl_Estoque\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTbl_Estoque.quantidade_produtoColumn] = value;
                 }
             }
             
@@ -1400,14 +1374,14 @@ namespace Ruler {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool Isvalor_produto_dolarNull() {
-                return this.IsNull(this.tableTbl_Estoque.valor_produto_dolarColumn);
+            public bool Isquantidade_produtoNull() {
+                return this.IsNull(this.tableTbl_Estoque.quantidade_produtoColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void Setvalor_produto_dolarNull() {
-                this[this.tableTbl_Estoque.valor_produto_dolarColumn] = global::System.Convert.DBNull;
+            public void Setquantidade_produtoNull() {
+                this[this.tableTbl_Estoque.quantidade_produtoColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1836,44 +1810,39 @@ namespace Ruler.rulerDataSetTableAdapters {
             tableMapping.DataSetTable = "Tbl_Estoque";
             tableMapping.ColumnMappings.Add("id_estoque", "id_estoque");
             tableMapping.ColumnMappings.Add("nome_produto", "nome_produto");
-            tableMapping.ColumnMappings.Add("valor_produto", "valor_produto");
-            tableMapping.ColumnMappings.Add("valor_produto_dolar", "valor_produto_dolar");
             tableMapping.ColumnMappings.Add("id_produto", "id_produto");
+            tableMapping.ColumnMappings.Add("quantidade_produto", "quantidade_produto");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Tbl_Estoque] WHERE (([id_estoque] = @Original_id_estoque) AND ([nome_produto] = @Original_nome_produto) AND ([valor_produto] = @Original_valor_produto) AND ((@IsNull_valor_produto_dolar = 1 AND [valor_produto_dolar] IS NULL) OR ([valor_produto_dolar] = @Original_valor_produto_dolar)) AND ([id_produto] = @Original_id_produto))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [Tbl_Estoque] WHERE (([id_estoque] = @Original_id_estoque) AND ([nome_produto] = @Original_nome_produto) AND ([id_produto] = @Original_id_produto) AND ((@IsNull_quantidade_produto = 1 AND [quantidade_produto] IS NULL) OR ([quantidade_produto] = @Original_quantidade_produto)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id_estoque", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_estoque", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_nome_produto", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nome_produto", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_valor_produto", global::System.Data.SqlDbType.SmallMoney, 0, global::System.Data.ParameterDirection.Input, 0, 0, "valor_produto", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_valor_produto_dolar", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "valor_produto_dolar", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_valor_produto_dolar", global::System.Data.SqlDbType.SmallMoney, 0, global::System.Data.ParameterDirection.Input, 0, 0, "valor_produto_dolar", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id_produto", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_produto", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_quantidade_produto", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "quantidade_produto", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_quantidade_produto", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "quantidade_produto", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Tbl_Estoque] ([nome_produto], [valor_produto], [valor_produto_dolar], [id_produto]) VALUES (@nome_produto, @valor_produto, @valor_produto_dolar, @id_produto);
-SELECT id_estoque, nome_produto, valor_produto, valor_produto_dolar, id_produto FROM Tbl_Estoque WHERE (id_estoque = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Tbl_Estoque] ([nome_produto], [id_produto], [quantidade_produto]) VALUES (@nome_produto, @id_produto, @quantidade_produto);
+SELECT id_estoque, nome_produto, id_produto, quantidade_produto FROM Tbl_Estoque WHERE (id_estoque = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nome_produto", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nome_produto", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@valor_produto", global::System.Data.SqlDbType.SmallMoney, 0, global::System.Data.ParameterDirection.Input, 0, 0, "valor_produto", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@valor_produto_dolar", global::System.Data.SqlDbType.SmallMoney, 0, global::System.Data.ParameterDirection.Input, 0, 0, "valor_produto_dolar", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_produto", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_produto", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@quantidade_produto", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "quantidade_produto", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Tbl_Estoque] SET [nome_produto] = @nome_produto, [valor_produto] = @valor_produto, [valor_produto_dolar] = @valor_produto_dolar, [id_produto] = @id_produto WHERE (([id_estoque] = @Original_id_estoque) AND ([nome_produto] = @Original_nome_produto) AND ([valor_produto] = @Original_valor_produto) AND ((@IsNull_valor_produto_dolar = 1 AND [valor_produto_dolar] IS NULL) OR ([valor_produto_dolar] = @Original_valor_produto_dolar)) AND ([id_produto] = @Original_id_produto));
-SELECT id_estoque, nome_produto, valor_produto, valor_produto_dolar, id_produto FROM Tbl_Estoque WHERE (id_estoque = @id_estoque)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [Tbl_Estoque] SET [nome_produto] = @nome_produto, [id_produto] = @id_produto, [quantidade_produto] = @quantidade_produto WHERE (([id_estoque] = @Original_id_estoque) AND ([nome_produto] = @Original_nome_produto) AND ([id_produto] = @Original_id_produto) AND ((@IsNull_quantidade_produto = 1 AND [quantidade_produto] IS NULL) OR ([quantidade_produto] = @Original_quantidade_produto)));
+SELECT id_estoque, nome_produto, id_produto, quantidade_produto FROM Tbl_Estoque WHERE (id_estoque = @id_estoque)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nome_produto", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nome_produto", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@valor_produto", global::System.Data.SqlDbType.SmallMoney, 0, global::System.Data.ParameterDirection.Input, 0, 0, "valor_produto", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@valor_produto_dolar", global::System.Data.SqlDbType.SmallMoney, 0, global::System.Data.ParameterDirection.Input, 0, 0, "valor_produto_dolar", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_produto", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_produto", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@quantidade_produto", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "quantidade_produto", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id_estoque", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_estoque", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_nome_produto", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nome_produto", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_valor_produto", global::System.Data.SqlDbType.SmallMoney, 0, global::System.Data.ParameterDirection.Input, 0, 0, "valor_produto", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_valor_produto_dolar", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "valor_produto_dolar", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_valor_produto_dolar", global::System.Data.SqlDbType.SmallMoney, 0, global::System.Data.ParameterDirection.Input, 0, 0, "valor_produto_dolar", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id_produto", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_produto", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_quantidade_produto", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "quantidade_produto", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_quantidade_produto", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "quantidade_produto", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_estoque", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id_estoque", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -1890,8 +1859,7 @@ SELECT id_estoque, nome_produto, valor_produto, valor_produto_dolar, id_produto 
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT id_estoque, nome_produto, valor_produto, valor_produto_dolar, id_produto F" +
-                "ROM dbo.Tbl_Estoque";
+            this._commandCollection[0].CommandText = "SELECT id_estoque, nome_produto, id_produto, quantidade_produto FROM Tbl_Estoque";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -1952,7 +1920,7 @@ SELECT id_estoque, nome_produto, valor_produto, valor_produto_dolar, id_produto 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_id_estoque, string Original_nome_produto, decimal Original_valor_produto, global::System.Nullable<decimal> Original_valor_produto_dolar, int Original_id_produto) {
+        public virtual int Delete(int Original_id_estoque, string Original_nome_produto, int Original_id_produto, global::System.Nullable<int> Original_quantidade_produto) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_id_estoque));
             if ((Original_nome_produto == null)) {
                 throw new global::System.ArgumentNullException("Original_nome_produto");
@@ -1960,16 +1928,15 @@ SELECT id_estoque, nome_produto, valor_produto, valor_produto_dolar, id_produto 
             else {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_nome_produto));
             }
-            this.Adapter.DeleteCommand.Parameters[2].Value = ((decimal)(Original_valor_produto));
-            if ((Original_valor_produto_dolar.HasValue == true)) {
+            this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_id_produto));
+            if ((Original_quantidade_produto.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((decimal)(Original_valor_produto_dolar.Value));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_quantidade_produto.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
-            this.Adapter.DeleteCommand.Parameters[5].Value = ((int)(Original_id_produto));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1990,21 +1957,20 @@ SELECT id_estoque, nome_produto, valor_produto, valor_produto_dolar, id_produto 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string nome_produto, decimal valor_produto, global::System.Nullable<decimal> valor_produto_dolar, int id_produto) {
+        public virtual int Insert(string nome_produto, int id_produto, global::System.Nullable<int> quantidade_produto) {
             if ((nome_produto == null)) {
                 throw new global::System.ArgumentNullException("nome_produto");
             }
             else {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((string)(nome_produto));
             }
-            this.Adapter.InsertCommand.Parameters[1].Value = ((decimal)(valor_produto));
-            if ((valor_produto_dolar.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((decimal)(valor_produto_dolar.Value));
+            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(id_produto));
+            if ((quantidade_produto.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((int)(quantidade_produto.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            this.Adapter.InsertCommand.Parameters[3].Value = ((int)(id_produto));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -2025,39 +1991,37 @@ SELECT id_estoque, nome_produto, valor_produto, valor_produto_dolar, id_produto 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string nome_produto, decimal valor_produto, global::System.Nullable<decimal> valor_produto_dolar, int id_produto, int Original_id_estoque, string Original_nome_produto, decimal Original_valor_produto, global::System.Nullable<decimal> Original_valor_produto_dolar, int Original_id_produto, int id_estoque) {
+        public virtual int Update(string nome_produto, int id_produto, global::System.Nullable<int> quantidade_produto, int Original_id_estoque, string Original_nome_produto, int Original_id_produto, global::System.Nullable<int> Original_quantidade_produto, int id_estoque) {
             if ((nome_produto == null)) {
                 throw new global::System.ArgumentNullException("nome_produto");
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(nome_produto));
             }
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((decimal)(valor_produto));
-            if ((valor_produto_dolar.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((decimal)(valor_produto_dolar.Value));
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(id_produto));
+            if ((quantidade_produto.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(quantidade_produto.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(id_produto));
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_id_estoque));
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_id_estoque));
             if ((Original_nome_produto == null)) {
                 throw new global::System.ArgumentNullException("Original_nome_produto");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Original_nome_produto));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Original_nome_produto));
             }
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((decimal)(Original_valor_produto));
-            if ((Original_valor_produto_dolar.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((decimal)(Original_valor_produto_dolar.Value));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_id_produto));
+            if ((Original_quantidade_produto.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_quantidade_produto.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_id_produto));
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(id_estoque));
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(id_estoque));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -2078,8 +2042,8 @@ SELECT id_estoque, nome_produto, valor_produto, valor_produto_dolar, id_produto 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string nome_produto, decimal valor_produto, global::System.Nullable<decimal> valor_produto_dolar, int id_produto, int Original_id_estoque, string Original_nome_produto, decimal Original_valor_produto, global::System.Nullable<decimal> Original_valor_produto_dolar, int Original_id_produto) {
-            return this.Update(nome_produto, valor_produto, valor_produto_dolar, id_produto, Original_id_estoque, Original_nome_produto, Original_valor_produto, Original_valor_produto_dolar, Original_id_produto, Original_id_estoque);
+        public virtual int Update(string nome_produto, int id_produto, global::System.Nullable<int> quantidade_produto, int Original_id_estoque, string Original_nome_produto, int Original_id_produto, global::System.Nullable<int> Original_quantidade_produto) {
+            return this.Update(nome_produto, id_produto, quantidade_produto, Original_id_estoque, Original_nome_produto, Original_id_produto, Original_quantidade_produto, Original_id_estoque);
         }
     }
     

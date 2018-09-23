@@ -28,205 +28,364 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btn_voltar = new System.Windows.Forms.Button();
-            this.btn_cadastrar = new System.Windows.Forms.Button();
-            this.lbl_id = new System.Windows.Forms.Label();
-            this.txt_id = new System.Windows.Forms.TextBox();
-            this.txt_dolar = new System.Windows.Forms.TextBox();
-            this.lbl_dolar = new System.Windows.Forms.Label();
-            this.lb_real = new System.Windows.Forms.Label();
-            this.lbl_produto = new System.Windows.Forms.Label();
-            this.txt_real = new System.Windows.Forms.TextBox();
-            this.txt_Nome = new System.Windows.Forms.TextBox();
+            this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txt_quantidade = new System.Windows.Forms.TextBox();
-            this.calendar_Entrada = new System.Windows.Forms.MonthCalendar();
-            this.label4 = new System.Windows.Forms.Label();
+            this.idestoqueDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomeprodutoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idprodutoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantidadeprodutoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tblEstoqueBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.rulerDataSet = new Ruler.rulerDataSet();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.btn_cadastrar = new System.Windows.Forms.Button();
+            this.lbl_quantidade = new System.Windows.Forms.Label();
+            this.lbl_id = new System.Windows.Forms.Label();
+            this.txt_id_produto = new System.Windows.Forms.TextBox();
+            this.lbl_produto = new System.Windows.Forms.Label();
+            this.ckb_deletar = new System.Windows.Forms.CheckBox();
+            this.btn_deletar = new System.Windows.Forms.Button();
+            this.btn_atualizar = new System.Windows.Forms.Button();
+            this.btn_pesquisa = new System.Windows.Forms.Button();
+            this.btn_voltar = new System.Windows.Forms.Button();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.nud_quantidade = new System.Windows.Forms.NumericUpDown();
+            this.cbb_produto = new System.Windows.Forms.ComboBox();
+            this.tblProdutoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.tbl_EstoqueTableAdapter = new Ruler.rulerDataSetTableAdapters.Tbl_EstoqueTableAdapter();
+            this.tbl_ProdutoTableAdapter = new Ruler.rulerDataSetTableAdapters.Tbl_ProdutoTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblEstoqueBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rulerDataSet)).BeginInit();
+            this.groupBox4.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_quantidade)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblProdutoBindingSource)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // btn_voltar
+            // dataGridView1
             // 
-            this.btn_voltar.Location = new System.Drawing.Point(205, 205);
-            this.btn_voltar.Name = "btn_voltar";
-            this.btn_voltar.Size = new System.Drawing.Size(70, 30);
-            this.btn_voltar.TabIndex = 49;
-            this.btn_voltar.Text = "Voltar";
-            this.btn_voltar.UseVisualStyleBackColor = true;
-            this.btn_voltar.Click += new System.EventHandler(this.btn_voltar_Click);
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idestoqueDataGridViewTextBoxColumn,
+            this.nomeprodutoDataGridViewTextBoxColumn,
+            this.idprodutoDataGridViewTextBoxColumn,
+            this.quantidadeprodutoDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.tblEstoqueBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(6, 16);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 40;
+            this.dataGridView1.RowTemplate.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(642, 193);
+            this.dataGridView1.TabIndex = 60;
+            // 
+            // idestoqueDataGridViewTextBoxColumn
+            // 
+            this.idestoqueDataGridViewTextBoxColumn.DataPropertyName = "id_estoque";
+            this.idestoqueDataGridViewTextBoxColumn.HeaderText = "Id do Estoque";
+            this.idestoqueDataGridViewTextBoxColumn.Name = "idestoqueDataGridViewTextBoxColumn";
+            this.idestoqueDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idestoqueDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // nomeprodutoDataGridViewTextBoxColumn
+            // 
+            this.nomeprodutoDataGridViewTextBoxColumn.DataPropertyName = "nome_produto";
+            this.nomeprodutoDataGridViewTextBoxColumn.HeaderText = "Nome do Produto";
+            this.nomeprodutoDataGridViewTextBoxColumn.Name = "nomeprodutoDataGridViewTextBoxColumn";
+            this.nomeprodutoDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // idprodutoDataGridViewTextBoxColumn
+            // 
+            this.idprodutoDataGridViewTextBoxColumn.DataPropertyName = "id_produto";
+            this.idprodutoDataGridViewTextBoxColumn.HeaderText = "Id do Produto";
+            this.idprodutoDataGridViewTextBoxColumn.Name = "idprodutoDataGridViewTextBoxColumn";
+            this.idprodutoDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // quantidadeprodutoDataGridViewTextBoxColumn
+            // 
+            this.quantidadeprodutoDataGridViewTextBoxColumn.DataPropertyName = "quantidade_produto";
+            this.quantidadeprodutoDataGridViewTextBoxColumn.HeaderText = "Quantidade do Produto";
+            this.quantidadeprodutoDataGridViewTextBoxColumn.Name = "quantidadeprodutoDataGridViewTextBoxColumn";
+            this.quantidadeprodutoDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // tblEstoqueBindingSource
+            // 
+            this.tblEstoqueBindingSource.DataMember = "Tbl_Estoque";
+            this.tblEstoqueBindingSource.DataSource = this.rulerDataSet;
+            // 
+            // rulerDataSet
+            // 
+            this.rulerDataSet.DataSetName = "rulerDataSet";
+            this.rulerDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.groupBox4.Controls.Add(this.dataGridView1);
+            this.groupBox4.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.groupBox4.Location = new System.Drawing.Point(56, 205);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(654, 215);
+            this.groupBox4.TabIndex = 86;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Produtos Cadastrados no Estoque";
             // 
             // btn_cadastrar
             // 
-            this.btn_cadastrar.Location = new System.Drawing.Point(12, 205);
+            this.btn_cadastrar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btn_cadastrar.FlatAppearance.BorderSize = 4;
+            this.btn_cadastrar.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.btn_cadastrar.Location = new System.Drawing.Point(296, 103);
             this.btn_cadastrar.Name = "btn_cadastrar";
-            this.btn_cadastrar.Size = new System.Drawing.Size(177, 30);
-            this.btn_cadastrar.TabIndex = 48;
+            this.btn_cadastrar.Size = new System.Drawing.Size(76, 34);
+            this.btn_cadastrar.TabIndex = 90;
             this.btn_cadastrar.Text = "Cadastrar";
             this.btn_cadastrar.UseVisualStyleBackColor = true;
-            this.btn_cadastrar.Click += new System.EventHandler(this.btn_cadastrar_Click);
+            this.btn_cadastrar.Click += new System.EventHandler(this.btn_cadastrar_Click_1);
+            // 
+            // lbl_quantidade
+            // 
+            this.lbl_quantidade.AutoSize = true;
+            this.lbl_quantidade.Location = new System.Drawing.Point(36, 86);
+            this.lbl_quantidade.Name = "lbl_quantidade";
+            this.lbl_quantidade.Size = new System.Drawing.Size(62, 13);
+            this.lbl_quantidade.TabIndex = 87;
+            this.lbl_quantidade.Text = "Quantidade";
             // 
             // lbl_id
             // 
             this.lbl_id.AutoSize = true;
-            this.lbl_id.Location = new System.Drawing.Point(67, 16);
+            this.lbl_id.Location = new System.Drawing.Point(34, 25);
             this.lbl_id.Name = "lbl_id";
             this.lbl_id.Size = new System.Drawing.Size(18, 13);
-            this.lbl_id.TabIndex = 47;
+            this.lbl_id.TabIndex = 83;
             this.lbl_id.Text = "ID";
             // 
-            // txt_id
+            // txt_id_produto
             // 
-            this.txt_id.Enabled = false;
-            this.txt_id.Location = new System.Drawing.Point(70, 36);
-            this.txt_id.Name = "txt_id";
-            this.txt_id.Size = new System.Drawing.Size(100, 20);
-            this.txt_id.TabIndex = 46;
-            // 
-            // txt_dolar
-            // 
-            this.txt_dolar.Enabled = false;
-            this.txt_dolar.Location = new System.Drawing.Point(118, 126);
-            this.txt_dolar.Name = "txt_dolar";
-            this.txt_dolar.Size = new System.Drawing.Size(100, 20);
-            this.txt_dolar.TabIndex = 45;
-            // 
-            // lbl_dolar
-            // 
-            this.lbl_dolar.AutoSize = true;
-            this.lbl_dolar.Location = new System.Drawing.Point(115, 110);
-            this.lbl_dolar.Name = "lbl_dolar";
-            this.lbl_dolar.Size = new System.Drawing.Size(40, 13);
-            this.lbl_dolar.TabIndex = 44;
-            this.lbl_dolar.Text = "Valor $";
-            // 
-            // lb_real
-            // 
-            this.lb_real.AutoSize = true;
-            this.lb_real.Location = new System.Drawing.Point(9, 107);
-            this.lb_real.Name = "lb_real";
-            this.lb_real.Size = new System.Drawing.Size(48, 13);
-            this.lb_real.TabIndex = 43;
-            this.lb_real.Text = "Valor R$";
+            this.txt_id_produto.Enabled = false;
+            this.txt_id_produto.Location = new System.Drawing.Point(37, 45);
+            this.txt_id_produto.Name = "txt_id_produto";
+            this.txt_id_produto.Size = new System.Drawing.Size(78, 20);
+            this.txt_id_produto.TabIndex = 82;
             // 
             // lbl_produto
             // 
             this.lbl_produto.AutoSize = true;
-            this.lbl_produto.Location = new System.Drawing.Point(32, 59);
+            this.lbl_produto.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_produto.Location = new System.Drawing.Point(158, 28);
             this.lbl_produto.Name = "lbl_produto";
             this.lbl_produto.Size = new System.Drawing.Size(44, 13);
-            this.lbl_produto.TabIndex = 42;
+            this.lbl_produto.TabIndex = 81;
             this.lbl_produto.Text = "Produto";
             // 
-            // txt_real
+            // ckb_deletar
             // 
-            this.txt_real.Enabled = false;
-            this.txt_real.Location = new System.Drawing.Point(12, 126);
-            this.txt_real.Name = "txt_real";
-            this.txt_real.Size = new System.Drawing.Size(100, 20);
-            this.txt_real.TabIndex = 41;
+            this.ckb_deletar.AutoSize = true;
+            this.ckb_deletar.Location = new System.Drawing.Point(16, 113);
+            this.ckb_deletar.Name = "ckb_deletar";
+            this.ckb_deletar.Size = new System.Drawing.Size(141, 17);
+            this.ckb_deletar.TabIndex = 95;
+            this.ckb_deletar.Text = "Desejo Apagar Produtos";
+            this.ckb_deletar.UseVisualStyleBackColor = true;
             // 
-            // txt_Nome
+            // btn_deletar
             // 
-            this.txt_Nome.Enabled = false;
-            this.txt_Nome.Location = new System.Drawing.Point(35, 75);
-            this.txt_Nome.Name = "txt_Nome";
-            this.txt_Nome.Size = new System.Drawing.Size(170, 20);
-            this.txt_Nome.TabIndex = 40;
+            this.btn_deletar.Enabled = false;
+            this.btn_deletar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btn_deletar.FlatAppearance.BorderSize = 4;
+            this.btn_deletar.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.btn_deletar.Location = new System.Drawing.Point(173, 103);
+            this.btn_deletar.Name = "btn_deletar";
+            this.btn_deletar.Size = new System.Drawing.Size(97, 34);
+            this.btn_deletar.TabIndex = 94;
+            this.btn_deletar.Text = "Deletar Produto";
+            this.btn_deletar.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // btn_atualizar
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 240);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersWidth = 40;
-            this.dataGridView1.Size = new System.Drawing.Size(446, 209);
-            this.dataGridView1.TabIndex = 38;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.btn_atualizar.Enabled = false;
+            this.btn_atualizar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btn_atualizar.FlatAppearance.BorderSize = 4;
+            this.btn_atualizar.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.btn_atualizar.Location = new System.Drawing.Point(173, 59);
+            this.btn_atualizar.Name = "btn_atualizar";
+            this.btn_atualizar.Size = new System.Drawing.Size(97, 34);
+            this.btn_atualizar.TabIndex = 93;
+            this.btn_atualizar.Text = "Atualizar Produto";
+            this.btn_atualizar.UseVisualStyleBackColor = true;
             // 
-            // label2
+            // btn_pesquisa
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(90, 163);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(62, 13);
-            this.label2.TabIndex = 51;
-            this.label2.Text = "Quantidade";
+            this.btn_pesquisa.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btn_pesquisa.FlatAppearance.BorderSize = 4;
+            this.btn_pesquisa.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.btn_pesquisa.Location = new System.Drawing.Point(173, 19);
+            this.btn_pesquisa.Name = "btn_pesquisa";
+            this.btn_pesquisa.Size = new System.Drawing.Size(97, 34);
+            this.btn_pesquisa.TabIndex = 92;
+            this.btn_pesquisa.Text = "Exibir Produtos";
+            this.btn_pesquisa.UseVisualStyleBackColor = true;
+            this.btn_pesquisa.Click += new System.EventHandler(this.btn_pesquisa_Click);
             // 
-            // txt_quantidade
+            // btn_voltar
             // 
-            this.txt_quantidade.Location = new System.Drawing.Point(70, 179);
-            this.txt_quantidade.Name = "txt_quantidade";
-            this.txt_quantidade.Size = new System.Drawing.Size(100, 20);
-            this.txt_quantidade.TabIndex = 50;
+            this.btn_voltar.Location = new System.Drawing.Point(716, 19);
+            this.btn_voltar.Name = "btn_voltar";
+            this.btn_voltar.Size = new System.Drawing.Size(54, 30);
+            this.btn_voltar.TabIndex = 91;
+            this.btn_voltar.Text = "Voltar";
+            this.btn_voltar.UseVisualStyleBackColor = true;
+            this.btn_voltar.Click += new System.EventHandler(this.btn_voltar_Click_1);
             // 
-            // calendar_Entrada
+            // groupBox5
             // 
-            this.calendar_Entrada.Enabled = false;
-            this.calendar_Entrada.Location = new System.Drawing.Point(231, 14);
-            this.calendar_Entrada.Name = "calendar_Entrada";
-            this.calendar_Entrada.TabIndex = 57;
+            this.groupBox5.Location = new System.Drawing.Point(56, 189);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(654, 10);
+            this.groupBox5.TabIndex = 89;
+            this.groupBox5.TabStop = false;
             // 
-            // label4
+            // groupBox3
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
-                | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label4.Location = new System.Drawing.Point(296, 196);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(162, 41);
-            this.label4.TabIndex = 58;
-            this.label4.Text = "Selecione um dos produtos\r\ncadastrados abaixo\r\n\r\n";
+            this.groupBox3.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.groupBox3.Controls.Add(this.ckb_deletar);
+            this.groupBox3.Controls.Add(this.btn_deletar);
+            this.groupBox3.Controls.Add(this.btn_atualizar);
+            this.groupBox3.Controls.Add(this.btn_pesquisa);
+            this.groupBox3.Location = new System.Drawing.Point(434, 37);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(276, 143);
+            this.groupBox3.TabIndex = 88;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Outras Opções";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.groupBox2.Controls.Add(this.nud_quantidade);
+            this.groupBox2.Controls.Add(this.cbb_produto);
+            this.groupBox2.Controls.Add(this.btn_cadastrar);
+            this.groupBox2.Controls.Add(this.lbl_quantidade);
+            this.groupBox2.Controls.Add(this.lbl_id);
+            this.groupBox2.Controls.Add(this.txt_id_produto);
+            this.groupBox2.Controls.Add(this.lbl_produto);
+            this.groupBox2.Location = new System.Drawing.Point(56, 37);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(388, 143);
+            this.groupBox2.TabIndex = 87;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Cadastro de Produtos no Estoque";
+            // 
+            // nud_quantidade
+            // 
+            this.nud_quantidade.Location = new System.Drawing.Point(37, 103);
+            this.nud_quantidade.Name = "nud_quantidade";
+            this.nud_quantidade.Size = new System.Drawing.Size(78, 20);
+            this.nud_quantidade.TabIndex = 92;
+            // 
+            // cbb_produto
+            // 
+            this.cbb_produto.DataSource = this.tblProdutoBindingSource;
+            this.cbb_produto.DisplayMember = "nome";
+            this.cbb_produto.FormattingEnabled = true;
+            this.cbb_produto.Location = new System.Drawing.Point(161, 45);
+            this.cbb_produto.Name = "cbb_produto";
+            this.cbb_produto.Size = new System.Drawing.Size(188, 21);
+            this.cbb_produto.TabIndex = 91;
+            this.cbb_produto.SelectedIndexChanged += new System.EventHandler(this.cbb_produto_SelectedIndexChanged);
+            // 
+            // tblProdutoBindingSource
+            // 
+            this.tblProdutoBindingSource.DataMember = "Tbl_Produto";
+            this.tblProdutoBindingSource.DataSource = this.rulerDataSet;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.groupBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.groupBox1.Controls.Add(this.btn_voltar);
+            this.groupBox1.Controls.Add(this.groupBox5);
+            this.groupBox1.Controls.Add(this.groupBox3);
+            this.groupBox1.Controls.Add(this.groupBox2);
+            this.groupBox1.Controls.Add(this.groupBox4);
+            this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.groupBox1.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(776, 426);
+            this.groupBox1.TabIndex = 2;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Estoque";
+            // 
+            // tbl_EstoqueTableAdapter
+            // 
+            this.tbl_EstoqueTableAdapter.ClearBeforeFill = true;
+            // 
+            // tbl_ProdutoTableAdapter
+            // 
+            this.tbl_ProdutoTableAdapter.ClearBeforeFill = true;
             // 
             // FrmEstoque
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(470, 461);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.calendar_Entrada);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.txt_quantidade);
-            this.Controls.Add(this.btn_voltar);
-            this.Controls.Add(this.btn_cadastrar);
-            this.Controls.Add(this.lbl_id);
-            this.Controls.Add(this.txt_id);
-            this.Controls.Add(this.txt_dolar);
-            this.Controls.Add(this.lbl_dolar);
-            this.Controls.Add(this.lb_real);
-            this.Controls.Add(this.lbl_produto);
-            this.Controls.Add(this.txt_real);
-            this.Controls.Add(this.txt_Nome);
-            this.Controls.Add(this.dataGridView1);
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.groupBox1);
             this.Name = "FrmEstoque";
-            this.Text = "Estoque";
+            this.Text = "Menu Estoque";
             this.Load += new System.EventHandler(this.FrmEstoque_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblEstoqueBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rulerDataSet)).EndInit();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_quantidade)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblProdutoBindingSource)).EndInit();
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btn_voltar;
-        private System.Windows.Forms.Button btn_cadastrar;
-        private System.Windows.Forms.Label lbl_id;
-        private System.Windows.Forms.TextBox txt_id;
-        private System.Windows.Forms.TextBox txt_dolar;
-        private System.Windows.Forms.Label lbl_dolar;
-        private System.Windows.Forms.Label lb_real;
-        private System.Windows.Forms.Label lbl_produto;
-        private System.Windows.Forms.TextBox txt_real;
-        private System.Windows.Forms.TextBox txt_Nome;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txt_quantidade;
-        private System.Windows.Forms.MonthCalendar calendar_Entrada;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Button btn_cadastrar;
+        private System.Windows.Forms.Label lbl_quantidade;
+        private System.Windows.Forms.Label lbl_id;
+        private System.Windows.Forms.TextBox txt_id_produto;
+        private System.Windows.Forms.Label lbl_produto;
+        private System.Windows.Forms.CheckBox ckb_deletar;
+        private System.Windows.Forms.Button btn_deletar;
+        private System.Windows.Forms.Button btn_atualizar;
+        private System.Windows.Forms.Button btn_pesquisa;
+        private System.Windows.Forms.Button btn_voltar;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.NumericUpDown nud_quantidade;
+        private System.Windows.Forms.ComboBox cbb_produto;
+        private rulerDataSet rulerDataSet;
+        private System.Windows.Forms.BindingSource tblEstoqueBindingSource;
+        private rulerDataSetTableAdapters.Tbl_EstoqueTableAdapter tbl_EstoqueTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idestoqueDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomeprodutoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idprodutoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn quantidadeprodutoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource tblProdutoBindingSource;
+        private rulerDataSetTableAdapters.Tbl_ProdutoTableAdapter tbl_ProdutoTableAdapter;
     }
 }

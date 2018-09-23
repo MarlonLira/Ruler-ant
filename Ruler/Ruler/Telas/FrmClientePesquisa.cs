@@ -1,13 +1,7 @@
 ﻿using Ruler.Dados;
 using Ruler.Persistence;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Ruler.Telas
@@ -67,7 +61,7 @@ namespace Ruler.Telas
         {
             if (txt_Nome.Text != "" && txt_telefone.Text != "")
             {
-                cliente = new Cliente(txt_Nome.Text, txt_telefone.Text, int.Parse(txt_id.Text), double.Parse(txt_debito.Text));
+                cliente = new Cliente(int.Parse(txt_id.Text), txt_Nome.Text, txt_telefone.Text, double.Parse(txt_debito.Text));
 
 
                 con.openCon(criarUpdate, cliente.Nome, cliente.Telefone, cliente.Debito.ToString(), cliente.Id.ToString());

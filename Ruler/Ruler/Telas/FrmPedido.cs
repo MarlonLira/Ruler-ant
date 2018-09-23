@@ -5,11 +5,12 @@ using System.Windows.Forms;
 
 namespace Ruler.Telas
 {
-    public partial class FrmPedido : Form
+    public partial class FrmPedido : Form, ConfigFrm
     {
         Conexao con = new Conexao();
         private FrmInicio inicio;
         private string procure;
+               
 
         public FrmPedido(FrmInicio frm)
         {
@@ -17,7 +18,7 @@ namespace Ruler.Telas
             inicio = frm;
         }
 
-        private void DisplayData()
+        public void DisplayData()
         {
             con.openCon();
             DataTable dt = new DataTable();
@@ -51,6 +52,36 @@ namespace Ruler.Telas
         {
             procure = "select * from Tbl_Pedido";
             DisplayData();
+        }
+
+        public void PesquisarObjeto()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void CadastrarObjeto()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void AtualizarObjeto()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void DeletarObjeto()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void DisplayData(string script)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void ClearData()
+        {
+            throw new NotImplementedException();
         }
     }
 }

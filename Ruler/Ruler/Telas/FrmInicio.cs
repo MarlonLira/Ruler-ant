@@ -92,6 +92,11 @@ namespace Ruler.Telas
             pedido.Show();
         }
 
-        
+        private void produtosTSMI_Click(object sender, EventArgs e)
+        {
+            FrmProduto produto = new FrmProduto(this);
+            this.Hide();
+            produto.Show();
+        }
     }
 }

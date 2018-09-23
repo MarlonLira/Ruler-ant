@@ -18,14 +18,29 @@ namespace Ruler.Dados
         public int Id { get => id; set => id = value; }
         public double Valor_dolar { get => valor_dolar; set => valor_dolar = value; }
 
-        public Produto(string nome, double valor, int id, double valor_dolar)
+        public Produto(int id, string nome, double valor, double valor_dolar)
         {
             this.nome = nome;
             this.valor = valor;
             this.id = id;
             this.valor_dolar = valor_dolar;
         }
-              
+
+        public Produto(int id)
+        {
+            this.id = id;
+        }
+
+        public Produto(string nome, double valor, double valor_dolar)
+        {
+            this.nome = nome;
+            this.valor = valor;
+            this.valor_dolar = valor_dolar;
+        }
+                
+
+        public Produto() { }
+
 
         public override string ToString()
         {

@@ -1,15 +1,31 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Ruler.Dados;
 
 namespace Ruler.Persistence
 {
-    class ClientePst : ConfigPst
+    class ClientePst : Cliente, ConfigPst
     {
-        string criarInsert = "insert into Tbl_Cliente";
+        public ClientePst(string nome, string telefone, double debito) : base(nome, telefone, debito)
+        {
+        }
 
-       
+        public string Atualizar()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public string Cadastrar()
+        {
+            return "INSERT INTO Tbl_Cliente (nome, telefone, debito) values(" + Nome + Telefone + Debito + ")";
+        }
+
+        public string Deletar()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public string Pesquisar()
+        {
+            return "SELECT * FROM Tbl_Cliente";
+        }
     }
 }
