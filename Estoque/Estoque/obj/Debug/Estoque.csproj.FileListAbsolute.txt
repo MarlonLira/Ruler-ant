@@ -1,7 +1,0 @@
-C:\Users\marlo\source\repos\Estoque\Estoque\bin\Debug\Estoque.exe.config
-C:\Users\marlo\source\repos\Estoque\Estoque\bin\Debug\Estoque.exe
-C:\Users\marlo\source\repos\Estoque\Estoque\bin\Debug\Estoque.pdb
-C:\Users\marlo\source\repos\Estoque\Estoque\obj\Debug\Estoque.csprojAssemblyReference.cache
-C:\Users\marlo\source\repos\Estoque\Estoque\obj\Debug\Estoque.csproj.CoreCompileInputs.cache
-C:\Users\marlo\source\repos\Estoque\Estoque\obj\Debug\Estoque.exe
-C:\Users\marlo\source\repos\Estoque\Estoque\obj\Debug\Estoque.pdb
