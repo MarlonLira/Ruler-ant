@@ -6,43 +6,42 @@ namespace Ruler.Model
 {
     class Pedido
     {
-        private int id_movimento;
-        private Produto produto;
+        private int id;
+        private string produto;
+        private string id_produto;
         private int quantidade_produto;
-        private DateTime data_entrada;
-        private DateTime data_saida;
-        private Cliente cliente;
+        private double valor_produto;
+        private string data;
+        private string cliente;
 
-        public Pedido(int id_movimento, Produto produto, int quantidade_produto, DateTime data_entrada, DateTime data_saida, Cliente cliente)
+        public Pedido(){}
+
+        public Pedido(int id, string produto, string id_produto, int quantidade_produto, double valor_produto, string cliente)
         {
-            this.id_movimento = id_movimento;
+            this.id = id;
             this.produto = produto;
+            this.id_produto = id_produto;
             this.quantidade_produto = quantidade_produto;
-            this.data_entrada = data_entrada;
-            this.data_saida = data_saida;
+            this.valor_produto = valor_produto;
             this.cliente = cliente;
         }
 
-        public Pedido(Produto produto, int quantidade_produto, DateTime data_saida, Cliente cliente)
+        public Pedido(string produto, string id_produto, int quantidade_produto, double valor_produto, string cliente, string data)
         {
             this.produto = produto;
+            this.id_produto = id_produto;
             this.quantidade_produto = quantidade_produto;
-            this.data_saida = data_saida;
+            this.valor_produto = valor_produto;
             this.cliente = cliente;
+            this.data = data;
         }
 
-
-
-        public int Id_movimento { get => id_movimento; set => id_movimento = value; }
+        public int Id { get => id; set => id = value; }
+        public string Produto { get => produto; set => produto = value; }
+        public string Id_produto { get => id_produto; set => id_produto = value; }
         public int Quantidade_produto { get => quantidade_produto; set => quantidade_produto = value; }
-        public DateTime Data_entrada { get => data_entrada; set => data_entrada = value; }
-        public DateTime Data_saida { get => data_saida; set => data_saida = value; }
-        internal Produto Produto { get => produto; set => produto = value; }
-        internal Cliente Cliente { get => cliente; set => cliente = value; }
-
-        public override string ToString()
-        {
-            return base.ToString();
-        }
+        public double Valor_produto { get => valor_produto; set => valor_produto = value; }
+        public string Cliente { get => cliente; set => cliente = value; }
+        public string Data { get => data; set => data = value; }
     }
 }

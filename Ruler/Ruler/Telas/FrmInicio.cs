@@ -17,41 +17,7 @@ namespace Ruler.Telas
             InitializeComponent();
         }
                  
-        private void cadastrarTSMI_Click(object sender, EventArgs e)
-        {
-            FrmCadastro cadastrar = new FrmCadastro(this);
-
-            this.Hide();
-
-            cadastrar.ShowDialog();
-        }
-
-        private void cadastrar_cliTSMI_Click(object sender, EventArgs e)
-        {
-            
-
-            FrmClienteCadastro cadastrarCliente = new FrmClienteCadastro(this);
-            this.Hide();
-
-            cadastrarCliente.Show();
-        }
         
-        private void pesquisarTSMI_Click_1(object sender, EventArgs e)
-        {
-            
-            FrmPesquisa pesquisa = new FrmPesquisa(this);
-            this.Hide();
-
-            pesquisa.Show();
-        }
-
-        private void pesquisarToolStripMenuItem1_Click_1(object sender, EventArgs e)
-        {
-            FrmClientePesquisa pesquisarCliente = new FrmClientePesquisa(this);
-            this.Hide();
-
-            pesquisarCliente.Show();
-        }
 
         private void btn_estoque_Click(object sender, EventArgs e)
         {
@@ -69,13 +35,6 @@ namespace Ruler.Telas
             estoque.Show();
         }
 
-        private void btn_pesquisar_estoque_Click(object sender, EventArgs e)
-        {
-            FrmEstoquePesquisa estoquePesquisa = new FrmEstoquePesquisa(this);
-            this.Hide();
-
-            estoquePesquisa.Show();
-        }
 
         private void btn_pesquisar_pedidos_Click(object sender, EventArgs e)
         {
@@ -97,6 +56,27 @@ namespace Ruler.Telas
             FrmProduto produto = new FrmProduto(this);
             this.Hide();
             produto.Show();
+        }
+
+        private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmCliente cliente = new FrmCliente(this);
+            this.Hide();
+            cliente.Show();
+        }
+
+        private void btn_vender_Click(object sender, EventArgs e)
+        {
+            FrmPedido pedido = new FrmPedido(this);
+            this.Hide();
+            pedido.Show();
+        }
+
+        private void btn_estoque_Click_1(object sender, EventArgs e)
+        {
+            FrmEstoque estoque = new FrmEstoque(this);
+            this.Hide();
+            estoque.Show();
         }
     }
 }

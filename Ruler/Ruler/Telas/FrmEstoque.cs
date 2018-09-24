@@ -1,12 +1,6 @@
 ﻿using Ruler.Persistence;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Ruler.Telas
@@ -32,36 +26,23 @@ namespace Ruler.Telas
             
         }
 
-        
         private void btn_voltar_Click(object sender, EventArgs e)
         {
             inicio.Show();
             this.Close();
         }
-                
-              
-
+            
         private void FrmEstoque_Load(object sender, EventArgs e)
         {
             // TODO: esta linha de código carrega dados na tabela 'rulerDataSet.Tbl_Produto'. Você pode movê-la ou removê-la conforme necessário.
             this.tbl_ProdutoTableAdapter.Fill(this.rulerDataSet.Tbl_Produto);
 
-            // TODO: esta linha de código carrega dados na tabela 'rulerDataSet.Tbl_Estoque'. Você pode movê-la ou removê-la conforme necessário.
-            this.tbl_EstoqueTableAdapter.Fill(this.rulerDataSet.Tbl_Estoque);
-            // TODO: esta linha de código carrega dados na tabela 'rulerDataSet.Tbl_Estoque'. Você pode movê-la ou removê-la conforme necessário.
-            this.tbl_EstoqueTableAdapter.Fill(this.rulerDataSet.Tbl_Estoque);
-
             ChecarId(cbb_produto.Text);
 
-            if (table.Rows.Count > 0)
-            {
-                aux = table.Rows[0]["id_produto"].ToString();
-            }
-            else { aux = ""; }
-
-            txt_id_produto.Text = aux.ToString();
-
-
+            // TODO: esta linha de código carrega dados na tabela 'rulerDataSet.Tbl_Estoque'. Você pode movê-la ou removê-la conforme necessário.
+            this.tbl_EstoqueTableAdapter.Fill(this.rulerDataSet.Tbl_Estoque);
+            // TODO: esta linha de código carrega dados na tabela 'rulerDataSet.Tbl_Estoque'. Você pode movê-la ou removê-la conforme necessário.
+            this.tbl_EstoqueTableAdapter.Fill(this.rulerDataSet.Tbl_Estoque);
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -81,6 +62,7 @@ namespace Ruler.Telas
         {
             cbb_produto.Text = "";
             txt_id_produto.Text = "";
+            txt_id_estoque.Text = "";
             nud_quantidade.Text = "";
         }
 
@@ -129,11 +111,26 @@ namespace Ruler.Telas
                 MessageBox.Show("Erro!,.");
             }
         }
+
         public void ChecarId(string objeto)
         {
             ProdutoPst produto = new ProdutoPst();
             DisplayData(produto.checar(objeto));
+
+            if (table.Rows.Count > 0)
+            {
+                txt_id_produto.Text = table.Rows[0]["id_produto"].ToString();
+
+                Checar(cbb_produto.Text);
+
+                if (table.Rows.Count > 0)
+                {
+                    txt_id_estoque.Text = table.Rows[0]["id_estoque"].ToString();
+                    nud_quantidade.Text = table.Rows[0]["quantidade_produto"].ToString();
+                }
+            }
         }
+
         public void Checar(string objeto)
         {
             EstoquePst estoque = new EstoquePst();
@@ -142,7 +139,22 @@ namespace Ruler.Telas
 
         public void AtualizarObjeto()
         {
-            throw new NotImplementedException();
+            if (cbb_produto.Text != "" && txt_id_produto.Text != "")
+            {
+                EstoquePst estoque = new EstoquePst(int.Parse(txt_id_estoque.Text), cbb_produto.Text, int.Parse(nud_quantidade.Text), int.Parse(txt_id_produto.Text));
+
+                con.openCon(estoque.Atualizar());
+                con.closeCon();
+                
+                MessageBox.Show("Estoque Atualizado com Sucesso");
+
+                DisplayData(estoque.Pesquisar());
+                ClearData();
+            }
+            else
+            {
+                MessageBox.Show("Erro! Por favor verifique os valores informados");
+            }
         }
 
         public void DeletarObjeto()
@@ -170,18 +182,16 @@ namespace Ruler.Telas
         private void cbb_produto_SelectedIndexChanged(object sender, EventArgs e)
         {
             ChecarId(cbb_produto.Text);
-
-            if (table.Rows.Count > 0)
-            {
-               aux = table.Rows[0]["id_produto"].ToString();
-            }
-
-            txt_id_produto.Text = aux.ToString();
         }
 
         private void btn_cadastrar_Click_1(object sender, EventArgs e)
         {
             CadastrarObjeto();
+        }
+
+        private void btn_atualizar_Click(object sender, EventArgs e)
+        {
+            AtualizarObjeto();
         }
     }
 }

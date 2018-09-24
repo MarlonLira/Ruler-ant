@@ -20,11 +20,25 @@ namespace Ruler.Model
             this.nome_produto = nome_produto;
         }
 
+        public Estoque(int id_produto, int quantidade_produto)
+        {
+            this.id_produto = id_produto;
+            this.quantidade_produto = quantidade_produto;
+        }
+
         public Estoque(string nome_produto, int quantidade_produto, int id_produto)
         {
             this.nome_produto = nome_produto;
             this.quantidade_produto = quantidade_produto;
             this.id_produto = id_produto;
+        }
+
+        public Estoque(int id_estoque, string nome_produto, int quantidade_produto, int id_produto)
+        {
+            this.nome_produto = nome_produto;
+            this.quantidade_produto = quantidade_produto;
+            this.id_produto = id_produto;
+            this.id_estoque = id_estoque;
         }
 
         public int Id_estoque { get => id_estoque; set => id_estoque = value; }

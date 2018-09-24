@@ -57,29 +57,17 @@
     <Compile Include="Persistence\PedidoPst.cs" />
     <Compile Include="Persistence\ProdutoPst.cs" />
     <Compile Include="Telas\ConfigFrm.cs" />
+    <Compile Include="Telas\FrmCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\FrmCliente.Designer.cs">
+      <DependentUpon>FrmCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="Telas\FrmEstoque.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Telas\FrmEstoque.Designer.cs">
       <DependentUpon>FrmEstoque.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Telas\FrmClienteCadastro.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Telas\FrmClienteCadastro.Designer.cs">
-      <DependentUpon>FrmClienteCadastro.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Telas\FrmClientePesquisa.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Telas\FrmClientePesquisa.Designer.cs">
-      <DependentUpon>FrmClientePesquisa.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Telas\FrmEstoquePesquisa.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Telas\FrmEstoquePesquisa.Designer.cs">
-      <DependentUpon>FrmEstoquePesquisa.cs</DependentUpon>
     </Compile>
     <Compile Include="Telas\FrmInicio.cs">
       <SubType>Form</SubType>
@@ -87,23 +75,11 @@
     <Compile Include="Telas\FrmInicio.Designer.cs">
       <DependentUpon>FrmInicio.cs</DependentUpon>
     </Compile>
-    <Compile Include="Telas\FrmCadastro.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Telas\FrmCadastro.Designer.cs">
-      <DependentUpon>FrmCadastro.cs</DependentUpon>
-    </Compile>
     <Compile Include="Telas\FrmPedido.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Telas\FrmPedido.Designer.cs">
       <DependentUpon>FrmPedido.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Telas\FrmPesquisa.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Telas\FrmPesquisa.Designer.cs">
-      <DependentUpon>FrmPesquisa.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -118,29 +94,17 @@
     <Compile Include="Telas\FrmProduto.Designer.cs">
       <DependentUpon>FrmProduto.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Telas\FrmCliente.resx">
+      <DependentUpon>FrmCliente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Telas\FrmEstoque.resx">
       <DependentUpon>FrmEstoque.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Telas\FrmClienteCadastro.resx">
-      <DependentUpon>FrmClienteCadastro.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Telas\FrmClientePesquisa.resx">
-      <DependentUpon>FrmClientePesquisa.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Telas\FrmEstoquePesquisa.resx">
-      <DependentUpon>FrmEstoquePesquisa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\FrmInicio.resx">
       <DependentUpon>FrmInicio.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Telas\FrmCadastro.resx">
-      <DependentUpon>FrmCadastro.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Telas\FrmPedido.resx">
       <DependentUpon>FrmPedido.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Telas\FrmPesquisa.resx">
-      <DependentUpon>FrmPesquisa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -11,6 +11,7 @@ namespace Ruler.Persistence
          string Deletar();
          string Atualizar();
          string Cadastrar();
-         string Pesquisar(); 
+         string Pesquisar();
+         string checar(string objeto);
     }
 }

@@ -7,13 +7,12 @@ namespace Ruler.Persistence
 {
     class PedidoPst : Pedido, ConfigPst
     {
-        public PedidoPst(Produto produto, int quantidade_produto, DateTime data_saida, Cliente cliente) : base(produto, quantidade_produto, data_saida, cliente)
-        {
-        }
+        public PedidoPst(){}
 
-        public PedidoPst(int id_movimento, Produto produto, int quantidade_produto, DateTime data_entrada, DateTime data_saida, Cliente cliente) : base(id_movimento, produto, quantidade_produto, data_entrada, data_saida, cliente)
-        {
-        }
+        public PedidoPst(int id, string produto, string id_produto, int quantidade_produto, double valor_produto, string cliente) :base(id, produto, id_produto, quantidade_produto, valor_produto, cliente){}
+
+        public PedidoPst(string produto, string id_produto, int quantidade_produto, double valor_produto, string cliente, string data) : base(produto, id_produto, quantidade_produto, valor_produto, cliente, data){}
+
 
         public string Atualizar()
         {
@@ -22,7 +21,7 @@ namespace Ruler.Persistence
 
         public string Cadastrar()
         {
-            throw new NotImplementedException();
+           return "INSERT INTO Tbl_Pedido (cliente, produto, quantidade_produto, valor, data, id_produto) VALUES(" + "'" + Cliente + "'" + ", " + "'" + Produto + "'" + ", " + Quantidade_produto + ", "+ Valor_produto + ", " + "'" + Data + "'" + "," + Id_produto + ")"; 
         }
 
         public string Deletar()
@@ -32,12 +31,12 @@ namespace Ruler.Persistence
 
         public string Pesquisar()
         {
-            throw new NotImplementedException();
+            return "SELECT * FROM Tbl_Pedido";
         }
 
-        public override string ToString()
+        public string checar(string objeto)
         {
-            return base.ToString();
+            throw new NotImplementedException();
         }
     }
 }

@@ -4,28 +4,18 @@ namespace Ruler.Persistence
 {
     class ClientePst : Cliente, ConfigPst
     {
-        public ClientePst(string nome, string telefone, double debito) : base(nome, telefone, debito)
-        {
-        }
+        public ClientePst(int id, string nome, string telefone, double debito) : base(id, nome, telefone, debito) { }
+        public ClientePst(string nome, string telefone, double debito) : base(nome, telefone, debito){}
+        public ClientePst(){}
 
-        public string Atualizar()
-        {
-            throw new System.NotImplementedException();
-        }
+        public string Deletar() { return "DELETE Tbl_Cliente WHERE id_cliente = " + Id; }
 
-        public string Cadastrar()
-        {
-            return "INSERT INTO Tbl_Cliente (nome, telefone, debito) values(" + Nome + Telefone + Debito + ")";
-        }
+        public string Atualizar() { return "UPDATE Tbl_Cliente SET nome = " + "'" + Nome + "'" + ", telefone = " + Telefone + " , debito = " + Debito + " where id_cliente = " + Id; }
 
-        public string Deletar()
-        {
-            throw new System.NotImplementedException();
-        }
+        public string Cadastrar() { return "INSERT INTO Tbl_Cliente (nome, telefone, debito) VALUES (" + "'" + Nome + "'" + ", " + Telefone + ", " + Debito + ")"; }
 
-        public string Pesquisar()
-        {
-            return "SELECT * FROM Tbl_Cliente";
-        }
+        public string Pesquisar() { return "SELECT * FROM Tbl_Cliente"; }
+
+        public string checar(string objeto) { return "SELECT * FROM Tbl_Cliente WHERE nome = " + "'" + objeto + "'"; }
     }
 }
