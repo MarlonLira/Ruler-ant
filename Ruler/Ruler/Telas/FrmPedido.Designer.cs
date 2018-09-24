@@ -30,6 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txt_id_cliente = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.btn_voltar = new System.Windows.Forms.Button();
             this.txt_valor_u = new System.Windows.Forms.TextBox();
             this.txt_id_produto = new System.Windows.Forms.TextBox();
@@ -39,6 +41,8 @@
             this.lbl_id = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.cbb_venda = new System.Windows.Forms.ComboBox();
             this.lbl_estoque = new System.Windows.Forms.Label();
             this.txt_quant_estoque = new System.Windows.Forms.TextBox();
             this.txt_quantidade = new System.Windows.Forms.TextBox();
@@ -91,6 +95,8 @@
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.groupBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.groupBox1.Controls.Add(this.txt_id_cliente);
+            this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.btn_voltar);
             this.groupBox1.Controls.Add(this.txt_valor_u);
             this.groupBox1.Controls.Add(this.txt_id_produto);
@@ -109,6 +115,25 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Pedidos";
+            // 
+            // txt_id_cliente
+            // 
+            this.txt_id_cliente.Enabled = false;
+            this.txt_id_cliente.Location = new System.Drawing.Point(716, 271);
+            this.txt_id_cliente.Name = "txt_id_cliente";
+            this.txt_id_cliente.Size = new System.Drawing.Size(40, 20);
+            this.txt_id_cliente.TabIndex = 102;
+            this.txt_id_cliente.Visible = false;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(714, 255);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(53, 13);
+            this.label6.TabIndex = 101;
+            this.label6.Text = "ID Cliente";
+            this.label6.Visible = false;
             // 
             // btn_voltar
             // 
@@ -188,6 +213,8 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Controls.Add(this.cbb_venda);
             this.groupBox2.Controls.Add(this.lbl_estoque);
             this.groupBox2.Controls.Add(this.txt_quant_estoque);
             this.groupBox2.Controls.Add(this.txt_quantidade);
@@ -200,12 +227,32 @@
             this.groupBox2.Controls.Add(this.cbb_produtos);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.lbl_produto);
-            this.groupBox2.Location = new System.Drawing.Point(56, 37);
+            this.groupBox2.Location = new System.Drawing.Point(56, 19);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(654, 146);
+            this.groupBox2.Size = new System.Drawing.Size(654, 164);
             this.groupBox2.TabIndex = 87;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Cadastro de Pedidos";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(6, 116);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(77, 13);
+            this.label7.TabIndex = 104;
+            this.label7.Text = "Tipo de Venda";
+            // 
+            // cbb_venda
+            // 
+            this.cbb_venda.FormattingEnabled = true;
+            this.cbb_venda.Items.AddRange(new object[] {
+            "Dinheiro",
+            "Conta"});
+            this.cbb_venda.Location = new System.Drawing.Point(9, 132);
+            this.cbb_venda.Name = "cbb_venda";
+            this.cbb_venda.Size = new System.Drawing.Size(97, 21);
+            this.cbb_venda.TabIndex = 103;
             // 
             // lbl_estoque
             // 
@@ -236,7 +283,7 @@
             // lbl_valor
             // 
             this.lbl_valor.AutoSize = true;
-            this.lbl_valor.Location = new System.Drawing.Point(204, 86);
+            this.lbl_valor.Location = new System.Drawing.Point(204, 70);
             this.lbl_valor.Name = "lbl_valor";
             this.lbl_valor.Size = new System.Drawing.Size(55, 13);
             this.lbl_valor.TabIndex = 95;
@@ -245,7 +292,7 @@
             // txt_valor
             // 
             this.txt_valor.Enabled = false;
-            this.txt_valor.Location = new System.Drawing.Point(207, 103);
+            this.txt_valor.Location = new System.Drawing.Point(207, 87);
             this.txt_valor.Name = "txt_valor";
             this.txt_valor.Size = new System.Drawing.Size(71, 20);
             this.txt_valor.TabIndex = 94;
@@ -255,7 +302,7 @@
             this.btn_cadastrar.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btn_cadastrar.FlatAppearance.BorderSize = 4;
             this.btn_cadastrar.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.btn_cadastrar.Location = new System.Drawing.Point(296, 106);
+            this.btn_cadastrar.Location = new System.Drawing.Point(296, 124);
             this.btn_cadastrar.Name = "btn_cadastrar";
             this.btn_cadastrar.Size = new System.Drawing.Size(76, 34);
             this.btn_cadastrar.TabIndex = 91;
@@ -276,7 +323,7 @@
             this.groupBox6.Controls.Add(this.btn_pesquisa);
             this.groupBox6.Location = new System.Drawing.Point(378, 0);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(276, 146);
+            this.groupBox6.Size = new System.Drawing.Size(276, 164);
             this.groupBox6.TabIndex = 90;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Outras Opções";
@@ -285,7 +332,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Enabled = false;
-            this.label3.Location = new System.Drawing.Point(13, 70);
+            this.label3.Location = new System.Drawing.Point(14, 85);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(85, 13);
             this.label3.TabIndex = 99;
@@ -295,7 +342,7 @@
             // 
             this.data_entrega.Enabled = false;
             this.data_entrega.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.data_entrega.Location = new System.Drawing.Point(16, 86);
+            this.data_entrega.Location = new System.Drawing.Point(17, 101);
             this.data_entrega.Name = "data_entrega";
             this.data_entrega.Size = new System.Drawing.Size(97, 20);
             this.data_entrega.TabIndex = 98;
@@ -323,11 +370,11 @@
             // 
             this.ckb_deletar.AutoSize = true;
             this.ckb_deletar.Enabled = false;
-            this.ckb_deletar.Location = new System.Drawing.Point(16, 113);
+            this.ckb_deletar.Location = new System.Drawing.Point(17, 134);
             this.ckb_deletar.Name = "ckb_deletar";
-            this.ckb_deletar.Size = new System.Drawing.Size(136, 17);
+            this.ckb_deletar.Size = new System.Drawing.Size(96, 17);
             this.ckb_deletar.TabIndex = 95;
-            this.ckb_deletar.Text = "Desejo Apagar Clientes";
+            this.ckb_deletar.Text = "Apagar Pedido";
             this.ckb_deletar.UseVisualStyleBackColor = true;
             // 
             // btn_deletar
@@ -336,7 +383,7 @@
             this.btn_deletar.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btn_deletar.FlatAppearance.BorderSize = 4;
             this.btn_deletar.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.btn_deletar.Location = new System.Drawing.Point(173, 103);
+            this.btn_deletar.Location = new System.Drawing.Point(173, 117);
             this.btn_deletar.Name = "btn_deletar";
             this.btn_deletar.Size = new System.Drawing.Size(97, 34);
             this.btn_deletar.TabIndex = 94;
@@ -350,7 +397,7 @@
             this.btn_atualizar.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btn_atualizar.FlatAppearance.BorderSize = 4;
             this.btn_atualizar.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.btn_atualizar.Location = new System.Drawing.Point(173, 59);
+            this.btn_atualizar.Location = new System.Drawing.Point(173, 65);
             this.btn_atualizar.Name = "btn_atualizar";
             this.btn_atualizar.Size = new System.Drawing.Size(97, 34);
             this.btn_atualizar.TabIndex = 93;
@@ -376,7 +423,7 @@
             this.cbb_cliente.DataSource = this.tblClienteBindingSource;
             this.cbb_cliente.DisplayMember = "nome";
             this.cbb_cliente.FormattingEnabled = true;
-            this.cbb_cliente.Location = new System.Drawing.Point(9, 102);
+            this.cbb_cliente.Location = new System.Drawing.Point(9, 86);
             this.cbb_cliente.Name = "cbb_cliente";
             this.cbb_cliente.Size = new System.Drawing.Size(173, 21);
             this.cbb_cliente.TabIndex = 88;
@@ -394,7 +441,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 86);
+            this.label4.Location = new System.Drawing.Point(6, 70);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(39, 13);
             this.label4.TabIndex = 87;
@@ -605,5 +652,9 @@
         private System.Windows.Forms.TextBox txt_quantidade;
         private System.Windows.Forms.Label lbl_estoque;
         private System.Windows.Forms.TextBox txt_quant_estoque;
+        private System.Windows.Forms.TextBox txt_id_cliente;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox cbb_venda;
     }
 }

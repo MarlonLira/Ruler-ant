@@ -13,10 +13,18 @@ namespace Ruler.Dados
         public int Id { get => id; set => id = value; }
         public double Debito { get => debito; set => debito = value; }
 
+        public Cliente(int id) { this.id = id; }
+
         public Cliente(int id, string nome, string telefone, double debito)
         {
             this.nome = nome;
             this.telefone = telefone;
+            this.id = id;
+            this.debito = debito;
+        }
+
+        public Cliente(int id, double debito)
+        {
             this.id = id;
             this.debito = debito;
         }

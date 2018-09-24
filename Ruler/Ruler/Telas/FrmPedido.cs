@@ -44,9 +44,17 @@ namespace Ruler.Telas
                     PedidoPst pedido = new PedidoPst(cbb_produtos.Text, txt_id_produto.Text, int.Parse(txt_quantidade.Text), double.Parse(txt_valor.Text), cbb_cliente.Text, data_pedido.Text);
 
                     EstoquePst estoque = new EstoquePst(int.Parse(txt_id_produto.Text), int.Parse(txt_quant_estoque.Text));
+                                       
 
                     con.openCon(pedido.Cadastrar());
                     con.openCon(estoque.AtualizarQuantidade(int.Parse(txt_quantidade.Text)));
+
+                    if (cbb_venda.Text == "Conta")
+                    {
+                        ClientePst cliente = new ClientePst(int.Parse(txt_id_cliente.Text));
+                        con.openCon(cliente.AtualizarDebito(double.Parse(txt_valor.Text)));
+                    }
+
                     con.closeCon();
                     MessageBox.Show("Pedido Inserido com Sucesso");
 
@@ -104,11 +112,17 @@ namespace Ruler.Telas
             {
                 txt_id_produto.Text = table.Rows[0]["id_produto"].ToString();
                 txt_valor_u.Text = table.Rows[0]["valor"].ToString();
+
                 EstoquePst estoque = new EstoquePst();
                 DisplayData(estoque.checar(objeto));
 
                 if (table.Rows.Count > 0) {
                     txt_quant_estoque.Text = table.Rows[0]["quantidade_produto"].ToString();
+
+                    ClientePst cliente = new ClientePst();
+                    DisplayData(cliente.Pesquisar());
+
+                    if (table.Rows.Count > 0) { txt_id_cliente.Text = table.Rows[0]["id_cliente"].ToString(); }
                 }
 
                 PesquisarObjeto();
@@ -132,6 +146,8 @@ namespace Ruler.Telas
             // TODO: esta linha de código carrega dados na tabela 'rulerDataSet.Tbl_Pedido'. Você pode movê-la ou removê-la conforme necessário.
             this.tbl_PedidoTableAdapter.Fill(this.rulerDataSet.Tbl_Pedido);
             calc();
+
+            cbb_venda.Text = "Dinheiro";
 
         }
 
@@ -187,11 +203,11 @@ namespace Ruler.Telas
             
         }
 
-        
-
         private void txt_quantidade_TextChanged(object sender, EventArgs e)
         {
             calc();
         }
+
+        
     }
 }
