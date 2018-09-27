@@ -6,16 +6,16 @@ namespace Ruler.Dados
         private string nome;
         private string telefone;
         private int id;
-        private double debito;
+        private string debito;
 
         public string Nome { get => nome; set => nome = value; }
         public string Telefone { get => telefone; set => telefone = value; }
         public int Id { get => id; set => id = value; }
-        public double Debito { get => debito; set => debito = value; }
+        public string Debito { get => debito; set => debito = value; }
 
         public Cliente(int id) { this.id = id; }
 
-        public Cliente(int id, string nome, string telefone, double debito)
+        public Cliente(int id, string nome, string telefone, string debito)
         {
             this.nome = nome;
             this.telefone = telefone;
@@ -23,7 +23,7 @@ namespace Ruler.Dados
             this.debito = debito;
         }
 
-        public Cliente(int id, double debito)
+        public Cliente(int id, string debito)
         {
             this.id = id;
             this.debito = debito;
@@ -35,7 +35,7 @@ namespace Ruler.Dados
             this.telefone = telefone;
         }
 
-        public Cliente(string nome, string telefone, double debito)
+        public Cliente(string nome, string telefone, string debito)
         {
             this.nome = nome;
             this.telefone = telefone;

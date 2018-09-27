@@ -22,7 +22,6 @@ namespace Ruler.Telas
             btn_cadastrar.Enabled = true;
             btn_atualizar.Enabled = true;
             txt_id_produto.Enabled = false;
-
             
         }
 
@@ -36,13 +35,12 @@ namespace Ruler.Telas
         {
             // TODO: esta linha de código carrega dados na tabela 'rulerDataSet.Tbl_Produto'. Você pode movê-la ou removê-la conforme necessário.
             this.tbl_ProdutoTableAdapter.Fill(this.rulerDataSet.Tbl_Produto);
+            // TODO: esta linha de código carrega dados na tabela 'rulerDataSet.Tbl_Estoque'. Você pode movê-la ou removê-la conforme necessário.
+            this.tbl_EstoqueTableAdapter.Fill(this.rulerDataSet.Tbl_Estoque);
+            // TODO: esta linha de código carrega dados na tabela 'rulerDataSet.Tbl_Estoque'. Você pode movê-la ou removê-la conforme necessário.
+            this.tbl_EstoqueTableAdapter.Fill(this.rulerDataSet.Tbl_Estoque);
 
             ChecarId(cbb_produto.Text);
-
-            // TODO: esta linha de código carrega dados na tabela 'rulerDataSet.Tbl_Estoque'. Você pode movê-la ou removê-la conforme necessário.
-            this.tbl_EstoqueTableAdapter.Fill(this.rulerDataSet.Tbl_Estoque);
-            // TODO: esta linha de código carrega dados na tabela 'rulerDataSet.Tbl_Estoque'. Você pode movê-la ou removê-la conforme necessário.
-            this.tbl_EstoqueTableAdapter.Fill(this.rulerDataSet.Tbl_Estoque);
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -104,6 +102,7 @@ namespace Ruler.Telas
                 }
 
                 ClearData();
+                PesquisarObjeto();
 
             }
             else
@@ -150,6 +149,7 @@ namespace Ruler.Telas
 
                 DisplayData(estoque.Pesquisar());
                 ClearData();
+                PesquisarObjeto();
             }
             else
             {
@@ -193,5 +193,7 @@ namespace Ruler.Telas
         {
             AtualizarObjeto();
         }
+               
+        
     }
 }

@@ -1,13 +1,8 @@
 ﻿using Ruler.Persistence;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Globalization;
 
 namespace Ruler.Telas
 {
@@ -50,8 +45,9 @@ namespace Ruler.Telas
             if (!string.IsNullOrEmpty(txt_nome.Text))
             {
                 if (string.IsNullOrEmpty(txt_debito.Text)) { txt_debito.Text = "0"; }
+                if (string.IsNullOrEmpty(txt_telefone.Text)) { txt_telefone.Text = "0"; }
 
-                ClientePst cliente = new ClientePst(txt_nome.Text, txt_telefone.Text, double.Parse(txt_debito.Text));
+                ClientePst cliente = new ClientePst(txt_nome.Text, txt_telefone.Text, txt_debito.Text.Replace(",","."));
 
                 //Consultar Objeto
                 Checar(txt_nome.Text);
@@ -82,7 +78,7 @@ namespace Ruler.Telas
         {
             if (txt_nome.Text != "" && txt_id.Text != "")
             {
-                ClientePst cliente = new ClientePst(int.Parse(txt_id.Text),txt_nome.Text, txt_telefone.Text, double.Parse(txt_debito.Text));
+                ClientePst cliente = new ClientePst(int.Parse(txt_id.Text), txt_nome.Text, txt_telefone.Text, txt_debito.Text.Replace(",", "."));
 
                 con.openCon(cliente.Atualizar());
                 con.closeCon();

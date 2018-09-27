@@ -11,4 +11,3 @@ C:\Users\marlo\source\repos\Ruler\Ruler\obj\Debug\Ruler.Telas.FrmEstoque.resourc
 C:\Users\marlo\source\repos\Ruler\Ruler\obj\Debug\Ruler.Telas.FrmPedido.resources
 C:\Users\marlo\source\repos\Ruler\Ruler\obj\Debug\Ruler.Telas.FrmProduto.resources
 C:\Users\marlo\source\repos\Ruler\Ruler\obj\Debug\Ruler.Telas.FrmCliente.resources
-C:\Users\marlo\source\repos\Ruler\Ruler\obj\Debug\Ruler.csprojAssemblyReference.cache

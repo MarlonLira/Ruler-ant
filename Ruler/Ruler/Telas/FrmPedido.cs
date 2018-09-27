@@ -11,25 +11,18 @@ namespace Ruler.Telas
         private FrmInicio inicio;
         DataTable table;
         int aux = 1;
-        
 
 
+        #region Metodos
         public FrmPedido(FrmInicio frm)
         {
             InitializeComponent();
             inicio = frm;
 
+            data_pedido.Value = DateTime.Now.Date;
+
         }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            txt_id_pedido.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
-            cbb_produtos.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
-            txt_quantidade.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
-            cbb_cliente.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
-        }
-
-
+        
         public void PesquisarObjeto()
         {
             PedidoPst pedido = new PedidoPst();
@@ -41,18 +34,17 @@ namespace Ruler.Telas
             if (!string.IsNullOrEmpty(cbb_produtos.Text) && !string.IsNullOrEmpty(txt_quantidade.Text) && !string.IsNullOrEmpty(txt_valor.Text))
             {
                 if (int.Parse(txt_quantidade.Text) <= int.Parse(txt_quant_estoque.Text)) {
-                    PedidoPst pedido = new PedidoPst(cbb_produtos.Text, txt_id_produto.Text, int.Parse(txt_quantidade.Text), double.Parse(txt_valor.Text), cbb_cliente.Text, data_pedido.Text);
+                    PedidoPst pedido = new PedidoPst(cbb_produtos.Text, txt_id_produto.Text, int.Parse(txt_quantidade.Text), txt_valor.Text.Replace(",","."), cbb_cliente.Text, data_pedido.Text, cbb_venda.Text);
 
                     EstoquePst estoque = new EstoquePst(int.Parse(txt_id_produto.Text), int.Parse(txt_quant_estoque.Text));
-                                       
-
+                     
                     con.openCon(pedido.Cadastrar());
                     con.openCon(estoque.AtualizarQuantidade(int.Parse(txt_quantidade.Text)));
 
                     if (cbb_venda.Text == "Conta")
                     {
                         ClientePst cliente = new ClientePst(int.Parse(txt_id_cliente.Text));
-                        con.openCon(cliente.AtualizarDebito(double.Parse(txt_valor.Text)));
+                        con.openCon(cliente.AtualizarDebito(txt_valor.Text.Replace(",",".")));
                     }
 
                     con.closeCon();
@@ -70,12 +62,12 @@ namespace Ruler.Telas
 
         public void AtualizarObjeto()
         {
-            throw new NotImplementedException();
+            
         }
 
         public void DeletarObjeto()
         {
-            throw new NotImplementedException();
+            
         }
 
         public void DisplayData(string script)
@@ -112,6 +104,7 @@ namespace Ruler.Telas
             {
                 txt_id_produto.Text = table.Rows[0]["id_produto"].ToString();
                 txt_valor_u.Text = table.Rows[0]["valor"].ToString();
+                calcularPreco();
 
                 EstoquePst estoque = new EstoquePst();
                 DisplayData(estoque.checar(objeto));
@@ -139,17 +132,45 @@ namespace Ruler.Telas
         {
             // TODO: esta linha de código carrega dados na tabela 'rulerDataSet1.Tbl_Cliente'. Você pode movê-la ou removê-la conforme necessário.
             this.tbl_ClienteTableAdapter.Fill(this.rulerDataSet1.Tbl_Cliente);
+
             // TODO: esta linha de código carrega dados na tabela 'rulerDataSet1.Tbl_Produto'. Você pode movê-la ou removê-la conforme necessário.
             this.tbl_ProdutoTableAdapter.Fill(this.rulerDataSet1.Tbl_Produto);
-
             ChecarId(cbb_produtos.Text);
+            
             // TODO: esta linha de código carrega dados na tabela 'rulerDataSet.Tbl_Pedido'. Você pode movê-la ou removê-la conforme necessário.
             this.tbl_PedidoTableAdapter.Fill(this.rulerDataSet.Tbl_Pedido);
-            calc();
 
+
+            calcularPreco();
             cbb_venda.Text = "Dinheiro";
+            
+        }
+
+        private void calcularPreco()
+        {
+            if (!string.IsNullOrEmpty(txt_quantidade.Text))
+            {
+
+                aux = int.Parse(txt_quantidade.Text);
+                double valor = double.Parse(txt_valor_u.Text);
+                double valorTotal = aux * valor;
+                txt_valor.Text = valorTotal.ToString();
+
+            }
+            else
+            {
+
+                aux = 0;
+                double valor = 0;
+                valor = double.Parse(txt_valor_u.Text);
+                double valorTotal = aux * valor;
+                txt_valor.Text = valorTotal.ToString();
+
+            }
 
         }
+
+        #endregion
 
         private void cbb_produtos_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -176,38 +197,35 @@ namespace Ruler.Telas
             DeletarObjeto();
         }
 
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txt_id_pedido.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
+            cbb_produtos.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+            txt_quantidade.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
+            cbb_cliente.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+            cbb_venda.Text = dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString();
+            data_pedido.Text = dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString();
+        }
+
         private void btn_voltar_Click(object sender, EventArgs e)
         {
             inicio.Show();
             this.Close();
         }
 
-        private void calc()
-        {
-            if (!string.IsNullOrEmpty(txt_quantidade.Text)) {  
-
-            aux = int.Parse(txt_quantidade.Text);
-            double valor = double.Parse(txt_valor_u.Text);
-            double valorTotal = aux * valor;
-            txt_valor.Text = valorTotal.ToString();
-
-            }
-            else {
-
-                aux = 0;
-                double valor = double.Parse(txt_valor_u.Text);
-                double valorTotal = aux * valor;
-                txt_valor.Text = valorTotal.ToString();
-
-            }
-            
-        }
-
         private void txt_quantidade_TextChanged(object sender, EventArgs e)
         {
-            calc();
+            calcularPreco();
         }
 
-        
+        private void cbb_cliente_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbb_venda_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

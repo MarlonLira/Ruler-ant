@@ -54,6 +54,7 @@
             this.txt_id_estoque = new System.Windows.Forms.TextBox();
             this.nud_quantidade = new System.Windows.Forms.NumericUpDown();
             this.cbb_produto = new System.Windows.Forms.ComboBox();
+            this.tblProdutoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.tblProdutoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tbl_EstoqueTableAdapter = new Ruler.rulerDataSetTableAdapters.Tbl_EstoqueTableAdapter();
@@ -65,6 +66,7 @@
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nud_quantidade)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblProdutoBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblProdutoBindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -85,6 +87,7 @@
             this.dataGridView1.DataSource = this.tblEstoqueBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(6, 16);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 40;
             this.dataGridView1.RowTemplate.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(642, 193);
@@ -103,6 +106,7 @@
             this.nomeprodutoDataGridViewTextBoxColumn.DataPropertyName = "nome_produto";
             this.nomeprodutoDataGridViewTextBoxColumn.HeaderText = "Nome do Produto";
             this.nomeprodutoDataGridViewTextBoxColumn.Name = "nomeprodutoDataGridViewTextBoxColumn";
+            this.nomeprodutoDataGridViewTextBoxColumn.ReadOnly = true;
             this.nomeprodutoDataGridViewTextBoxColumn.Width = 200;
             // 
             // idprodutoDataGridViewTextBoxColumn
@@ -110,6 +114,7 @@
             this.idprodutoDataGridViewTextBoxColumn.DataPropertyName = "id_produto";
             this.idprodutoDataGridViewTextBoxColumn.HeaderText = "Id do Produto";
             this.idprodutoDataGridViewTextBoxColumn.Name = "idprodutoDataGridViewTextBoxColumn";
+            this.idprodutoDataGridViewTextBoxColumn.ReadOnly = true;
             this.idprodutoDataGridViewTextBoxColumn.Width = 125;
             // 
             // quantidadeprodutoDataGridViewTextBoxColumn
@@ -117,6 +122,7 @@
             this.quantidadeprodutoDataGridViewTextBoxColumn.DataPropertyName = "quantidade_produto";
             this.quantidadeprodutoDataGridViewTextBoxColumn.HeaderText = "Quantidade do Produto";
             this.quantidadeprodutoDataGridViewTextBoxColumn.Name = "quantidadeprodutoDataGridViewTextBoxColumn";
+            this.quantidadeprodutoDataGridViewTextBoxColumn.ReadOnly = true;
             this.quantidadeprodutoDataGridViewTextBoxColumn.Width = 150;
             // 
             // tblEstoqueBindingSource
@@ -318,7 +324,7 @@
             // 
             // cbb_produto
             // 
-            this.cbb_produto.DataSource = this.tblProdutoBindingSource;
+            this.cbb_produto.DataSource = this.tblProdutoBindingSource1;
             this.cbb_produto.DisplayMember = "nome";
             this.cbb_produto.FormattingEnabled = true;
             this.cbb_produto.Location = new System.Drawing.Point(161, 45);
@@ -326,6 +332,11 @@
             this.cbb_produto.Size = new System.Drawing.Size(188, 21);
             this.cbb_produto.TabIndex = 91;
             this.cbb_produto.SelectedIndexChanged += new System.EventHandler(this.cbb_produto_SelectedIndexChanged);
+            // 
+            // tblProdutoBindingSource1
+            // 
+            this.tblProdutoBindingSource1.DataMember = "Tbl_Produto";
+            this.tblProdutoBindingSource1.DataSource = this.rulerDataSet;
             // 
             // tblProdutoBindingSource
             // 
@@ -376,6 +387,7 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nud_quantidade)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblProdutoBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblProdutoBindingSource)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -412,5 +424,6 @@
         private rulerDataSetTableAdapters.Tbl_ProdutoTableAdapter tbl_ProdutoTableAdapter;
         private System.Windows.Forms.Label lbl_id_estoque;
         private System.Windows.Forms.TextBox txt_id_estoque;
+        private System.Windows.Forms.BindingSource tblProdutoBindingSource1;
     }
 }

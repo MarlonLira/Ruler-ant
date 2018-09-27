@@ -52,7 +52,7 @@ namespace Ruler.Telas
         {
             if (txt_nome.Text != "" && txt_valor.Text != "")
             {
-                ProdutoPst produto = new ProdutoPst(int.Parse(txt_id_produto.Text), txt_nome.Text, double.Parse(txt_valor.Text), double.Parse(txt_valor_dolar.Text));
+                ProdutoPst produto = new ProdutoPst(int.Parse(txt_id_produto.Text), txt_nome.Text, txt_valor.Text.Replace(",","."), txt_valor_dolar.Text.Replace(",","."));
                                 
                 con.openCon(produto.Atualizar());
                 con.closeCon();
@@ -60,6 +60,7 @@ namespace Ruler.Telas
                             
                 DisplayData(produto.Pesquisar());
                 ClearData();
+                this.tbl_ProdutoTableAdapter.Fill(this.rulerDataSet.Tbl_Produto);
             }
             else
             {
@@ -74,7 +75,7 @@ namespace Ruler.Telas
                 //Caso o valor em dolar não seja digitado atribui 0.
                 if (string.IsNullOrEmpty(txt_valor_dolar.Text)) { txt_valor_dolar.Text = "0"; }
 
-                ProdutoPst produto = new ProdutoPst(txt_nome.Text, double.Parse(txt_valor.Text), double.Parse(txt_valor_dolar.Text));
+                ProdutoPst produto = new ProdutoPst(txt_nome.Text, txt_valor.Text.Replace(",","."), txt_valor_dolar.Text.Replace(",","."));
 
                 //Consultar Objeto
                 Checar(txt_nome.Text);
@@ -97,6 +98,7 @@ namespace Ruler.Telas
                 }
 
                 ClearData();
+                PesquisarObjeto();
 
             }
             else
@@ -195,6 +197,16 @@ namespace Ruler.Telas
         private void btn_atualizar_Click(object sender, EventArgs e)
         {
             AtualizarObjeto();
+        }
+
+        private void dataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            txt_id_produto.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
+            txt_nome.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+            txt_valor.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+            txt_valor_dolar.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
+            
         }
     }
 }

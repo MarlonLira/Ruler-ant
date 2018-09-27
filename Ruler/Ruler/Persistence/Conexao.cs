@@ -32,6 +32,8 @@ namespace Ruler.Persistence
             cmd.ExecuteNonQuery();
         }
 
+        
+
         public void openCon(string tabela ,string colun, string colun2)
         {
                      

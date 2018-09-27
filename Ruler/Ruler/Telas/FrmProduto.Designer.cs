@@ -196,6 +196,7 @@
             // txt_nome
             // 
             this.txt_nome.Location = new System.Drawing.Point(159, 45);
+            this.txt_nome.MaxLength = 15;
             this.txt_nome.Name = "txt_nome";
             this.txt_nome.Size = new System.Drawing.Size(190, 20);
             this.txt_nome.TabIndex = 88;
@@ -291,13 +292,17 @@
             this.valorDataGridViewTextBoxColumn,
             this.valordolarDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.tblProdutoBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 16);
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(3, 16);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 40;
             this.dataGridView1.RowTemplate.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(642, 193);
+            this.dataGridView1.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.Size = new System.Drawing.Size(648, 196);
             this.dataGridView1.TabIndex = 60;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentDoubleClick);
             // 
             // idprodutoDataGridViewTextBoxColumn
             // 
@@ -305,14 +310,16 @@
             this.idprodutoDataGridViewTextBoxColumn.HeaderText = "Id";
             this.idprodutoDataGridViewTextBoxColumn.Name = "idprodutoDataGridViewTextBoxColumn";
             this.idprodutoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idprodutoDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.idprodutoDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.idprodutoDataGridViewTextBoxColumn.Width = 105;
             // 
             // nomeDataGridViewTextBoxColumn
             // 
             this.nomeDataGridViewTextBoxColumn.DataPropertyName = "nome";
             this.nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
             this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
-            this.nomeDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.nomeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nomeDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.nomeDataGridViewTextBoxColumn.Width = 200;
             // 
             // valorDataGridViewTextBoxColumn
@@ -320,7 +327,8 @@
             this.valorDataGridViewTextBoxColumn.DataPropertyName = "valor";
             this.valorDataGridViewTextBoxColumn.HeaderText = "Valor R$";
             this.valorDataGridViewTextBoxColumn.Name = "valorDataGridViewTextBoxColumn";
-            this.valorDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.valorDataGridViewTextBoxColumn.ReadOnly = true;
+            this.valorDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.valorDataGridViewTextBoxColumn.Width = 150;
             // 
             // valordolarDataGridViewTextBoxColumn
@@ -328,7 +336,8 @@
             this.valordolarDataGridViewTextBoxColumn.DataPropertyName = "valor_dolar";
             this.valordolarDataGridViewTextBoxColumn.HeaderText = "Valor $";
             this.valordolarDataGridViewTextBoxColumn.Name = "valordolarDataGridViewTextBoxColumn";
-            this.valordolarDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.valordolarDataGridViewTextBoxColumn.ReadOnly = true;
+            this.valordolarDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.valordolarDataGridViewTextBoxColumn.Width = 150;
             // 
             // tblProdutoBindingSource
@@ -389,12 +398,12 @@
         private rulerDataSet rulerDataSet;
         private System.Windows.Forms.BindingSource tblProdutoBindingSource;
         private rulerDataSetTableAdapters.Tbl_ProdutoTableAdapter tbl_ProdutoTableAdapter;
+        private System.Windows.Forms.Button btn_deletar;
+        private System.Windows.Forms.Button btn_atualizar;
+        private System.Windows.Forms.CheckBox ckb_deletar;
         private System.Windows.Forms.DataGridViewTextBoxColumn idprodutoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn valorDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn valordolarDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Button btn_deletar;
-        private System.Windows.Forms.Button btn_atualizar;
-        private System.Windows.Forms.CheckBox ckb_deletar;
     }
 }

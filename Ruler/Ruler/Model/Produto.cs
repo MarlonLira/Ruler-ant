@@ -1,24 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace Ruler.Dados
 {
     class Produto
     {
         private string nome;
-        private double valor;
+        private string valor;
         private int id;
-        private double valor_dolar;
+        private string valor_dolar;
 
         public string Nome { get => nome; set => nome = value; }
-        public double Valor { get => valor; set => valor = value; }
+        public string Valor { get => valor; set => valor = value; }
         public int Id { get => id; set => id = value; }
-        public double Valor_dolar { get => valor_dolar; set => valor_dolar = value; }
+        public string Valor_dolar { get => valor_dolar; set => valor_dolar = value; }
 
-        public Produto(int id, string nome, double valor, double valor_dolar)
+        public Produto(int id, string nome, string valor, string valor_dolar)
         {
             this.nome = nome;
             this.valor = valor;
@@ -31,7 +26,7 @@ namespace Ruler.Dados
             this.id = id;
         }
 
-        public Produto(string nome, double valor, double valor_dolar)
+        public Produto(string nome, string valor, string valor_dolar)
         {
             this.nome = nome;
             this.valor = valor;
