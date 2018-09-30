@@ -56,6 +56,7 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tbl_ClienteTableAdapter = new Ruler.rulerDataSetTableAdapters.Tbl_ClienteTableAdapter();
+            this.btn_pesquisar_id = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblClienteBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rulerDataSet)).BeginInit();
@@ -147,7 +148,7 @@
             // txt_nome
             // 
             this.txt_nome.Location = new System.Drawing.Point(159, 45);
-            this.txt_nome.MaxLength = 15;
+            this.txt_nome.MaxLength = 50;
             this.txt_nome.Name = "txt_nome";
             this.txt_nome.Size = new System.Drawing.Size(190, 20);
             this.txt_nome.TabIndex = 88;
@@ -201,7 +202,6 @@
             // 
             // txt_id
             // 
-            this.txt_id.Enabled = false;
             this.txt_id.Location = new System.Drawing.Point(18, 45);
             this.txt_id.Name = "txt_id";
             this.txt_id.Size = new System.Drawing.Size(78, 20);
@@ -289,6 +289,7 @@
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.groupBox3.Controls.Add(this.btn_pesquisar_id);
             this.groupBox3.Controls.Add(this.ckb_deletar);
             this.groupBox3.Controls.Add(this.btn_deletar);
             this.groupBox3.Controls.Add(this.btn_atualizar);
@@ -341,6 +342,19 @@
             // 
             this.tbl_ClienteTableAdapter.ClearBeforeFill = true;
             // 
+            // btn_pesquisar_id
+            // 
+            this.btn_pesquisar_id.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btn_pesquisar_id.FlatAppearance.BorderSize = 4;
+            this.btn_pesquisar_id.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.btn_pesquisar_id.Location = new System.Drawing.Point(16, 19);
+            this.btn_pesquisar_id.Name = "btn_pesquisar_id";
+            this.btn_pesquisar_id.Size = new System.Drawing.Size(97, 34);
+            this.btn_pesquisar_id.TabIndex = 96;
+            this.btn_pesquisar_id.Text = "Pesquisar";
+            this.btn_pesquisar_id.UseVisualStyleBackColor = true;
+            this.btn_pesquisar_id.Click += new System.EventHandler(this.btn_pesquisar_id_Click);
+            // 
             // FrmCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -392,5 +406,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn telefoneDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn debitoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button btn_pesquisar_id;
     }
 }

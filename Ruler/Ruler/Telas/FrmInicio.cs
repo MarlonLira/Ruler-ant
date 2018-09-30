@@ -78,5 +78,14 @@ namespace Ruler.Telas
             this.Hide();
             estoque.Show();
         }
+
+        private void movimentacaoTSMI_Click(object sender, EventArgs e)
+        {
+            FrmRelatorio relatorio = new FrmRelatorio(this);
+            this.Hide();
+            relatorio.Show();
+        }
+
+        
     }
 }

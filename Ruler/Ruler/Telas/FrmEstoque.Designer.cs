@@ -59,6 +59,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tbl_EstoqueTableAdapter = new Ruler.rulerDataSetTableAdapters.Tbl_EstoqueTableAdapter();
             this.tbl_ProdutoTableAdapter = new Ruler.rulerDataSetTableAdapters.Tbl_ProdutoTableAdapter();
+            this.btn_estoque_id = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblEstoqueBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rulerDataSet)).BeginInit();
@@ -268,6 +269,7 @@
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.groupBox3.Controls.Add(this.btn_estoque_id);
             this.groupBox3.Controls.Add(this.ckb_deletar);
             this.groupBox3.Controls.Add(this.btn_deletar);
             this.groupBox3.Controls.Add(this.btn_atualizar);
@@ -309,7 +311,6 @@
             // 
             // txt_id_estoque
             // 
-            this.txt_id_estoque.Enabled = false;
             this.txt_id_estoque.Location = new System.Drawing.Point(37, 50);
             this.txt_id_estoque.Name = "txt_id_estoque";
             this.txt_id_estoque.Size = new System.Drawing.Size(78, 20);
@@ -369,6 +370,19 @@
             // 
             this.tbl_ProdutoTableAdapter.ClearBeforeFill = true;
             // 
+            // btn_estoque_id
+            // 
+            this.btn_estoque_id.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btn_estoque_id.FlatAppearance.BorderSize = 4;
+            this.btn_estoque_id.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.btn_estoque_id.Location = new System.Drawing.Point(6, 19);
+            this.btn_estoque_id.Name = "btn_estoque_id";
+            this.btn_estoque_id.Size = new System.Drawing.Size(106, 34);
+            this.btn_estoque_id.TabIndex = 96;
+            this.btn_estoque_id.Text = "Pesquisar Produto";
+            this.btn_estoque_id.UseVisualStyleBackColor = true;
+            this.btn_estoque_id.Click += new System.EventHandler(this.btn_estoque_id_Click);
+            // 
             // FrmEstoque
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -425,5 +439,6 @@
         private System.Windows.Forms.Label lbl_id_estoque;
         private System.Windows.Forms.TextBox txt_id_estoque;
         private System.Windows.Forms.BindingSource tblProdutoBindingSource1;
+        private System.Windows.Forms.Button btn_estoque_id;
     }
 }

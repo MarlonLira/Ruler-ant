@@ -6,6 +6,8 @@ namespace Ruler.Persistence
     {
         public EstoquePst() { }
 
+        public EstoquePst(int id) :base(id){ }
+
         public EstoquePst(int id_produto, int quantidade_produto) : base(id_produto, quantidade_produto) { }
 
         public EstoquePst(string nome_produto, int quantidade_produto, int id_produto) : base(nome_produto, quantidade_produto, id_produto) { }
@@ -26,5 +28,7 @@ namespace Ruler.Persistence
         public string Pesquisar() { return "SELECT * FROM Tbl_Estoque"; }
 
         public string checar(string objeto) { return "SELECT * FROM Tbl_Estoque WHERE nome_produto = " + "'" + objeto + "'"; }
+
+        public string PesquisarId(int objeto) { return "SELECT * FROM Tbl_Estoque WHERE id_produto = " + objeto; }
     }
 }

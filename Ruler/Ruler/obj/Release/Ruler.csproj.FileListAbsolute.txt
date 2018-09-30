@@ -12,3 +12,6 @@ C:\Users\marlo\source\repos\Ruler\Ruler\obj\Release\Ruler.Telas.FrmEstoque.resou
 C:\Users\marlo\source\repos\Ruler\Ruler\obj\Release\Ruler.Telas.FrmPedido.resources
 C:\Users\marlo\source\repos\Ruler\Ruler\obj\Release\Ruler.Telas.FrmCliente.resources
 C:\Users\marlo\source\repos\Ruler\Ruler\obj\Release\Ruler.Telas.FrmProduto.resources
+C:\Users\marlo\source\repos\Ruler\Ruler\obj\Release\Ruler.Telas.FrmInicioX.resources
+C:\Users\marlo\source\repos\Ruler\Ruler\obj\Release\Ruler.Telas.FrmMovimento.resources
+C:\Users\marlo\source\repos\Ruler\Ruler\obj\Release\Ruler.Telas.FrmRelatorio.resources

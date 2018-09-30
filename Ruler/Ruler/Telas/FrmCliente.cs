@@ -37,7 +37,27 @@ namespace Ruler.Telas
         public void PesquisarObjeto()
         {
             ClientePst cliente = new ClientePst();
-            DisplayData(cliente.Pesquisar());
+            if (string.IsNullOrEmpty(aux))
+            {
+                DisplayData(cliente.Pesquisar());
+            }
+            else
+            {
+                DisplayData(cliente.PesquisarId(int.Parse(txt_id.Text)));
+                if (table.Rows.Count > 0)
+                {
+                    txt_nome.Text = table.Rows[0]["nome"].ToString();
+                    txt_telefone.Text = table.Rows[0]["telefone"].ToString();
+                    txt_debito.Text = table.Rows[0]["debito"].ToString();
+                    aux = "";
+                }
+                else
+                {
+                    MessageBox.Show("Cliente com o id "+ txt_id.Text + " não existe!");
+                    aux = "";
+                }
+            }
+            
         }
 
         public void CadastrarObjeto()
@@ -133,6 +153,7 @@ namespace Ruler.Telas
         private void btn_pesquisa_Click(object sender, EventArgs e)
         {
             PesquisarObjeto();
+            
         }
 
         private void btn_atualizar_Click(object sender, EventArgs e)
@@ -151,6 +172,13 @@ namespace Ruler.Telas
             txt_nome.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
             txt_telefone.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
             txt_debito.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
+        }
+
+        private void btn_pesquisar_id_Click(object sender, EventArgs e)
+        {
+            aux = "id";
+            PesquisarObjeto();
+            
         }
     }
 }

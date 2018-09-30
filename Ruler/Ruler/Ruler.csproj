@@ -11,6 +11,21 @@
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -31,6 +46,12 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>Ruler.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>ruler_icon2.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
@@ -48,15 +69,28 @@
   <ItemGroup>
     <Compile Include="Model\Cliente.cs" />
     <Compile Include="Model\Estoque.cs" />
+    <Compile Include="Model\Movimento.cs" />
     <Compile Include="Model\Pedido.cs" />
     <Compile Include="Model\Produto.cs" />
     <Compile Include="Persistence\ClientePst.cs" />
     <Compile Include="Persistence\Conexao.cs" />
     <Compile Include="Persistence\EstoquePst.cs" />
     <Compile Include="Persistence\ConfigPst.cs" />
+    <Compile Include="Persistence\MovimentoPst.cs" />
     <Compile Include="Persistence\PedidoPst.cs" />
     <Compile Include="Persistence\ProdutoPst.cs" />
+    <Compile Include="rulerDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rulerDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Telas\ConfigFrm.cs" />
+    <Compile Include="Telas\FrmMovimento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\FrmMovimento.Designer.cs">
+      <DependentUpon>FrmMovimento.cs</DependentUpon>
+    </Compile>
     <Compile Include="Telas\FrmCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +109,12 @@
     <Compile Include="Telas\FrmInicio.Designer.cs">
       <DependentUpon>FrmInicio.cs</DependentUpon>
     </Compile>
+    <Compile Include="Telas\FrmInicioX.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\FrmInicioX.Designer.cs">
+      <DependentUpon>FrmInicioX.cs</DependentUpon>
+    </Compile>
     <Compile Include="Telas\FrmPedido.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,17 +123,21 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="rulerDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>rulerDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Telas\FrmProduto.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Telas\FrmProduto.Designer.cs">
       <DependentUpon>FrmProduto.cs</DependentUpon>
     </Compile>
+    <Compile Include="Telas\FrmRelatorio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\FrmRelatorio.Designer.cs">
+      <DependentUpon>FrmRelatorio.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Telas\FrmMovimento.resx">
+      <DependentUpon>FrmMovimento.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Telas\FrmCliente.resx">
       <DependentUpon>FrmCliente.cs</DependentUpon>
     </EmbeddedResource>
@@ -102,6 +146,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\FrmInicio.resx">
       <DependentUpon>FrmInicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\FrmInicioX.resx">
+      <DependentUpon>FrmInicioX.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\FrmPedido.resx">
       <DependentUpon>FrmPedido.cs</DependentUpon>
@@ -118,6 +165,9 @@
     </Compile>
     <EmbeddedResource Include="Telas\FrmProduto.resx">
       <DependentUpon>FrmProduto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\FrmRelatorio.resx">
+      <DependentUpon>FrmRelatorio.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -148,7 +198,28 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Imagens\" />
-    <Folder Include="Resources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Bitmap1.bmp" />
+    <Content Include="Resources\ruler_icon.png" />
+    <Content Include="Resources\ruler_icon2.ico" />
+    <Content Include="ruler_icon.ico" />
+    <Content Include="ruler_icon2.ico" />
+    <None Include="Resources\up_high_sales_business_finance_icon-icons.com_76287.png" />
+    <None Include="Resources\vendas2.jpg" />
+    <None Include="Resources\vendas.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 e x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

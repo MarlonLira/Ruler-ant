@@ -1,12 +1,6 @@
 ﻿using Ruler.Persistence;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Ruler.Telas
@@ -27,7 +21,7 @@ namespace Ruler.Telas
             btn_deletar.Enabled = false;
             btn_cadastrar.Enabled = true;
             btn_atualizar.Enabled = true;
-            txt_id_produto.Enabled = false;
+            
         }
 
         public void Checar(string objeto)
@@ -130,7 +124,27 @@ namespace Ruler.Telas
         public void PesquisarObjeto()
         {
             ProdutoPst produto = new ProdutoPst();
-            DisplayData(produto.Pesquisar());
+
+            if (string.IsNullOrEmpty(aux))
+            {
+                DisplayData(produto.Pesquisar());
+            }
+            else
+            {
+                DisplayData(produto.PesquisarId(int.Parse(txt_id_produto.Text)));
+                if (table.Rows.Count > 0)
+                {
+                    txt_nome.Text = table.Rows[0]["nome"].ToString();
+                    txt_valor.Text = table.Rows[0]["valor"].ToString();
+                    txt_valor_dolar.Text = table.Rows[0]["valor_dolar"].ToString();
+                    aux = "";
+                }
+                else
+                {
+                    MessageBox.Show("Cliente com o id " + txt_id_produto.Text + " não existe!");
+                    aux = "";
+                }
+            }
         }
 
         private void btn_pesquisa_Click(object sender, EventArgs e)
@@ -207,6 +221,12 @@ namespace Ruler.Telas
             txt_valor.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
             txt_valor_dolar.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
             
+        }
+
+        private void btn_pesquisar_id_Click(object sender, EventArgs e)
+        {
+            aux = "id";
+            PesquisarObjeto();
         }
     }
 }

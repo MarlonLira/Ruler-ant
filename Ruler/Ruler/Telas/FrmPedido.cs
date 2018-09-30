@@ -21,6 +21,16 @@ namespace Ruler.Telas
 
             data_pedido.Value = DateTime.Now.Date;
 
+            if (cbb_venda.Text == "Cartão")
+            {
+                cbb_dividir.Enabled = true;
+            }
+            else
+            {
+                cbb_dividir.Enabled = false;
+                cbb_juros.Enabled = false;
+            }
+
         }
         
         public void PesquisarObjeto()
@@ -34,18 +44,18 @@ namespace Ruler.Telas
             if (!string.IsNullOrEmpty(cbb_produtos.Text) && !string.IsNullOrEmpty(txt_quantidade.Text) && !string.IsNullOrEmpty(txt_valor.Text))
             {
                 if (int.Parse(txt_quantidade.Text) <= int.Parse(txt_quant_estoque.Text)) {
-                    PedidoPst pedido = new PedidoPst(cbb_produtos.Text, txt_id_produto.Text, int.Parse(txt_quantidade.Text), txt_valor.Text.Replace(",","."), cbb_cliente.Text, data_pedido.Text, cbb_venda.Text);
+                    PedidoPst pedido = new PedidoPst(cbb_produtos.Text, txt_id_produto.Text, int.Parse(txt_quantidade.Text), txt_valor.Text.Replace(",", "."), cbb_cliente.Text, data_pedido.Text, cbb_venda.Text, int.Parse(txt_id_cliente.Text), int.Parse(cbb_dividir.Text));
 
                     EstoquePst estoque = new EstoquePst(int.Parse(txt_id_produto.Text), int.Parse(txt_quant_estoque.Text));
                      
                     con.openCon(pedido.Cadastrar());
                     con.openCon(estoque.AtualizarQuantidade(int.Parse(txt_quantidade.Text)));
 
-                    if (cbb_venda.Text == "Conta")
+                    /*if (cbb_venda.Text == "Conta")
                     {
                         ClientePst cliente = new ClientePst(int.Parse(txt_id_cliente.Text));
                         con.openCon(cliente.AtualizarDebito(txt_valor.Text.Replace(",",".")));
-                    }
+                    }*/
 
                     con.closeCon();
                     MessageBox.Show("Pedido Inserido com Sucesso");
@@ -92,6 +102,8 @@ namespace Ruler.Telas
             txt_id_pedido.Text = "";
             txt_id_produto.Text = "";
             txt_valor_u.Text = "";
+            cbb_dividir.Text = "";
+            cbb_juros.Text = "";
 
         }
 
@@ -130,6 +142,8 @@ namespace Ruler.Telas
 
         private void FrmPedido_Load(object sender, EventArgs e)
         {
+            // TODO: esta linha de código carrega dados na tabela 'rulerDataSet1.Tbl_Cartao_Dividir'. Você pode movê-la ou removê-la conforme necessário.
+            this.tbl_Cartao_DividirTableAdapter.Fill(this.rulerDataSet1.Tbl_Cartao_Dividir);
             // TODO: esta linha de código carrega dados na tabela 'rulerDataSet1.Tbl_Cliente'. Você pode movê-la ou removê-la conforme necessário.
             this.tbl_ClienteTableAdapter.Fill(this.rulerDataSet1.Tbl_Cliente);
 
@@ -148,27 +162,33 @@ namespace Ruler.Telas
 
         private void calcularPreco()
         {
+
             if (!string.IsNullOrEmpty(txt_quantidade.Text))
             {
 
                 aux = int.Parse(txt_quantidade.Text);
                 double valor = double.Parse(txt_valor_u.Text);
                 double valorTotal = aux * valor;
-                txt_valor.Text = valorTotal.ToString();
 
+                if (cbb_dividir.Enabled == true)
+                {
+                    valorTotal = (valorTotal * (100 + double.Parse(cbb_juros.Text.Replace(".", ",")))) / 100;
+                }
+
+                txt_valor.Text = valorTotal.ToString();
             }
             else
             {
 
-                aux = 0;
-                double valor = 0;
-                valor = double.Parse(txt_valor_u.Text);
-                double valorTotal = aux * valor;
-                txt_valor.Text = valorTotal.ToString();
+                 aux = 0;
+                 double valor = 0;
+                 valor = double.Parse(txt_valor_u.Text);
+                 double valorTotal = aux * valor;
+                 txt_valor.Text = valorTotal.ToString();
 
             }
-
         }
+            
 
         #endregion
 
@@ -209,6 +229,7 @@ namespace Ruler.Telas
 
         private void btn_voltar_Click(object sender, EventArgs e)
         {
+            cbb_dividir.Enabled = false;
             inicio.Show();
             this.Close();
         }
@@ -218,14 +239,58 @@ namespace Ruler.Telas
             calcularPreco();
         }
 
-        private void cbb_cliente_SelectedIndexChanged(object sender, EventArgs e)
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            CalcularCartao();
+        }
 
+        public void CalcularCartao()
+        {
+            if (cbb_dividir.Enabled == true)
+            {
+                if (cbb_venda.Text == "Cartão")
+                {
+                    string cartao = "SELECT * FROM Tbl_Cartao_Dividir WHERE id_cartao_dividir = " + int.Parse(cbb_dividir.Text);
+
+                    table = new DataTable();
+                    con.openAdpter(cartao);
+                    con.adapt.Fill(table);
+                    if (table.Rows.Count > 0)
+                    {
+                        cbb_dividir.Text = table.Rows[0]["id_cartao_dividir"].ToString();
+                        cbb_juros.Text = table.Rows[0]["juros"].ToString();
+                    }
+
+                    calcularPreco();
+
+                    con.closeCon();
+                    table.Clear();
+                }
+            }
+            else
+            {
+                ClearData(); 
+            }
+            
         }
 
         private void cbb_venda_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if(cbb_venda.Text == "Cartão")
+            {
+                cbb_dividir.Enabled = true;
+                CalcularCartao();
+            }
+            else
+            {
+                cbb_dividir.Enabled = false;
+                cbb_juros.Enabled = false;
+            }
+        }
 
+        private void cbb_cliente_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ChecarId(cbb_produtos.Text);
         }
     }
 }

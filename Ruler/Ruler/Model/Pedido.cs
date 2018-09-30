@@ -12,8 +12,10 @@ namespace Ruler.Model
         private int quantidade_produto;
         private string valor_produto;
         private string data;
+        private int id_cliente;
         private string cliente;
         private string tipo;
+        private int dividir;
 
         public Pedido(){}
 
@@ -27,7 +29,7 @@ namespace Ruler.Model
             this.cliente = cliente;
         }
 
-        public Pedido(string produto, string id_produto, int quantidade_produto, string valor_produto, string cliente, string data, string tipo)
+        public Pedido(string produto, string id_produto, int quantidade_produto, string valor_produto, string cliente, string data, string tipo, int id_cliente, int dividir)
         {
             this.produto = produto;
             this.id_produto = id_produto;
@@ -36,6 +38,8 @@ namespace Ruler.Model
             this.cliente = cliente;
             this.data = data;
             this.tipo = tipo;
+            this.id_cliente = id_cliente;
+            this.dividir = dividir;
         }
 
         public int Id { get => id; set => id = value; }
@@ -46,5 +50,7 @@ namespace Ruler.Model
         public string Cliente { get => cliente; set => cliente = value; }
         public string Data { get => data; set => data = value; }
         public string Tipo { get => tipo; set => tipo = value; }
+        public int Id_cliente { get => id_cliente; set => id_cliente = value; }
+        public int Dividir { get => dividir; set => dividir = value; }
     }
 }

@@ -74,6 +74,27 @@ namespace Ruler.Telas
         {
             EstoquePst estoque = new EstoquePst();
             DisplayData(estoque.Pesquisar());
+
+            if (string.IsNullOrEmpty(aux))
+            {
+                DisplayData(estoque.Pesquisar());
+            }
+            else
+            {
+                DisplayData(estoque.PesquisarId(int.Parse(txt_id_estoque.Text)));
+                if (table.Rows.Count > 0)
+                {
+                    cbb_produto.Text = table.Rows[0]["nome"].ToString();
+                    nud_quantidade.Text = table.Rows[0]["valor"].ToString();
+                    txt_id_produto.Text = table.Rows[0]["valor_dolar"].ToString();
+                    aux = "";
+                }
+                else
+                {
+                    MessageBox.Show("Cliente com o id " + txt_id_produto.Text + " não existe!");
+                    aux = "";
+                }
+            }
         }
 
         public void CadastrarObjeto()
@@ -193,7 +214,11 @@ namespace Ruler.Telas
         {
             AtualizarObjeto();
         }
-               
-        
+
+        private void btn_estoque_id_Click(object sender, EventArgs e)
+        {
+            aux = "id";
+            PesquisarObjeto();
+        }
     }
 }

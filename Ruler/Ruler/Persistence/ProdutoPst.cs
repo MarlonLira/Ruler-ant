@@ -24,5 +24,7 @@ namespace Ruler.Persistence
         public string Pesquisar() { return "SELECT * FROM Tbl_Produto"; }
 
         public string checar(string objeto) { return "SELECT * FROM Tbl_Produto WHERE nome = " + "'" + objeto + "'"; }
+
+        public string PesquisarId(int objeto) { return "SELECT * FROM Tbl_Produto WHERE id_produto = " + objeto; }
     }
 }

@@ -56,6 +56,7 @@
             this.tblProdutoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.rulerDataSet = new Ruler.rulerDataSet();
             this.tbl_ProdutoTableAdapter = new Ruler.rulerDataSetTableAdapters.Tbl_ProdutoTableAdapter();
+            this.btn_pesquisar_id = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -104,6 +105,7 @@
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.groupBox3.Controls.Add(this.btn_pesquisar_id);
             this.groupBox3.Controls.Add(this.ckb_deletar);
             this.groupBox3.Controls.Add(this.btn_deletar);
             this.groupBox3.Controls.Add(this.btn_atualizar);
@@ -196,7 +198,7 @@
             // txt_nome
             // 
             this.txt_nome.Location = new System.Drawing.Point(159, 45);
-            this.txt_nome.MaxLength = 15;
+            this.txt_nome.MaxLength = 50;
             this.txt_nome.Name = "txt_nome";
             this.txt_nome.Size = new System.Drawing.Size(190, 20);
             this.txt_nome.TabIndex = 88;
@@ -250,7 +252,6 @@
             // 
             // txt_id_produto
             // 
-            this.txt_id_produto.Enabled = false;
             this.txt_id_produto.Location = new System.Drawing.Point(37, 45);
             this.txt_id_produto.Name = "txt_id_produto";
             this.txt_id_produto.Size = new System.Drawing.Size(78, 20);
@@ -354,6 +355,19 @@
             // 
             this.tbl_ProdutoTableAdapter.ClearBeforeFill = true;
             // 
+            // btn_pesquisar_id
+            // 
+            this.btn_pesquisar_id.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btn_pesquisar_id.FlatAppearance.BorderSize = 4;
+            this.btn_pesquisar_id.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.btn_pesquisar_id.Location = new System.Drawing.Point(16, 19);
+            this.btn_pesquisar_id.Name = "btn_pesquisar_id";
+            this.btn_pesquisar_id.Size = new System.Drawing.Size(103, 34);
+            this.btn_pesquisar_id.TabIndex = 96;
+            this.btn_pesquisar_id.Text = "Pesquisar Produto";
+            this.btn_pesquisar_id.UseVisualStyleBackColor = true;
+            this.btn_pesquisar_id.Click += new System.EventHandler(this.btn_pesquisar_id_Click);
+            // 
             // FrmProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -405,5 +419,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn valorDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn valordolarDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button btn_pesquisar_id;
     }
 }

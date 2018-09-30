@@ -41,6 +41,12 @@
             this.lbl_id = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.cbb_juros = new System.Windows.Forms.ComboBox();
+            this.tblCartaoDividirBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.rulerDataSet1 = new Ruler.rulerDataSet();
+            this.label8 = new System.Windows.Forms.Label();
+            this.cbb_dividir = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.cbb_venda = new System.Windows.Forms.ComboBox();
             this.lbl_estoque = new System.Windows.Forms.Label();
@@ -60,7 +66,6 @@
             this.btn_pesquisa = new System.Windows.Forms.Button();
             this.cbb_cliente = new System.Windows.Forms.ComboBox();
             this.tblClienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.rulerDataSet1 = new Ruler.rulerDataSet();
             this.label4 = new System.Windows.Forms.Label();
             this.cbb_produtos = new System.Windows.Forms.ComboBox();
             this.tblProdutoBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -68,12 +73,6 @@
             this.lbl_produto = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.tblPedidoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.rulerDataSet = new Ruler.rulerDataSet();
-            this.tbl_PedidoTableAdapter = new Ruler.rulerDataSetTableAdapters.Tbl_PedidoTableAdapter();
-            this.tbl_ProdutoTableAdapter = new Ruler.rulerDataSetTableAdapters.Tbl_ProdutoTableAdapter();
-            this.tbl_ClienteTableAdapter = new Ruler.rulerDataSetTableAdapters.Tbl_ClienteTableAdapter();
-            this.tblPedidoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.idpedidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clienteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.produtoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -81,17 +80,25 @@
             this.valorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipovendaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tblPedidoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.tblPedidoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.rulerDataSet = new Ruler.rulerDataSet();
+            this.tbl_PedidoTableAdapter = new Ruler.rulerDataSetTableAdapters.Tbl_PedidoTableAdapter();
+            this.tbl_ProdutoTableAdapter = new Ruler.rulerDataSetTableAdapters.Tbl_ProdutoTableAdapter();
+            this.tbl_ClienteTableAdapter = new Ruler.rulerDataSetTableAdapters.Tbl_ClienteTableAdapter();
+            this.tbl_Cartao_DividirTableAdapter = new Ruler.rulerDataSetTableAdapters.Tbl_Cartao_DividirTableAdapter();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tblCartaoDividirBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rulerDataSet1)).BeginInit();
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tblClienteBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rulerDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblProdutoBindingSource)).BeginInit();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblPedidoBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblPedidoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rulerDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tblPedidoBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -216,6 +223,10 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.groupBox2.Controls.Add(this.label9);
+            this.groupBox2.Controls.Add(this.cbb_juros);
+            this.groupBox2.Controls.Add(this.label8);
+            this.groupBox2.Controls.Add(this.cbb_dividir);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.cbb_venda);
             this.groupBox2.Controls.Add(this.lbl_estoque);
@@ -237,6 +248,59 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Cadastro de Pedidos";
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(189, 116);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(32, 13);
+            this.label9.TabIndex = 108;
+            this.label9.Text = "Juros";
+            // 
+            // cbb_juros
+            // 
+            this.cbb_juros.DataSource = this.tblCartaoDividirBindingSource;
+            this.cbb_juros.DisplayMember = "juros";
+            this.cbb_juros.Enabled = false;
+            this.cbb_juros.FormattingEnabled = true;
+            this.cbb_juros.Location = new System.Drawing.Point(192, 132);
+            this.cbb_juros.Name = "cbb_juros";
+            this.cbb_juros.Size = new System.Drawing.Size(67, 21);
+            this.cbb_juros.TabIndex = 107;
+            this.cbb_juros.ValueMember = "juros";
+            // 
+            // tblCartaoDividirBindingSource
+            // 
+            this.tblCartaoDividirBindingSource.DataMember = "Tbl_Cartao_Dividir";
+            this.tblCartaoDividirBindingSource.DataSource = this.rulerDataSet1;
+            // 
+            // rulerDataSet1
+            // 
+            this.rulerDataSet1.DataSetName = "rulerDataSet";
+            this.rulerDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(124, 116);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(36, 13);
+            this.label8.TabIndex = 106;
+            this.label8.Text = "Dividir";
+            // 
+            // cbb_dividir
+            // 
+            this.cbb_dividir.DataSource = this.tblCartaoDividirBindingSource;
+            this.cbb_dividir.DisplayMember = "id_cartao_dividir";
+            this.cbb_dividir.Enabled = false;
+            this.cbb_dividir.FormattingEnabled = true;
+            this.cbb_dividir.Location = new System.Drawing.Point(127, 132);
+            this.cbb_dividir.Name = "cbb_dividir";
+            this.cbb_dividir.Size = new System.Drawing.Size(67, 21);
+            this.cbb_dividir.TabIndex = 105;
+            this.cbb_dividir.ValueMember = "id_cartao_dividir";
+            this.cbb_dividir.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -251,7 +315,8 @@
             this.cbb_venda.FormattingEnabled = true;
             this.cbb_venda.Items.AddRange(new object[] {
             "Dinheiro",
-            "Conta"});
+            "Conta",
+            "Cartão"});
             this.cbb_venda.Location = new System.Drawing.Point(9, 132);
             this.cbb_venda.Name = "cbb_venda";
             this.cbb_venda.Size = new System.Drawing.Size(97, 21);
@@ -438,11 +503,6 @@
             this.tblClienteBindingSource.DataMember = "Tbl_Cliente";
             this.tblClienteBindingSource.DataSource = this.rulerDataSet1;
             // 
-            // rulerDataSet1
-            // 
-            this.rulerDataSet1.DataSetName = "rulerDataSet";
-            this.rulerDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -522,33 +582,6 @@
             this.dataGridView1.TabIndex = 60;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // tblPedidoBindingSource
-            // 
-            this.tblPedidoBindingSource.DataMember = "Tbl_Pedido";
-            this.tblPedidoBindingSource.DataSource = this.rulerDataSet;
-            // 
-            // rulerDataSet
-            // 
-            this.rulerDataSet.DataSetName = "rulerDataSet";
-            this.rulerDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tbl_PedidoTableAdapter
-            // 
-            this.tbl_PedidoTableAdapter.ClearBeforeFill = true;
-            // 
-            // tbl_ProdutoTableAdapter
-            // 
-            this.tbl_ProdutoTableAdapter.ClearBeforeFill = true;
-            // 
-            // tbl_ClienteTableAdapter
-            // 
-            this.tbl_ClienteTableAdapter.ClearBeforeFill = true;
-            // 
-            // tblPedidoBindingSource1
-            // 
-            this.tblPedidoBindingSource1.DataMember = "Tbl_Pedido";
-            this.tblPedidoBindingSource1.DataSource = this.rulerDataSet1;
-            // 
             // idpedidoDataGridViewTextBoxColumn
             // 
             this.idpedidoDataGridViewTextBoxColumn.DataPropertyName = "id_pedido";
@@ -603,6 +636,37 @@
             this.tipovendaDataGridViewTextBoxColumn.ReadOnly = true;
             this.tipovendaDataGridViewTextBoxColumn.Width = 80;
             // 
+            // tblPedidoBindingSource1
+            // 
+            this.tblPedidoBindingSource1.DataMember = "Tbl_Pedido";
+            this.tblPedidoBindingSource1.DataSource = this.rulerDataSet1;
+            // 
+            // tblPedidoBindingSource
+            // 
+            this.tblPedidoBindingSource.DataMember = "Tbl_Pedido";
+            this.tblPedidoBindingSource.DataSource = this.rulerDataSet;
+            // 
+            // rulerDataSet
+            // 
+            this.rulerDataSet.DataSetName = "rulerDataSet";
+            this.rulerDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tbl_PedidoTableAdapter
+            // 
+            this.tbl_PedidoTableAdapter.ClearBeforeFill = true;
+            // 
+            // tbl_ProdutoTableAdapter
+            // 
+            this.tbl_ProdutoTableAdapter.ClearBeforeFill = true;
+            // 
+            // tbl_ClienteTableAdapter
+            // 
+            this.tbl_ClienteTableAdapter.ClearBeforeFill = true;
+            // 
+            // tbl_Cartao_DividirTableAdapter
+            // 
+            this.tbl_Cartao_DividirTableAdapter.ClearBeforeFill = true;
+            // 
             // FrmPedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -616,16 +680,17 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tblCartaoDividirBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rulerDataSet1)).EndInit();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tblClienteBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rulerDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblProdutoBindingSource)).EndInit();
             this.groupBox4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblPedidoBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblPedidoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rulerDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tblPedidoBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -684,5 +749,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tipovendaDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource tblPedidoBindingSource1;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox cbb_dividir;
+        private System.Windows.Forms.ComboBox cbb_juros;
+        private System.Windows.Forms.BindingSource tblCartaoDividirBindingSource;
+        private rulerDataSetTableAdapters.Tbl_Cartao_DividirTableAdapter tbl_Cartao_DividirTableAdapter;
+        private System.Windows.Forms.Label label9;
     }
 }
