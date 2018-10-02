@@ -2,7 +2,6 @@
 using System;
 using System.Data;
 using System.Windows.Forms;
-using System.Globalization;
 
 namespace Ruler.Telas
 {

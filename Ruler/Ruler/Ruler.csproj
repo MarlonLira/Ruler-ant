@@ -109,12 +109,6 @@
     <Compile Include="Telas\FrmInicio.Designer.cs">
       <DependentUpon>FrmInicio.cs</DependentUpon>
     </Compile>
-    <Compile Include="Telas\FrmInicioX.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Telas\FrmInicioX.Designer.cs">
-      <DependentUpon>FrmInicioX.cs</DependentUpon>
-    </Compile>
     <Compile Include="Telas\FrmPedido.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,9 +140,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\FrmInicio.resx">
       <DependentUpon>FrmInicio.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Telas\FrmInicioX.resx">
-      <DependentUpon>FrmInicioX.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\FrmPedido.resx">
       <DependentUpon>FrmPedido.cs</DependentUpon>
