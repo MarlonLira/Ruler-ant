@@ -36,6 +36,7 @@ namespace Ruler.Telas
         public void PesquisarObjeto()
         {
             PedidoPst pedido = new PedidoPst();
+                
             DisplayData(pedido.Pesquisar());
         }
 
@@ -51,16 +52,11 @@ namespace Ruler.Telas
                     con.openCon(pedido.Cadastrar());
                     con.openCon(estoque.AtualizarQuantidade(int.Parse(txt_quantidade.Text)));
 
-                    /*if (cbb_venda.Text == "Conta")
-                    {
-                        ClientePst cliente = new ClientePst(int.Parse(txt_id_cliente.Text));
-                        con.openCon(cliente.AtualizarDebito(txt_valor.Text.Replace(",",".")));
-                    }*/
-
                     con.closeCon();
                     MessageBox.Show("Pedido Inserido com Sucesso");
 
                     ClearData();
+                    PesquisarObjeto();
                 }
                 else
                 {
@@ -142,15 +138,13 @@ namespace Ruler.Telas
 
         private void FrmPedido_Load(object sender, EventArgs e)
         {
-            // TODO: esta linha de código carrega dados na tabela 'rulerDataSet1.Tbl_Cartao_Dividir'. Você pode movê-la ou removê-la conforme necessário.
-            this.tbl_Cartao_DividirTableAdapter.Fill(this.rulerDataSet1.Tbl_Cartao_Dividir);
-            // TODO: esta linha de código carrega dados na tabela 'rulerDataSet1.Tbl_Cliente'. Você pode movê-la ou removê-la conforme necessário.
-            this.tbl_ClienteTableAdapter.Fill(this.rulerDataSet1.Tbl_Cliente);
-
-            // TODO: esta linha de código carrega dados na tabela 'rulerDataSet1.Tbl_Produto'. Você pode movê-la ou removê-la conforme necessário.
-            this.tbl_ProdutoTableAdapter.Fill(this.rulerDataSet1.Tbl_Produto);
+            // TODO: esta linha de código carrega dados na tabela 'rulerDataSet.Tbl_Cartao_Dividir'. Você pode movê-la ou removê-la conforme necessário.
+            this.tbl_Cartao_DividirTableAdapter.Fill(this.rulerDataSet.Tbl_Cartao_Dividir);
+            // TODO: esta linha de código carrega dados na tabela 'rulerDataSet.Tbl_Cliente'. Você pode movê-la ou removê-la conforme necessário.
+            this.tbl_ClienteTableAdapter.Fill(this.rulerDataSet.Tbl_Cliente);
+            // TODO: esta linha de código carrega dados na tabela 'rulerDataSet.Tbl_Produto'. Você pode movê-la ou removê-la conforme necessário.
+            this.tbl_ProdutoTableAdapter.Fill(this.rulerDataSet.Tbl_Produto);
             ChecarId(cbb_produtos.Text);
-            
             // TODO: esta linha de código carrega dados na tabela 'rulerDataSet.Tbl_Pedido'. Você pode movê-la ou removê-la conforme necessário.
             this.tbl_PedidoTableAdapter.Fill(this.rulerDataSet.Tbl_Pedido);
 
@@ -158,6 +152,7 @@ namespace Ruler.Telas
             calcularPreco();
             cbb_venda.Text = "Dinheiro";
             
+
         }
 
         private void calcularPreco()
@@ -179,12 +174,18 @@ namespace Ruler.Telas
             }
             else
             {
-
+                
                  aux = 0;
                  double valor = 0;
-                 valor = double.Parse(txt_valor_u.Text);
-                 double valorTotal = aux * valor;
-                 txt_valor.Text = valorTotal.ToString();
+
+                if (!string.IsNullOrEmpty(txt_valor_u.Text))
+                {
+
+                    valor = double.Parse(txt_valor_u.Text);
+                }
+
+                double valorTotal = aux * valor;
+                txt_valor.Text = valorTotal.ToString();
 
             }
         }
@@ -202,7 +203,7 @@ namespace Ruler.Telas
             CadastrarObjeto();
         }
 
-        private void btn_pesquisa_Click(object sender, EventArgs e)
+        private void btn_pesquisar_Click(object sender, EventArgs e)
         {
             PesquisarObjeto();
         }
@@ -212,7 +213,7 @@ namespace Ruler.Telas
             AtualizarObjeto();
         }
 
-        private void btn_deletar_Click(object sender, EventArgs e)
+        private void btn_apagar_Click(object sender, EventArgs e)
         {
             DeletarObjeto();
         }
@@ -291,6 +292,16 @@ namespace Ruler.Telas
         private void cbb_cliente_SelectedIndexChanged(object sender, EventArgs e)
         {
             ChecarId(cbb_produtos.Text);
+        }
+
+        private void cbb_dividir_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CalcularCartao();
+        }
+
+        private void btn_limpar_Click(object sender, EventArgs e)
+        {
+            ClearData();
         }
     }
 }

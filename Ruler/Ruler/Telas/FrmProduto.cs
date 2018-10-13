@@ -17,11 +17,6 @@ namespace Ruler.Telas
         {
             InitializeComponent();
             inicio = frm;
-
-            btn_deletar.Enabled = false;
-            btn_cadastrar.Enabled = true;
-            btn_atualizar.Enabled = true;
-            
         }
 
         public void Checar(string objeto)
@@ -125,7 +120,7 @@ namespace Ruler.Telas
         {
             ProdutoPst produto = new ProdutoPst();
 
-            if (string.IsNullOrEmpty(aux))
+            if (string.IsNullOrEmpty(txt_id_produto.Text))
             {
                 DisplayData(produto.Pesquisar());
             }
@@ -147,7 +142,7 @@ namespace Ruler.Telas
             }
         }
 
-        private void btn_pesquisa_Click(object sender, EventArgs e)
+        private void btn_pesquisar_Click(object sender, EventArgs e)
         {
             PesquisarObjeto();
         }
@@ -185,28 +180,11 @@ namespace Ruler.Telas
             this.tbl_ProdutoTableAdapter.Fill(this.rulerDataSet.Tbl_Produto);
         }
 
-        private void btn_deletar_Click(object sender, EventArgs e)
+        private void btn_apagar_Click(object sender, EventArgs e)
         {
             DeletarObjeto();
         }
 
-        private void ckb_deletar_CheckedChanged(object sender, EventArgs e)
-        {
-            if (ckb_deletar.Checked == true)
-            {
-                btn_deletar.Enabled = true;
-                txt_id_produto.Enabled = true;
-                btn_cadastrar.Enabled = false;
-                btn_atualizar.Enabled = false;
-            }
-            else
-            {
-                btn_deletar.Enabled = false;
-                btn_cadastrar.Enabled = true;
-                btn_atualizar.Enabled = true;
-                txt_id_produto.Enabled = false;
-            }
-        }
 
         private void btn_atualizar_Click(object sender, EventArgs e)
         {
@@ -223,10 +201,6 @@ namespace Ruler.Telas
             
         }
 
-        private void btn_pesquisar_id_Click(object sender, EventArgs e)
-        {
-            aux = "id";
-            PesquisarObjeto();
-        }
+      
     }
 }

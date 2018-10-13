@@ -36,7 +36,7 @@ namespace Ruler.Telas
         public void PesquisarObjeto()
         {
             ClientePst cliente = new ClientePst();
-            if (string.IsNullOrEmpty(aux))
+            if (string.IsNullOrEmpty(txt_id.Text))
             {
                 DisplayData(cliente.Pesquisar());
             }
@@ -90,6 +90,7 @@ namespace Ruler.Telas
                 }
 
                 ClearData();
+                PesquisarObjeto();
             }
         }
 
@@ -149,7 +150,7 @@ namespace Ruler.Telas
             CadastrarObjeto();
         }
 
-        private void btn_pesquisa_Click(object sender, EventArgs e)
+        private void btn_pesquisar_Click(object sender, EventArgs e)
         {
             PesquisarObjeto();
             
@@ -160,7 +161,7 @@ namespace Ruler.Telas
             AtualizarObjeto();
         }
 
-        private void btn_deletar_Click(object sender, EventArgs e)
+        private void btn_apagar_Click(object sender, EventArgs e)
         {
             DeletarObjeto();
         }
@@ -179,5 +180,6 @@ namespace Ruler.Telas
             PesquisarObjeto();
             
         }
+
     }
 }

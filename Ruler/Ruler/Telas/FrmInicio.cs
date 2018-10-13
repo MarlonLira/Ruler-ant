@@ -74,9 +74,9 @@ namespace Ruler.Telas
 
         private void movimentacaoTSMI_Click(object sender, EventArgs e)
         {
-            FrmRelatorio relatorio = new FrmRelatorio(this);
+            FrmMovimento movimento = new FrmMovimento(this);
             this.Hide();
-            relatorio.Show();
+            movimento.Show();
         }
 
         private void btn_cadastrar_produtos_Click(object sender, EventArgs e)
@@ -85,6 +85,6 @@ namespace Ruler.Telas
             this.Hide();
             produto.Show();
         }
-        
+
     }
 }
