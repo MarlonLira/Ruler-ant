@@ -24,7 +24,6 @@ namespace Ruler.Telas
         {
             // TODO: esta linha de código carrega dados na tabela 'rulerDataSet.Tbl_Cliente'. Você pode movê-la ou removê-la conforme necessário.
             this.tbl_ClienteTableAdapter.Fill(this.rulerDataSet.Tbl_Cliente);
-
         }
 
         private void btn_voltar_Click(object sender, EventArgs e)

@@ -86,5 +86,11 @@ namespace Ruler.Telas
             produto.Show();
         }
 
+        private void btn_pagar_Click(object sender, EventArgs e)
+        {
+            FrmPagamento pagamento = new FrmPagamento(this);
+            this.Hide();
+            pagamento.Show();
+        }
     }
 }

@@ -1,52 +1,41 @@
-﻿
-namespace Ruler.Dados
+﻿namespace Ruler.Dados
 {
-    class Cliente
+    abstract class Cliente
     {
-        private string nome;
-        private string telefone;
-        private int id;
-        private string debito;
+        public string Nome { get; set; }
+        public string Telefone { get; set; }
+        public int Id { get; set; }
+        public string Debito { get; set; }
 
-        public string Nome { get => nome; set => nome = value; }
-        public string Telefone { get => telefone; set => telefone = value; }
-        public int Id { get => id; set => id = value; }
-        public string Debito { get => debito; set => debito = value; }
-
-        public Cliente(int id) { this.id = id; }
+        public Cliente(int id) { this.Id = id; }
 
         public Cliente(int id, string nome, string telefone, string debito)
         {
-            this.nome = nome;
-            this.telefone = telefone;
-            this.id = id;
-            this.debito = debito;
+            this.Nome = nome;
+            this.Telefone = telefone;
+            this.Id = id;
+            this.Debito = debito;
         }
 
         public Cliente(int id, string debito)
         {
-            this.id = id;
-            this.debito = debito;
+            this.Id = id;
+            this.Debito = debito;
         }
 
         public Cliente(string nome, string telefone)
         {
-            this.nome = nome;
-            this.telefone = telefone;
+            this.Nome = nome;
+            this.Telefone = telefone;
         }
 
         public Cliente(string nome, string telefone, string debito)
         {
-            this.nome = nome;
-            this.telefone = telefone;
-            this.debito = debito;
+            this.Nome = nome;
+            this.Telefone = telefone;
+            this.Debito = debito;
         }
 
-        public Cliente() { }
-                
-        public override string ToString()
-        {
-            return base.ToString();
-        }
+        public Cliente(){}
     }
 }

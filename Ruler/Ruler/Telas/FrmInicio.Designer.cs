@@ -173,7 +173,6 @@
             this.btn_pagar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btn_pagar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_pagar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_pagar.Enabled = false;
             this.btn_pagar.FlatAppearance.BorderColor = System.Drawing.SystemColors.AppWorkspace;
             this.btn_pagar.FlatAppearance.CheckedBackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btn_pagar.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ActiveCaption;
@@ -187,6 +186,7 @@
             this.btn_pagar.TabIndex = 28;
             this.btn_pagar.Text = "Pagar";
             this.btn_pagar.UseVisualStyleBackColor = false;
+            this.btn_pagar.Click += new System.EventHandler(this.btn_pagar_Click);
             // 
             // btn_vender
             // 
@@ -205,7 +205,7 @@
             this.btn_vender.Name = "btn_vender";
             this.btn_vender.Size = new System.Drawing.Size(266, 87);
             this.btn_vender.TabIndex = 27;
-            this.btn_vender.Text = "+ Venda";
+            this.btn_vender.Text = "+ Vendas";
             this.btn_vender.UseVisualStyleBackColor = false;
             this.btn_vender.Click += new System.EventHandler(this.btn_vender_Click);
             // 
@@ -258,20 +258,20 @@
             // movimentacaoTSMI
             // 
             this.movimentacaoTSMI.Name = "movimentacaoTSMI";
-            this.movimentacaoTSMI.Size = new System.Drawing.Size(180, 22);
+            this.movimentacaoTSMI.Size = new System.Drawing.Size(154, 22);
             this.movimentacaoTSMI.Text = "Movimentação";
             this.movimentacaoTSMI.Click += new System.EventHandler(this.movimentacaoTSMI_Click);
             // 
             // comprasToolStripMenuItem
             // 
             this.comprasToolStripMenuItem.Name = "comprasToolStripMenuItem";
-            this.comprasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.comprasToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.comprasToolStripMenuItem.Text = "Compras";
             // 
             // vendasToolStripMenuItem
             // 
             this.vendasToolStripMenuItem.Name = "vendasToolStripMenuItem";
-            this.vendasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.vendasToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.vendasToolStripMenuItem.Text = "Vendas";
             // 
             // clientesToolStripMenuItem

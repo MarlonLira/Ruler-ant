@@ -68,15 +68,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\Cliente.cs" />
+    <Compile Include="Model\Compras.cs" />
     <Compile Include="Model\Estoque.cs" />
+    <Compile Include="Model\Funcionario.cs" />
     <Compile Include="Model\Movimento.cs" />
+    <Compile Include="Model\Pagamento.cs" />
     <Compile Include="Model\Pedido.cs" />
     <Compile Include="Model\Produto.cs" />
     <Compile Include="Persistence\ClientePst.cs" />
+    <Compile Include="Persistence\ComprasPst.cs" />
     <Compile Include="Persistence\Conexao.cs" />
     <Compile Include="Persistence\EstoquePst.cs" />
     <Compile Include="Persistence\ConfigPst.cs" />
+    <Compile Include="Persistence\FuncionarioPst.cs" />
     <Compile Include="Persistence\MovimentoPst.cs" />
+    <Compile Include="Persistence\PagamentoPst.cs" />
     <Compile Include="Persistence\PedidoPst.cs" />
     <Compile Include="Persistence\ProdutoPst.cs" />
     <Compile Include="rulerDataSet.Designer.cs">
@@ -85,22 +91,28 @@
       <DependentUpon>rulerDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Telas\ConfigFrm.cs" />
-    <Compile Include="Telas\FrmMovimento.cs">
+    <Compile Include="Telas\Local\FrmCompras.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Telas\FrmMovimento.Designer.cs">
+    <Compile Include="Telas\Local\FrmCompras.Designer.cs">
+      <DependentUpon>FrmCompras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\Relatorios\FrmMovimento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\Relatorios\FrmMovimento.Designer.cs">
       <DependentUpon>FrmMovimento.cs</DependentUpon>
     </Compile>
-    <Compile Include="Telas\FrmCliente.cs">
+    <Compile Include="Telas\Clientes\FrmCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Telas\FrmCliente.Designer.cs">
+    <Compile Include="Telas\Clientes\FrmCliente.Designer.cs">
       <DependentUpon>FrmCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="Telas\FrmEstoque.cs">
+    <Compile Include="Telas\Local\FrmEstoque.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Telas\FrmEstoque.Designer.cs">
+    <Compile Include="Telas\Local\FrmEstoque.Designer.cs">
       <DependentUpon>FrmEstoque.cs</DependentUpon>
     </Compile>
     <Compile Include="Telas\FrmInicio.cs">
@@ -109,39 +121,48 @@
     <Compile Include="Telas\FrmInicio.Designer.cs">
       <DependentUpon>FrmInicio.cs</DependentUpon>
     </Compile>
-    <Compile Include="Telas\FrmPedido.cs">
+    <Compile Include="Telas\Clientes\FrmPagamento.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Telas\FrmPedido.Designer.cs">
+    <Compile Include="Telas\Clientes\FrmPagamento.Designer.cs">
+      <DependentUpon>FrmPagamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\Clientes\FrmPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\Clientes\FrmPedido.Designer.cs">
       <DependentUpon>FrmPedido.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Telas\FrmProduto.cs">
+    <Compile Include="Telas\Local\FrmProduto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Telas\FrmProduto.Designer.cs">
+    <Compile Include="Telas\Local\FrmProduto.Designer.cs">
       <DependentUpon>FrmProduto.cs</DependentUpon>
     </Compile>
-    <Compile Include="Telas\FrmRelatorio.cs">
+    <Compile Include="Telas\Relatorios\FrmRelatorio.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Telas\FrmRelatorio.Designer.cs">
+    <Compile Include="Telas\Relatorios\FrmRelatorio.Designer.cs">
       <DependentUpon>FrmRelatorio.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Telas\FrmMovimento.resx">
+    <EmbeddedResource Include="Telas\Relatorios\FrmMovimento.resx">
       <DependentUpon>FrmMovimento.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Telas\FrmCliente.resx">
+    <EmbeddedResource Include="Telas\Clientes\FrmCliente.resx">
       <DependentUpon>FrmCliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Telas\FrmEstoque.resx">
+    <EmbeddedResource Include="Telas\Local\FrmEstoque.resx">
       <DependentUpon>FrmEstoque.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\FrmInicio.resx">
       <DependentUpon>FrmInicio.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Telas\FrmPedido.resx">
+    <EmbeddedResource Include="Telas\Clientes\FrmPagamento.resx">
+      <DependentUpon>FrmPagamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Clientes\FrmPedido.resx">
       <DependentUpon>FrmPedido.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -154,10 +175,10 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Telas\FrmProduto.resx">
+    <EmbeddedResource Include="Telas\Local\FrmProduto.resx">
       <DependentUpon>FrmProduto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Telas\FrmRelatorio.resx">
+    <EmbeddedResource Include="Telas\Relatorios\FrmRelatorio.resx">
       <DependentUpon>FrmRelatorio.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">

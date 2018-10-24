@@ -14,3 +14,4 @@ C:\Users\marlo\source\repos\Ruler\Ruler\obj\Release\Ruler.Telas.FrmCliente.resou
 C:\Users\marlo\source\repos\Ruler\Ruler\obj\Release\Ruler.Telas.FrmProduto.resources
 C:\Users\marlo\source\repos\Ruler\Ruler\obj\Release\Ruler.Telas.FrmMovimento.resources
 C:\Users\marlo\source\repos\Ruler\Ruler\obj\Release\Ruler.Telas.FrmRelatorio.resources
+C:\Users\marlo\source\repos\Ruler\Ruler\obj\Release\Ruler.Telas.FrmPagamento.resources

@@ -1,8 +1,5 @@
-﻿
-using System.Configuration;
+﻿using System.Configuration;
 using System.Data.SqlClient;
-
-
 
 namespace Ruler.Persistence
 {

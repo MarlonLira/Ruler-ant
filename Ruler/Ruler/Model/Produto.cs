@@ -1,45 +1,33 @@
-﻿
-namespace Ruler.Dados
+﻿namespace Ruler.Dados
 {
     class Produto
     {
-        private string nome;
-        private string valor;
-        private int id;
-        private string valor_dolar;
-
-        public string Nome { get => nome; set => nome = value; }
-        public string Valor { get => valor; set => valor = value; }
-        public int Id { get => id; set => id = value; }
-        public string Valor_dolar { get => valor_dolar; set => valor_dolar = value; }
+        public string Nome { get; set; }
+        public string Valor { get; set; }
+        public int Id { get; set; }
+        public string Valor_dolar { get; set; }
 
         public Produto(int id, string nome, string valor, string valor_dolar)
         {
-            this.nome = nome;
-            this.valor = valor;
-            this.id = id;
-            this.valor_dolar = valor_dolar;
+            this.Nome = nome;
+            this.Valor = valor;
+            this.Id = id;
+            this.Valor_dolar = valor_dolar;
         }
 
         public Produto(int id)
         {
-            this.id = id;
+            this.Id = id;
         }
 
         public Produto(string nome, string valor, string valor_dolar)
         {
-            this.nome = nome;
-            this.valor = valor;
-            this.valor_dolar = valor_dolar;
+            this.Nome = nome;
+            this.Valor = valor;
+            this.Valor_dolar = valor_dolar;
         }
-                
 
         public Produto() { }
 
-
-        public override string ToString()
-        {
-            return base.ToString();
-        }
     }
 }

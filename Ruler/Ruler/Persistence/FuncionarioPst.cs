@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace Ruler.Persistence
 {
-    class MovimentoPst : Movimento, ConfigPst
+    class FuncionarioPst : Funcionario, ConfigPst
     {
-        protected MovimentoPst(DateTime data_Venda, DateTime data_Entrega, ClientePst cliente, FuncionarioPst funcionario, ProdutoPst produto) : base(data_Venda, data_Entrega, cliente, funcionario, produto)
+        public FuncionarioPst(string nome, string email, string cpf, string senha) : base(nome, email, cpf, senha)
         {
         }
 

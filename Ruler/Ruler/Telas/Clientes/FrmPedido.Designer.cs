@@ -35,7 +35,7 @@
             this.lbl_valor = new System.Windows.Forms.Label();
             this.cbb_juros = new System.Windows.Forms.ComboBox();
             this.tblCartaoDividirBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.rulerDataSet = new Ruler.rulerDataSet();
+            this.rulerDataSet1 = new Ruler.rulerDataSet();
             this.txt_valor = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -47,8 +47,6 @@
             this.lbl_estoque = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.data_pedido = new System.Windows.Forms.DateTimePicker();
-            this.tblPedidoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tbl_PedidoTableAdapter = new Ruler.rulerDataSetTableAdapters.Tbl_PedidoTableAdapter();
             this.txt_quant_estoque = new System.Windows.Forms.TextBox();
             this.lbl_u = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -76,30 +74,34 @@
             this.txt_quantidade = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.idpedidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clienteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.produtoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quantidadeprodutoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.valorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tipovendaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idprodutoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tblPedidoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btn_cadastrar = new System.Windows.Forms.Button();
             this.btn_voltar = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cbb_pagou = new System.Windows.Forms.ComboBox();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.tbl_ProdutoTableAdapter = new Ruler.rulerDataSetTableAdapters.Tbl_ProdutoTableAdapter();
-            this.tbl_ClienteTableAdapter = new Ruler.rulerDataSetTableAdapters.Tbl_ClienteTableAdapter();
-            this.tbl_Cartao_DividirTableAdapter = new Ruler.rulerDataSetTableAdapters.Tbl_Cartao_DividirTableAdapter();
+            this.tbl_PedidoTableAdapter1 = new Ruler.rulerDataSetTableAdapters.Tbl_PedidoTableAdapter();
+            this.tbl_ProdutoTableAdapter1 = new Ruler.rulerDataSetTableAdapters.Tbl_ProdutoTableAdapter();
+            this.tbl_ClienteTableAdapter1 = new Ruler.rulerDataSetTableAdapters.Tbl_ClienteTableAdapter();
+            this.tbl_Cartao_DividirTableAdapter1 = new Ruler.rulerDataSetTableAdapters.Tbl_Cartao_DividirTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.tblCartaoDividirBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rulerDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tblPedidoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rulerDataSet1)).BeginInit();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tblClienteBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblProdutoBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblPedidoBindingSource)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -158,12 +160,12 @@
             // tblCartaoDividirBindingSource
             // 
             this.tblCartaoDividirBindingSource.DataMember = "Tbl_Cartao_Dividir";
-            this.tblCartaoDividirBindingSource.DataSource = this.rulerDataSet;
+            this.tblCartaoDividirBindingSource.DataSource = this.rulerDataSet1;
             // 
-            // rulerDataSet
+            // rulerDataSet1
             // 
-            this.rulerDataSet.DataSetName = "rulerDataSet";
-            this.rulerDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.rulerDataSet1.DataSetName = "rulerDataSet";
+            this.rulerDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // txt_valor
             // 
@@ -281,15 +283,6 @@
             this.data_pedido.Size = new System.Drawing.Size(97, 20);
             this.data_pedido.TabIndex = 98;
             this.data_pedido.Value = new System.DateTime(2018, 9, 23, 20, 5, 40, 0);
-            // 
-            // tblPedidoBindingSource
-            // 
-            this.tblPedidoBindingSource.DataMember = "Tbl_Pedido";
-            this.tblPedidoBindingSource.DataSource = this.rulerDataSet;
-            // 
-            // tbl_PedidoTableAdapter
-            // 
-            this.tbl_PedidoTableAdapter.ClearBeforeFill = true;
             // 
             // txt_quant_estoque
             // 
@@ -501,23 +494,22 @@
             // tblClienteBindingSource
             // 
             this.tblClienteBindingSource.DataMember = "Tbl_Cliente";
-            this.tblClienteBindingSource.DataSource = this.rulerDataSet;
+            this.tblClienteBindingSource.DataSource = this.rulerDataSet1;
             // 
             // cbb_produtos
             // 
             this.cbb_produtos.DataSource = this.tblProdutoBindingSource;
             this.cbb_produtos.DisplayMember = "nome";
-            this.cbb_produtos.FormattingEnabled = true;
             this.cbb_produtos.Location = new System.Drawing.Point(68, 31);
             this.cbb_produtos.Name = "cbb_produtos";
             this.cbb_produtos.Size = new System.Drawing.Size(160, 21);
-            this.cbb_produtos.TabIndex = 87;
-            this.cbb_produtos.SelectedIndexChanged += new System.EventHandler(this.cbb_produtos_SelectedIndexChanged);
+            this.cbb_produtos.TabIndex = 117;
+            this.cbb_produtos.SelectedIndexChanged += new System.EventHandler(this.cbb_produtos_SelectedIndexChanged_1);
             // 
             // tblProdutoBindingSource
             // 
             this.tblProdutoBindingSource.DataMember = "Tbl_Produto";
-            this.tblProdutoBindingSource.DataSource = this.rulerDataSet;
+            this.tblProdutoBindingSource.DataSource = this.rulerDataSet1;
             // 
             // label4
             // 
@@ -557,7 +549,7 @@
             this.lbl_produtos.AutoSize = true;
             this.lbl_produtos.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.lbl_produtos.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_produtos.Location = new System.Drawing.Point(65, 16);
+            this.lbl_produtos.Location = new System.Drawing.Point(65, 15);
             this.lbl_produtos.Name = "lbl_produtos";
             this.lbl_produtos.Size = new System.Drawing.Size(49, 13);
             this.lbl_produtos.TabIndex = 4;
@@ -593,14 +585,14 @@
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idpedidoDataGridViewTextBoxColumn,
-            this.clienteDataGridViewTextBoxColumn,
-            this.produtoDataGridViewTextBoxColumn,
-            this.quantidadeprodutoDataGridViewTextBoxColumn,
-            this.valorDataGridViewTextBoxColumn,
-            this.dataDataGridViewTextBoxColumn,
-            this.tipovendaDataGridViewTextBoxColumn,
-            this.idprodutoDataGridViewTextBoxColumn});
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8});
             this.dataGridView1.DataSource = this.tblPedidoBindingSource;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
@@ -609,68 +601,68 @@
             this.dataGridView1.Size = new System.Drawing.Size(776, 285);
             this.dataGridView1.TabIndex = 0;
             // 
-            // idpedidoDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn1
             // 
-            this.idpedidoDataGridViewTextBoxColumn.DataPropertyName = "id_pedido";
-            this.idpedidoDataGridViewTextBoxColumn.HeaderText = "Id  Pedido";
-            this.idpedidoDataGridViewTextBoxColumn.Name = "idpedidoDataGridViewTextBoxColumn";
-            this.idpedidoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idpedidoDataGridViewTextBoxColumn.Width = 85;
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "id_pedido";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Id Pedido";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
-            // clienteDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn2
             // 
-            this.clienteDataGridViewTextBoxColumn.DataPropertyName = "cliente";
-            this.clienteDataGridViewTextBoxColumn.HeaderText = "Cliente";
-            this.clienteDataGridViewTextBoxColumn.Name = "clienteDataGridViewTextBoxColumn";
-            this.clienteDataGridViewTextBoxColumn.ReadOnly = true;
-            this.clienteDataGridViewTextBoxColumn.Width = 200;
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "cliente";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Cliente";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 200;
             // 
-            // produtoDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn3
             // 
-            this.produtoDataGridViewTextBoxColumn.DataPropertyName = "produto";
-            this.produtoDataGridViewTextBoxColumn.HeaderText = "Produto";
-            this.produtoDataGridViewTextBoxColumn.Name = "produtoDataGridViewTextBoxColumn";
-            this.produtoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.produtoDataGridViewTextBoxColumn.Width = 300;
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "produto";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Produto";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 200;
             // 
-            // quantidadeprodutoDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn4
             // 
-            this.quantidadeprodutoDataGridViewTextBoxColumn.DataPropertyName = "quantidade_produto";
-            this.quantidadeprodutoDataGridViewTextBoxColumn.HeaderText = "Quantidade";
-            this.quantidadeprodutoDataGridViewTextBoxColumn.Name = "quantidadeprodutoDataGridViewTextBoxColumn";
-            this.quantidadeprodutoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.quantidadeprodutoDataGridViewTextBoxColumn.Width = 50;
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "quantidade_produto";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Quantidade";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
-            // valorDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn5
             // 
-            this.valorDataGridViewTextBoxColumn.DataPropertyName = "valor";
-            this.valorDataGridViewTextBoxColumn.HeaderText = "Valor";
-            this.valorDataGridViewTextBoxColumn.Name = "valorDataGridViewTextBoxColumn";
-            this.valorDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "valor";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Valor";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
             // 
-            // dataDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn6
             // 
-            this.dataDataGridViewTextBoxColumn.DataPropertyName = "data";
-            this.dataDataGridViewTextBoxColumn.HeaderText = "Data";
-            this.dataDataGridViewTextBoxColumn.Name = "dataDataGridViewTextBoxColumn";
-            this.dataDataGridViewTextBoxColumn.ReadOnly = true;
-            this.dataDataGridViewTextBoxColumn.Width = 85;
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "data";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Data";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
             // 
-            // tipovendaDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn7
             // 
-            this.tipovendaDataGridViewTextBoxColumn.DataPropertyName = "tipo_venda";
-            this.tipovendaDataGridViewTextBoxColumn.HeaderText = "Tipo Venda";
-            this.tipovendaDataGridViewTextBoxColumn.Name = "tipovendaDataGridViewTextBoxColumn";
-            this.tipovendaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.tipovendaDataGridViewTextBoxColumn.Width = 85;
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "tipo_venda";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Tipo Venda";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
             // 
-            // idprodutoDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn8
             // 
-            this.idprodutoDataGridViewTextBoxColumn.DataPropertyName = "id_produto";
-            this.idprodutoDataGridViewTextBoxColumn.HeaderText = "Id Produto";
-            this.idprodutoDataGridViewTextBoxColumn.Name = "idprodutoDataGridViewTextBoxColumn";
-            this.idprodutoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idprodutoDataGridViewTextBoxColumn.Width = 85;
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "id_produto";
+            this.dataGridViewTextBoxColumn8.HeaderText = "Id Produto";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            // 
+            // tblPedidoBindingSource
+            // 
+            this.tblPedidoBindingSource.DataMember = "Tbl_Pedido";
+            this.tblPedidoBindingSource.DataSource = this.rulerDataSet1;
             // 
             // btn_cadastrar
             // 
@@ -706,6 +698,8 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.cbb_pagou);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.data_entrega);
             this.panel2.Controls.Add(this.lbl_estoque);
@@ -721,6 +715,29 @@
             this.panel2.Size = new System.Drawing.Size(800, 450);
             this.panel2.TabIndex = 17;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.25F);
+            this.label2.Location = new System.Drawing.Point(418, 2);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(38, 13);
+            this.label2.TabIndex = 108;
+            this.label2.Text = "Pago?";
+            // 
+            // cbb_pagou
+            // 
+            this.cbb_pagou.FormattingEnabled = true;
+            this.cbb_pagou.Items.AddRange(new object[] {
+            "Sim",
+            "Não"});
+            this.cbb_pagou.Location = new System.Drawing.Point(421, 17);
+            this.cbb_pagou.Name = "cbb_pagou";
+            this.cbb_pagou.Size = new System.Drawing.Size(49, 21);
+            this.cbb_pagou.TabIndex = 109;
+            this.cbb_pagou.SelectedIndexChanged += new System.EventHandler(this.cbb_pagou_SelectedIndexChanged);
+            // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.Black;
@@ -731,17 +748,21 @@
             this.panel5.Size = new System.Drawing.Size(1, 35);
             this.panel5.TabIndex = 6;
             // 
-            // tbl_ProdutoTableAdapter
+            // tbl_PedidoTableAdapter1
             // 
-            this.tbl_ProdutoTableAdapter.ClearBeforeFill = true;
+            this.tbl_PedidoTableAdapter1.ClearBeforeFill = true;
             // 
-            // tbl_ClienteTableAdapter
+            // tbl_ProdutoTableAdapter1
             // 
-            this.tbl_ClienteTableAdapter.ClearBeforeFill = true;
+            this.tbl_ProdutoTableAdapter1.ClearBeforeFill = true;
             // 
-            // tbl_Cartao_DividirTableAdapter
+            // tbl_ClienteTableAdapter1
             // 
-            this.tbl_Cartao_DividirTableAdapter.ClearBeforeFill = true;
+            this.tbl_ClienteTableAdapter1.ClearBeforeFill = true;
+            // 
+            // tbl_Cartao_DividirTableAdapter1
+            // 
+            this.tbl_Cartao_DividirTableAdapter1.ClearBeforeFill = true;
             // 
             // FrmPedido
             // 
@@ -757,8 +778,7 @@
             this.Text = "Menu Pedidos";
             this.Load += new System.EventHandler(this.FrmPedido_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tblCartaoDividirBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rulerDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tblPedidoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rulerDataSet1)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -767,6 +787,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tblProdutoBindingSource)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblPedidoBindingSource)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
@@ -792,7 +813,6 @@
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.DateTimePicker data_pedido;
         private rulerDataSet rulerDataSet;
-        private System.Windows.Forms.BindingSource tblPedidoBindingSource;
         private rulerDataSetTableAdapters.Tbl_PedidoTableAdapter tbl_PedidoTableAdapter;
         private System.Windows.Forms.TextBox txt_quant_estoque;
         private System.Windows.Forms.Label lbl_u;
@@ -829,13 +849,29 @@
         private System.Windows.Forms.Button btn_voltar;
         public System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.BindingSource tblProdutoBindingSource;
         private rulerDataSetTableAdapters.Tbl_ProdutoTableAdapter tbl_ProdutoTableAdapter;
-        private System.Windows.Forms.BindingSource tblClienteBindingSource;
         private rulerDataSetTableAdapters.Tbl_ClienteTableAdapter tbl_ClienteTableAdapter;
-        private System.Windows.Forms.BindingSource tblCartaoDividirBindingSource;
         private rulerDataSetTableAdapters.Tbl_Cartao_DividirTableAdapter tbl_Cartao_DividirTableAdapter;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Button btn_limpar;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox cbb_pagou;
+        private rulerDataSet rulerDataSet1;
+        private System.Windows.Forms.BindingSource tblPedidoBindingSource;
+        private rulerDataSetTableAdapters.Tbl_PedidoTableAdapter tbl_PedidoTableAdapter1;
+        private System.Windows.Forms.BindingSource tblProdutoBindingSource;
+        private rulerDataSetTableAdapters.Tbl_ProdutoTableAdapter tbl_ProdutoTableAdapter1;
+        private System.Windows.Forms.BindingSource tblClienteBindingSource;
+        private rulerDataSetTableAdapters.Tbl_ClienteTableAdapter tbl_ClienteTableAdapter1;
+        private System.Windows.Forms.BindingSource tblCartaoDividirBindingSource;
+        private rulerDataSetTableAdapters.Tbl_Cartao_DividirTableAdapter tbl_Cartao_DividirTableAdapter1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
     }
 }

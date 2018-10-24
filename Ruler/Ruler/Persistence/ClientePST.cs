@@ -1,6 +1,4 @@
 ﻿using Ruler.Dados;
-using System.Data.SqlClient;
-using System.Globalization;
 
 namespace Ruler.Persistence
 {

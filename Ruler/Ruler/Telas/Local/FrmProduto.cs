@@ -68,7 +68,7 @@ namespace Ruler.Telas
 
                 //Consultar Objeto
                 Checar(txt_nome.Text);
-                if (table.Rows.Count < 0)
+                if (table.Rows.Count > 0)
                 {
                     aux = table.Rows[0]["nome"].ToString();
                 }

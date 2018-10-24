@@ -25,13 +25,12 @@ namespace Ruler.Telas
             this.Close();
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void FrmMovimento_Load_1(object sender, EventArgs e)
         {
+            // TODO: esta linha de código carrega dados na tabela 'rulerDataSet.Tbl_Movimento'. Você pode movê-la ou removê-la conforme necessário.
+            this.tbl_MovimentoTableAdapter.Fill(this.rulerDataSet.Tbl_Movimento);
+            // TODO: esta linha de código carrega dados na tabela 'rulerDataSet.Tbl_Movimento'. Você pode movê-la ou removê-la conforme necessário.
+            this.tbl_MovimentoTableAdapter.Fill(this.rulerDataSet.Tbl_Movimento);
             // TODO: esta linha de código carrega dados na tabela 'rulerDataSet.Tbl_Movimento'. Você pode movê-la ou removê-la conforme necessário.
             this.tbl_MovimentoTableAdapter.Fill(this.rulerDataSet.Tbl_Movimento);
 

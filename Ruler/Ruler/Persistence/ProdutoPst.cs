@@ -1,6 +1,4 @@
 ﻿using Ruler.Dados;
-using System.Collections;
-using System.Linq;
 
 namespace Ruler.Persistence
 {
@@ -11,7 +9,6 @@ namespace Ruler.Persistence
         public ProdutoPst(int id) : base(id){}
 
         public ProdutoPst(){}
-
 
         public string Deletar() { return "DELETE Tbl_Produto WHERE id_produto = " + Id; }
 

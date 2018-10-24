@@ -30,12 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCliente));
-            this.debitoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idclienteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tbl_ClienteTableAdapter = new Ruler.rulerDataSetTableAdapters.Tbl_ClienteTableAdapter();
-            this.tblClienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.rulerDataSet = new Ruler.rulerDataSet();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -47,7 +41,8 @@
             this.txt_nome = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.telefoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tblClienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.rulerDataSet = new Ruler.rulerDataSet();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btn_cadastrar = new System.Windows.Forms.Button();
             this.btn_voltar = new System.Windows.Forms.Button();
@@ -58,52 +53,19 @@
             this.btn_apagar = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.tblClienteBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rulerDataSet)).BeginInit();
+            this.tbl_ClienteTableAdapter = new Ruler.rulerDataSetTableAdapters.Tbl_ClienteTableAdapter();
+            this.idclienteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.debitoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblClienteBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rulerDataSet)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // debitoDataGridViewTextBoxColumn
-            // 
-            this.debitoDataGridViewTextBoxColumn.DataPropertyName = "debito";
-            this.debitoDataGridViewTextBoxColumn.HeaderText = "Debito";
-            this.debitoDataGridViewTextBoxColumn.Name = "debitoDataGridViewTextBoxColumn";
-            this.debitoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.debitoDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // nomeDataGridViewTextBoxColumn
-            // 
-            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "nome";
-            this.nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
-            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
-            this.nomeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nomeDataGridViewTextBoxColumn.Width = 300;
-            // 
-            // idclienteDataGridViewTextBoxColumn
-            // 
-            this.idclienteDataGridViewTextBoxColumn.DataPropertyName = "id_cliente";
-            this.idclienteDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idclienteDataGridViewTextBoxColumn.Name = "idclienteDataGridViewTextBoxColumn";
-            this.idclienteDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idclienteDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // tbl_ClienteTableAdapter
-            // 
-            this.tbl_ClienteTableAdapter.ClearBeforeFill = true;
-            // 
-            // tblClienteBindingSource
-            // 
-            this.tblClienteBindingSource.DataMember = "Tbl_Cliente";
-            this.tblClienteBindingSource.DataSource = this.rulerDataSet;
-            // 
-            // rulerDataSet
-            // 
-            this.rulerDataSet.DataSetName = "rulerDataSet";
-            this.rulerDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // panel3
             // 
@@ -205,7 +167,6 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idclienteDataGridViewTextBoxColumn,
             this.nomeDataGridViewTextBoxColumn,
@@ -219,13 +180,15 @@
             this.dataGridView1.Size = new System.Drawing.Size(776, 285);
             this.dataGridView1.TabIndex = 0;
             // 
-            // telefoneDataGridViewTextBoxColumn
+            // tblClienteBindingSource
             // 
-            this.telefoneDataGridViewTextBoxColumn.DataPropertyName = "telefone";
-            this.telefoneDataGridViewTextBoxColumn.HeaderText = "Telefone";
-            this.telefoneDataGridViewTextBoxColumn.Name = "telefoneDataGridViewTextBoxColumn";
-            this.telefoneDataGridViewTextBoxColumn.ReadOnly = true;
-            this.telefoneDataGridViewTextBoxColumn.Width = 150;
+            this.tblClienteBindingSource.DataMember = "Tbl_Cliente";
+            this.tblClienteBindingSource.DataSource = this.rulerDataSet;
+            // 
+            // rulerDataSet
+            // 
+            this.rulerDataSet.DataSetName = "rulerDataSet";
+            this.rulerDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // panel2
             // 
@@ -360,6 +323,42 @@
             this.panel7.Size = new System.Drawing.Size(1, 35);
             this.panel7.TabIndex = 19;
             // 
+            // tbl_ClienteTableAdapter
+            // 
+            this.tbl_ClienteTableAdapter.ClearBeforeFill = true;
+            // 
+            // idclienteDataGridViewTextBoxColumn
+            // 
+            this.idclienteDataGridViewTextBoxColumn.DataPropertyName = "id_cliente";
+            this.idclienteDataGridViewTextBoxColumn.HeaderText = "Id Cliente";
+            this.idclienteDataGridViewTextBoxColumn.Name = "idclienteDataGridViewTextBoxColumn";
+            this.idclienteDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idclienteDataGridViewTextBoxColumn.Width = 130;
+            // 
+            // nomeDataGridViewTextBoxColumn
+            // 
+            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "nome";
+            this.nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
+            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
+            this.nomeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nomeDataGridViewTextBoxColumn.Width = 300;
+            // 
+            // telefoneDataGridViewTextBoxColumn
+            // 
+            this.telefoneDataGridViewTextBoxColumn.DataPropertyName = "telefone";
+            this.telefoneDataGridViewTextBoxColumn.HeaderText = "Telefone";
+            this.telefoneDataGridViewTextBoxColumn.Name = "telefoneDataGridViewTextBoxColumn";
+            this.telefoneDataGridViewTextBoxColumn.ReadOnly = true;
+            this.telefoneDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // debitoDataGridViewTextBoxColumn
+            // 
+            this.debitoDataGridViewTextBoxColumn.DataPropertyName = "debito";
+            this.debitoDataGridViewTextBoxColumn.HeaderText = "Debito";
+            this.debitoDataGridViewTextBoxColumn.Name = "debitoDataGridViewTextBoxColumn";
+            this.debitoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.debitoDataGridViewTextBoxColumn.Width = 150;
+            // 
             // FrmCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -374,12 +373,12 @@
             this.Name = "FrmCliente";
             this.Text = "Menu Clientes";
             this.Load += new System.EventHandler(this.FrmCliente_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.tblClienteBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rulerDataSet)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblClienteBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rulerDataSet)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -388,12 +387,6 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridViewTextBoxColumn debitoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idclienteDataGridViewTextBoxColumn;
-        private rulerDataSetTableAdapters.Tbl_ClienteTableAdapter tbl_ClienteTableAdapter;
-        private System.Windows.Forms.BindingSource tblClienteBindingSource;
-        private rulerDataSet rulerDataSet;
         public System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
@@ -405,7 +398,6 @@
         public System.Windows.Forms.TextBox txt_nome;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn telefoneDataGridViewTextBoxColumn;
         public System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btn_cadastrar;
         private System.Windows.Forms.Button btn_voltar;
@@ -416,5 +408,12 @@
         private System.Windows.Forms.Button btn_apagar;
         public System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel7;
+        private rulerDataSet rulerDataSet;
+        private System.Windows.Forms.BindingSource tblClienteBindingSource;
+        private rulerDataSetTableAdapters.Tbl_ClienteTableAdapter tbl_ClienteTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idclienteDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn telefoneDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn debitoDataGridViewTextBoxColumn;
     }
 }

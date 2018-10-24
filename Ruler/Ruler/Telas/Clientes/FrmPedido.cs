@@ -11,6 +11,7 @@ namespace Ruler.Telas
         private FrmInicio inicio;
         DataTable table;
         int aux = 1;
+        int pagou;
 
 
         #region Metodos
@@ -30,7 +31,7 @@ namespace Ruler.Telas
                 cbb_dividir.Enabled = false;
                 cbb_juros.Enabled = false;
             }
-
+            
         }
         
         public void PesquisarObjeto()
@@ -46,6 +47,8 @@ namespace Ruler.Telas
             {
                 if (int.Parse(txt_quantidade.Text) <= int.Parse(txt_quant_estoque.Text)) {
                     PedidoPst pedido = new PedidoPst(cbb_produtos.Text, txt_id_produto.Text, int.Parse(txt_quantidade.Text), txt_valor.Text.Replace(",", "."), cbb_cliente.Text, data_pedido.Text, cbb_venda.Text, int.Parse(txt_id_cliente.Text), int.Parse(cbb_dividir.Text));
+
+                    pedido.Pagou = this.pagou;
 
                     EstoquePst estoque = new EstoquePst(int.Parse(txt_id_produto.Text), int.Parse(txt_quant_estoque.Text));
                      
@@ -121,7 +124,7 @@ namespace Ruler.Telas
                     txt_quant_estoque.Text = table.Rows[0]["quantidade_produto"].ToString();
 
                     ClientePst cliente = new ClientePst();
-                    DisplayData(cliente.Pesquisar());
+                    DisplayData(cliente.checar(cbb_cliente.Text));
 
                     if (table.Rows.Count > 0) { txt_id_cliente.Text = table.Rows[0]["id_cliente"].ToString(); }
                 }
@@ -138,20 +141,20 @@ namespace Ruler.Telas
 
         private void FrmPedido_Load(object sender, EventArgs e)
         {
-            // TODO: esta linha de código carrega dados na tabela 'rulerDataSet.Tbl_Cartao_Dividir'. Você pode movê-la ou removê-la conforme necessário.
-            this.tbl_Cartao_DividirTableAdapter.Fill(this.rulerDataSet.Tbl_Cartao_Dividir);
-            // TODO: esta linha de código carrega dados na tabela 'rulerDataSet.Tbl_Cliente'. Você pode movê-la ou removê-la conforme necessário.
-            this.tbl_ClienteTableAdapter.Fill(this.rulerDataSet.Tbl_Cliente);
-            // TODO: esta linha de código carrega dados na tabela 'rulerDataSet.Tbl_Produto'. Você pode movê-la ou removê-la conforme necessário.
-            this.tbl_ProdutoTableAdapter.Fill(this.rulerDataSet.Tbl_Produto);
-            ChecarId(cbb_produtos.Text);
-            // TODO: esta linha de código carrega dados na tabela 'rulerDataSet.Tbl_Pedido'. Você pode movê-la ou removê-la conforme necessário.
-            this.tbl_PedidoTableAdapter.Fill(this.rulerDataSet.Tbl_Pedido);
-
+            // TODO: esta linha de código carrega dados na tabela 'rulerDataSet1.Tbl_Cartao_Dividir'. Você pode movê-la ou removê-la conforme necessário.
+            this.tbl_Cartao_DividirTableAdapter1.Fill(this.rulerDataSet1.Tbl_Cartao_Dividir);
+            // TODO: esta linha de código carrega dados na tabela 'rulerDataSet1.Tbl_Cliente'. Você pode movê-la ou removê-la conforme necessário.
+            this.tbl_ClienteTableAdapter1.Fill(this.rulerDataSet1.Tbl_Cliente);
+            // TODO: esta linha de código carrega dados na tabela 'rulerDataSet1.Tbl_Produto'. Você pode movê-la ou removê-la conforme necessário.
+            this.tbl_ProdutoTableAdapter1.Fill(this.rulerDataSet1.Tbl_Produto);
+            // TODO: esta linha de código carrega dados na tabela 'rulerDataSet1.Tbl_Pedido'. Você pode movê-la ou removê-la conforme necessário.
+            this.tbl_PedidoTableAdapter1.Fill(this.rulerDataSet1.Tbl_Pedido);
 
             calcularPreco();
             cbb_venda.Text = "Dinheiro";
-            
+            ChecarId(cbb_produtos.Text);
+            cbb_pagou.Text = "Não";
+
 
         }
 
@@ -286,6 +289,7 @@ namespace Ruler.Telas
             {
                 cbb_dividir.Enabled = false;
                 cbb_juros.Enabled = false;
+                ChecarId(cbb_produtos.Text);
             }
         }
 
@@ -296,12 +300,39 @@ namespace Ruler.Telas
 
         private void cbb_dividir_SelectedIndexChanged(object sender, EventArgs e)
         {
-            CalcularCartao();
+            if (string.IsNullOrEmpty(cbb_dividir.Text)) { cbb_dividir.Text = "0"; } 
+            if (int.Parse(cbb_dividir.Text) > 5  )
+            {
+                MessageBox.Show("Erro! O produto só pode ser divido em até 5 vezes");
+            }
+            else
+            {
+                CalcularCartao();
+            }
+            
+
         }
 
         private void btn_limpar_Click(object sender, EventArgs e)
         {
             ClearData();
+        }
+        
+        private void cbb_pagou_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbb_pagou.Text == "Sim")
+            {
+                pagou = 1;
+            }
+            else
+            {
+                pagou = 0;
+            }
+        }
+
+        private void cbb_produtos_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            ChecarId(cbb_produtos.Text);
         }
     }
 }
