@@ -1,0 +1,17 @@
+C:\Users\marlo\source\repos\Ruler\Ruler\bin\Release\Ruler.exe.config
+C:\Users\marlo\source\repos\Ruler\Ruler\bin\Release\Ruler.exe
+C:\Users\marlo\source\repos\Ruler\Ruler\bin\Release\Ruler.pdb
+C:\Users\marlo\source\repos\Ruler\Ruler\obj\Release\Ruler.Telas.FrmInicio.resources
+C:\Users\marlo\source\repos\Ruler\Ruler\obj\Release\Ruler.Properties.Resources.resources
+C:\Users\marlo\source\repos\Ruler\Ruler\obj\Release\Ruler.csproj.GenerateResource.cache
+C:\Users\marlo\source\repos\Ruler\Ruler\obj\Release\Ruler.csproj.CoreCompileInputs.cache
+C:\Users\marlo\source\repos\Ruler\Ruler\obj\Release\Ruler.exe
+C:\Users\marlo\source\repos\Ruler\Ruler\obj\Release\Ruler.pdb
+C:\Users\marlo\source\repos\Ruler\Ruler\obj\Release\Ruler.Telas.FrmEstoque.resources
+C:\Users\marlo\source\repos\Ruler\Ruler\obj\Release\Ruler.Telas.FrmPedido.resources
+C:\Users\marlo\source\repos\Ruler\Ruler\obj\Release\Ruler.Telas.FrmCliente.resources
+C:\Users\marlo\source\repos\Ruler\Ruler\obj\Release\Ruler.Telas.FrmProduto.resources
+C:\Users\marlo\source\repos\Ruler\Ruler\obj\Release\Ruler.Telas.FrmMovimento.resources
+C:\Users\marlo\source\repos\Ruler\Ruler\obj\Release\Ruler.Telas.FrmRelatorio.resources
+C:\Users\marlo\source\repos\Ruler\Ruler\obj\Release\Ruler.Telas.FrmPagamento.resources
+C:\Users\marlo\source\repos\Ruler\Ruler\obj\Release\Ruler.csprojAssemblyReference.cache
