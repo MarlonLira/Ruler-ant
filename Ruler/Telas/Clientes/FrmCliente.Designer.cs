@@ -41,6 +41,10 @@
             this.txt_nome = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.idclienteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.debitoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tblClienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.rulerDataSet = new Ruler.rulerDataSet();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -54,10 +58,6 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.tbl_ClienteTableAdapter = new Ruler.rulerDataSetTableAdapters.Tbl_ClienteTableAdapter();
-            this.idclienteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telefoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.debitoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -179,6 +179,38 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(776, 285);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // idclienteDataGridViewTextBoxColumn
+            // 
+            this.idclienteDataGridViewTextBoxColumn.DataPropertyName = "id_cliente";
+            this.idclienteDataGridViewTextBoxColumn.HeaderText = "Id Cliente";
+            this.idclienteDataGridViewTextBoxColumn.Name = "idclienteDataGridViewTextBoxColumn";
+            this.idclienteDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idclienteDataGridViewTextBoxColumn.Width = 130;
+            // 
+            // nomeDataGridViewTextBoxColumn
+            // 
+            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "nome";
+            this.nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
+            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
+            this.nomeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nomeDataGridViewTextBoxColumn.Width = 300;
+            // 
+            // telefoneDataGridViewTextBoxColumn
+            // 
+            this.telefoneDataGridViewTextBoxColumn.DataPropertyName = "telefone";
+            this.telefoneDataGridViewTextBoxColumn.HeaderText = "Telefone";
+            this.telefoneDataGridViewTextBoxColumn.Name = "telefoneDataGridViewTextBoxColumn";
+            this.telefoneDataGridViewTextBoxColumn.ReadOnly = true;
+            this.telefoneDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // debitoDataGridViewTextBoxColumn
+            // 
+            this.debitoDataGridViewTextBoxColumn.DataPropertyName = "debito";
+            this.debitoDataGridViewTextBoxColumn.HeaderText = "Debito";
+            this.debitoDataGridViewTextBoxColumn.Name = "debitoDataGridViewTextBoxColumn";
+            this.debitoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.debitoDataGridViewTextBoxColumn.Width = 150;
             // 
             // tblClienteBindingSource
             // 
@@ -327,38 +359,6 @@
             // 
             this.tbl_ClienteTableAdapter.ClearBeforeFill = true;
             // 
-            // idclienteDataGridViewTextBoxColumn
-            // 
-            this.idclienteDataGridViewTextBoxColumn.DataPropertyName = "id_cliente";
-            this.idclienteDataGridViewTextBoxColumn.HeaderText = "Id Cliente";
-            this.idclienteDataGridViewTextBoxColumn.Name = "idclienteDataGridViewTextBoxColumn";
-            this.idclienteDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idclienteDataGridViewTextBoxColumn.Width = 130;
-            // 
-            // nomeDataGridViewTextBoxColumn
-            // 
-            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "nome";
-            this.nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
-            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
-            this.nomeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nomeDataGridViewTextBoxColumn.Width = 300;
-            // 
-            // telefoneDataGridViewTextBoxColumn
-            // 
-            this.telefoneDataGridViewTextBoxColumn.DataPropertyName = "telefone";
-            this.telefoneDataGridViewTextBoxColumn.HeaderText = "Telefone";
-            this.telefoneDataGridViewTextBoxColumn.Name = "telefoneDataGridViewTextBoxColumn";
-            this.telefoneDataGridViewTextBoxColumn.ReadOnly = true;
-            this.telefoneDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // debitoDataGridViewTextBoxColumn
-            // 
-            this.debitoDataGridViewTextBoxColumn.DataPropertyName = "debito";
-            this.debitoDataGridViewTextBoxColumn.HeaderText = "Debito";
-            this.debitoDataGridViewTextBoxColumn.Name = "debitoDataGridViewTextBoxColumn";
-            this.debitoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.debitoDataGridViewTextBoxColumn.Width = 150;
-            // 
             // FrmCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -371,6 +371,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmCliente";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu Clientes";
             this.Load += new System.EventHandler(this.FrmCliente_Load);
             this.panel3.ResumeLayout(false);

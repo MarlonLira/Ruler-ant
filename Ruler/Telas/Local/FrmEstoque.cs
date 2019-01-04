@@ -17,24 +17,36 @@ namespace Ruler.Telas
         {
             InitializeComponent();
             inicio = frm;
-
         }
 
         private void btn_voltar_Click(object sender, EventArgs e)
         {
-            inicio.Show();
-            this.Close();
+            try
+            {
+                inicio.Show();
+                this.Close();
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+            }
         }
             
         private void FrmEstoque_Load(object sender, EventArgs e)
         {
-            // TODO: esta linha de código carrega dados na tabela 'rulerDataSet.Tbl_Produto'. Você pode movê-la ou removê-la conforme necessário.
-            this.tbl_ProdutoTableAdapter.Fill(this.rulerDataSet.Tbl_Produto);
+            try
+            {
+                // TODO: esta linha de código carrega dados na tabela 'rulerDataSet.Tbl_Produto'. Você pode movê-la ou removê-la conforme necessário.
+                this.tbl_ProdutoTableAdapter.Fill(this.rulerDataSet.Tbl_Produto);
+                // TODO: esta linha de código carrega dados na tabela 'rulerDataSet.Tbl_Estoque'. Você pode movê-la ou removê-la conforme necessário.
+                this.tbl_EstoqueTableAdapter.Fill(this.rulerDataSet.Tbl_Estoque);
 
-            // TODO: esta linha de código carrega dados na tabela 'rulerDataSet.Tbl_Estoque'. Você pode movê-la ou removê-la conforme necessário.
-            this.tbl_EstoqueTableAdapter.Fill(this.rulerDataSet.Tbl_Estoque);
-
-            ChecarId(cbb_produto.Text);
+                ChecarId(cbb_produto.Text);
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+            }
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -42,7 +54,6 @@ namespace Ruler.Telas
             txt_id_produto.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
             cbb_produto.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
             txt_quantidade.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
-            
         }
 
         public void ClearData()
@@ -57,109 +68,147 @@ namespace Ruler.Telas
         public void PesquisarObjeto()
         {
             EstoquePst estoque = new EstoquePst();
-            
-
-            if (string.IsNullOrEmpty(txt_id_estoque.Text))
+            try
             {
-                DisplayData(estoque.Pesquisar());
-            }
-            else
-            {
-                DisplayData(estoque.PesquisarId(int.Parse(txt_id_estoque.Text)));
-                if (table.Rows.Count > 0)
+                if (string.IsNullOrEmpty(txt_id_estoque.Text))
                 {
-                    cbb_produto.Text = table.Rows[0]["nome_produto"].ToString();
-                    txt_quantidade.Text = table.Rows[0]["quantidade_produto"].ToString();
-                    txt_id_produto.Text = table.Rows[0]["id_produto"].ToString();
-                    
+                    DisplayData(estoque.Pesquisar());
                 }
                 else
                 {
-                    MessageBox.Show("O id informado '" + txt_id_produto.Text + "' não existe!");
-                    
+                    DisplayData(estoque.PesquisarId(int.Parse(txt_id_estoque.Text)));
+                    if (table.Rows.Count > 0)
+                    {
+                        cbb_produto.Text = table.Rows[0]["nome_produto"].ToString();
+                        txt_quantidade.Text = table.Rows[0]["quantidade_produto"].ToString();
+                        txt_id_produto.Text = table.Rows[0]["id_produto"].ToString();
+                    }
+                    else
+                    {
+                        MessageBox.Show("O id informado '" + txt_id_produto.Text + "' não existe!");
+                    }
                 }
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
             }
         }
 
         public void CadastrarObjeto()
         {
-            if (!string.IsNullOrEmpty(cbb_produto.Text) && !string.IsNullOrEmpty(txt_quantidade.Text))
+            EstoquePst estoque;
+            try
             {
-
-                EstoquePst estoque = new EstoquePst(cbb_produto.Text, int.Parse(txt_quantidade.Text), int.Parse(txt_id_produto.Text));
-                //Consultar Objeto
-                Checar(cbb_produto.Text);
-                if (table.Rows.Count > 0) {
-                    aux = table.Rows[0]["nome_produto"].ToString();
-                }
-                else { aux = ""; }
-                //Condição para não haver produtos iguais.
-                if (aux == cbb_produto.Text)
+                if (!string.IsNullOrEmpty(cbb_produto.Text) && !string.IsNullOrEmpty(txt_quantidade.Text))
                 {
-                    MessageBox.Show("Erro! O produto já está cadastrado no estoque. ");
+                    estoque = new EstoquePst();
+                    estoque.Nome_produto = cbb_produto.Text;
+                    estoque.Quantidade_produto = int.Parse(txt_quantidade.Text);
+                    estoque.Id_produto = int.Parse(txt_id_produto.Text);
+
+                    //Consultar Objeto
+                    Checar(cbb_produto.Text);
+                    if (table.Rows.Count > 0)
+                    {
+                        aux = table.Rows[0]["nome_produto"].ToString();
+                    }
+                    else { aux = ""; }
+                    //Condição para não haver produtos iguais.
+                    if (aux == cbb_produto.Text)
+                    {
+                        MessageBox.Show("Erro! O produto já está cadastrado no estoque. ");
+                        ClearData();
+                    }
+                    else
+                    {
+                        con.openCon(estoque.Cadastrar());
+                        con.closeCon();
+                        MessageBox.Show("Produto Inserido com Sucesso");
+                    }
                     ClearData();
+                    PesquisarObjeto();
                 }
                 else
                 {
-                    con.openCon(estoque.Cadastrar());
-                    con.closeCon();
-                    MessageBox.Show("Produto Inserido com Sucesso");
+                    MessageBox.Show("Erro!,.");
                 }
-
-                ClearData();
-                PesquisarObjeto();
-
             }
-            else
+            catch (Exception err)
             {
-                MessageBox.Show("Erro!,.");
+                MessageBox.Show(err.Message);
             }
         }
 
         public void ChecarId(string objeto)
         {
-            ProdutoPst produto = new ProdutoPst();
-            DisplayData(produto.checar(objeto));
-
-            if (table.Rows.Count > 0)
+            try
             {
-                txt_id_produto.Text = table.Rows[0]["id_produto"].ToString();
-
-                Checar(cbb_produto.Text);
+                ProdutoPst produto = new ProdutoPst();
+                DisplayData(produto.checar(objeto));
 
                 if (table.Rows.Count > 0)
                 {
-                    txt_id_estoque.Text = table.Rows[0]["id_estoque"].ToString();
-                    txt_quantidade.Text = table.Rows[0]["quantidade_produto"].ToString();
+                    txt_id_produto.Text = table.Rows[0]["id_produto"].ToString();
+
+                    Checar(cbb_produto.Text);
+
+                    if (table.Rows.Count > 0)
+                    {
+                        txt_id_estoque.Text = table.Rows[0]["id_estoque"].ToString();
+                        txt_quantidade.Text = table.Rows[0]["quantidade_produto"].ToString();
+                    }
                 }
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
             }
         }
 
         public void Checar(string objeto)
         {
-            EstoquePst estoque = new EstoquePst();
-            DisplayData(estoque.checar(objeto));
+            try
+            {
+                EstoquePst estoque = new EstoquePst();
+                DisplayData(estoque.checar(objeto));
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+            }
         }
 
         public void AtualizarObjeto()
         {
-            if (cbb_produto.Text != "" && txt_id_produto.Text != "")
+            EstoquePst estoque;
+            try
             {
-                EstoquePst estoque = new EstoquePst(int.Parse(txt_id_estoque.Text), cbb_produto.Text, int.Parse(txt_quantidade.Text), int.Parse(txt_id_produto.Text));
+                if (cbb_produto.Text != "" && txt_id_produto.Text != "")
+                {
+                    estoque = new EstoquePst();
+                    estoque.Nome_produto = cbb_produto.Text;
+                    estoque.Quantidade_produto = int.Parse(txt_quantidade.Text);
+                    estoque.Id_produto = int.Parse(txt_id_produto.Text);
 
-                con.openCon(estoque.Atualizar());
-                con.closeCon();
-                
-                MessageBox.Show("Estoque Atualizado com Sucesso");
+                    con.openCon(estoque.Atualizar());
+                    con.closeCon();
 
-                DisplayData(estoque.Pesquisar());
-                ClearData();
-                PesquisarObjeto();
+                    MessageBox.Show("Estoque Atualizado com Sucesso");
+
+                    DisplayData(estoque.Pesquisar());
+                    PesquisarObjeto();
+                }
+                else
+                {
+                    MessageBox.Show("Erro! Por favor verifique os valores informados");
+                }
             }
-            else
+            catch (Exception err)
             {
-                MessageBox.Show("Erro! Por favor verifique os valores informados");
+                MessageBox.Show(err.Message);
             }
+            ClearData();
         }
 
         public void DeletarObjeto()
@@ -181,27 +230,62 @@ namespace Ruler.Telas
 
         private void btn_pesquisar_Click(object sender, EventArgs e)
         {
-            PesquisarObjeto();
+            try
+            {
+                PesquisarObjeto();
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+            }
         }
 
         private void cbb_produto_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ChecarId(cbb_produto.Text);
+            try
+            {
+                ChecarId(cbb_produto.Text);
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+            }
         }
 
         private void btn_atualizar_Click(object sender, EventArgs e)
         {
-            AtualizarObjeto();
+            try
+            {
+                AtualizarObjeto();
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+            }
         }
 
         private void btn_cadastrar_Click(object sender, EventArgs e)
         {
-            CadastrarObjeto();
+            try
+            {
+                CadastrarObjeto();
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+            }
         }
 
         private void btn_limpar_Click(object sender, EventArgs e)
         {
-            ClearData();
+            try
+            {
+                ClearData();
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+            }
         }
     }
 }

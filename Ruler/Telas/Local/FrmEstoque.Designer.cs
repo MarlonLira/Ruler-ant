@@ -37,6 +37,7 @@
             this.rulerDataSet = new Ruler.rulerDataSet();
             this.panel3 = new System.Windows.Forms.Panel();
             this.cbb_produto = new System.Windows.Forms.ComboBox();
+            this.tblProdutoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label5 = new System.Windows.Forms.Label();
             this.txt_quantidade = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -52,23 +53,22 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.quantidadeprodutoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.btn_limpar = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
             this.btn_cadastrar = new System.Windows.Forms.Button();
             this.btn_voltar = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.tblProdutoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tbl_ProdutoTableAdapter = new Ruler.rulerDataSetTableAdapters.Tbl_ProdutoTableAdapter();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.btn_limpar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tblEstoqueBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rulerDataSet)).BeginInit();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tblProdutoBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tblProdutoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // idprodutoDataGridViewTextBoxColumn
@@ -134,6 +134,11 @@
             this.cbb_produto.Size = new System.Drawing.Size(188, 21);
             this.cbb_produto.TabIndex = 92;
             this.cbb_produto.SelectedIndexChanged += new System.EventHandler(this.cbb_produto_SelectedIndexChanged);
+            // 
+            // tblProdutoBindingSource
+            // 
+            this.tblProdutoBindingSource.DataMember = "Tbl_Produto";
+            this.tblProdutoBindingSource.DataSource = this.rulerDataSet;
             // 
             // label5
             // 
@@ -306,6 +311,32 @@
             this.panel4.Size = new System.Drawing.Size(804, 57);
             this.panel4.TabIndex = 19;
             // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.Black;
+            this.panel8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel8.Location = new System.Drawing.Point(282, 8);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(1, 35);
+            this.panel8.TabIndex = 21;
+            // 
+            // btn_limpar
+            // 
+            this.btn_limpar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_limpar.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.btn_limpar.FlatAppearance.BorderSize = 0;
+            this.btn_limpar.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btn_limpar.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btn_limpar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_limpar.Location = new System.Drawing.Point(287, 9);
+            this.btn_limpar.Name = "btn_limpar";
+            this.btn_limpar.Size = new System.Drawing.Size(85, 35);
+            this.btn_limpar.TabIndex = 20;
+            this.btn_limpar.Text = "Limpar";
+            this.btn_limpar.UseVisualStyleBackColor = true;
+            this.btn_limpar.Click += new System.EventHandler(this.btn_limpar_Click);
+            // 
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.Black;
@@ -369,40 +400,9 @@
             this.panel2.Size = new System.Drawing.Size(800, 450);
             this.panel2.TabIndex = 17;
             // 
-            // tblProdutoBindingSource
-            // 
-            this.tblProdutoBindingSource.DataMember = "Tbl_Produto";
-            this.tblProdutoBindingSource.DataSource = this.rulerDataSet;
-            // 
             // tbl_ProdutoTableAdapter
             // 
             this.tbl_ProdutoTableAdapter.ClearBeforeFill = true;
-            // 
-            // panel8
-            // 
-            this.panel8.BackColor = System.Drawing.Color.Black;
-            this.panel8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel8.Location = new System.Drawing.Point(282, 8);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(1, 35);
-            this.panel8.TabIndex = 21;
-            // 
-            // btn_limpar
-            // 
-            this.btn_limpar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_limpar.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.btn_limpar.FlatAppearance.BorderSize = 0;
-            this.btn_limpar.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btn_limpar.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btn_limpar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_limpar.Location = new System.Drawing.Point(287, 9);
-            this.btn_limpar.Name = "btn_limpar";
-            this.btn_limpar.Size = new System.Drawing.Size(85, 35);
-            this.btn_limpar.TabIndex = 20;
-            this.btn_limpar.Text = "Limpar";
-            this.btn_limpar.UseVisualStyleBackColor = true;
-            this.btn_limpar.Click += new System.EventHandler(this.btn_limpar_Click);
             // 
             // FrmEstoque
             // 
@@ -415,17 +415,18 @@
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FrmEstoque";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu Estoque";
             this.Load += new System.EventHandler(this.FrmEstoque_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tblEstoqueBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rulerDataSet)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tblProdutoBindingSource)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.tblProdutoBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -41,6 +41,10 @@
             this.rulerDataSet = new Ruler.rulerDataSet();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.idprodutoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valordolarDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btn_cadastrar = new System.Windows.Forms.Button();
             this.btn_voltar = new System.Windows.Forms.Button();
@@ -55,10 +59,6 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.idprodutoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.valorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.valordolarDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.tblProdutoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rulerDataSet)).BeginInit();
             this.panel1.SuspendLayout();
@@ -196,6 +196,38 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(776, 285);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // idprodutoDataGridViewTextBoxColumn
+            // 
+            this.idprodutoDataGridViewTextBoxColumn.DataPropertyName = "id_produto";
+            this.idprodutoDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idprodutoDataGridViewTextBoxColumn.Name = "idprodutoDataGridViewTextBoxColumn";
+            this.idprodutoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idprodutoDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // nomeDataGridViewTextBoxColumn
+            // 
+            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "nome";
+            this.nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
+            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
+            this.nomeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nomeDataGridViewTextBoxColumn.Width = 350;
+            // 
+            // valorDataGridViewTextBoxColumn
+            // 
+            this.valorDataGridViewTextBoxColumn.DataPropertyName = "valor";
+            this.valorDataGridViewTextBoxColumn.HeaderText = "Valor(R$)";
+            this.valorDataGridViewTextBoxColumn.Name = "valorDataGridViewTextBoxColumn";
+            this.valorDataGridViewTextBoxColumn.ReadOnly = true;
+            this.valorDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // valordolarDataGridViewTextBoxColumn
+            // 
+            this.valordolarDataGridViewTextBoxColumn.DataPropertyName = "valor_dolar";
+            this.valordolarDataGridViewTextBoxColumn.HeaderText = "Valor($)";
+            this.valordolarDataGridViewTextBoxColumn.Name = "valordolarDataGridViewTextBoxColumn";
+            this.valordolarDataGridViewTextBoxColumn.ReadOnly = true;
+            this.valordolarDataGridViewTextBoxColumn.Width = 125;
             // 
             // panel2
             // 
@@ -349,38 +381,6 @@
             this.panel6.Size = new System.Drawing.Size(1, 35);
             this.panel6.TabIndex = 18;
             // 
-            // idprodutoDataGridViewTextBoxColumn
-            // 
-            this.idprodutoDataGridViewTextBoxColumn.DataPropertyName = "id_produto";
-            this.idprodutoDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idprodutoDataGridViewTextBoxColumn.Name = "idprodutoDataGridViewTextBoxColumn";
-            this.idprodutoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idprodutoDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // nomeDataGridViewTextBoxColumn
-            // 
-            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "nome";
-            this.nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
-            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
-            this.nomeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nomeDataGridViewTextBoxColumn.Width = 350;
-            // 
-            // valorDataGridViewTextBoxColumn
-            // 
-            this.valorDataGridViewTextBoxColumn.DataPropertyName = "valor";
-            this.valorDataGridViewTextBoxColumn.HeaderText = "Valor(R$)";
-            this.valorDataGridViewTextBoxColumn.Name = "valorDataGridViewTextBoxColumn";
-            this.valorDataGridViewTextBoxColumn.ReadOnly = true;
-            this.valorDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // valordolarDataGridViewTextBoxColumn
-            // 
-            this.valordolarDataGridViewTextBoxColumn.DataPropertyName = "valor_dolar";
-            this.valordolarDataGridViewTextBoxColumn.HeaderText = "Valor($)";
-            this.valordolarDataGridViewTextBoxColumn.Name = "valordolarDataGridViewTextBoxColumn";
-            this.valordolarDataGridViewTextBoxColumn.ReadOnly = true;
-            this.valordolarDataGridViewTextBoxColumn.Width = 125;
-            // 
             // FrmProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -392,6 +392,7 @@
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FrmProduto";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu de Produtos";
             this.Load += new System.EventHandler(this.FrmProduto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tblProdutoBindingSource)).EndInit();

@@ -475,7 +475,6 @@
             this.txt_id.Name = "txt_id";
             this.txt_id.Size = new System.Drawing.Size(76, 20);
             this.txt_id.TabIndex = 3;
-            
             // 
             // txt_id_pedido
             // 
@@ -483,7 +482,6 @@
             this.txt_id_pedido.Name = "txt_id_pedido";
             this.txt_id_pedido.Size = new System.Drawing.Size(103, 20);
             this.txt_id_pedido.TabIndex = 1;
-            
             // 
             // panel2
             // 
@@ -577,6 +575,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmPagamento";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu de Pagamentos";
             this.Load += new System.EventHandler(this.FrmPagamento_Load);
             this.panel1.ResumeLayout(false);

@@ -12,7 +12,6 @@ namespace Ruler.Telas
         DataTable table;
         private string aux;
 
-
         public FrmProduto(FrmInicio frm)
         {
             InitializeComponent();
@@ -21,8 +20,15 @@ namespace Ruler.Telas
 
         public void Checar(string objeto)
         {
-            ProdutoPst produto = new ProdutoPst();
-            DisplayData(produto.checar(objeto));
+            try
+            {
+                ProdutoPst produto = new ProdutoPst();
+                DisplayData(produto.checar(objeto));
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+            }
         }
 
         public void DisplayData(string script)
@@ -39,112 +45,155 @@ namespace Ruler.Telas
 
         public void AtualizarObjeto()
         {
-            if (txt_nome.Text != "" && txt_valor.Text != "")
+            ProdutoPst produto;
+            try
             {
-                ProdutoPst produto = new ProdutoPst(int.Parse(txt_id_produto.Text), txt_nome.Text, txt_valor.Text.Replace(",","."), txt_valor_dolar.Text.Replace(",","."));
-                                
-                con.openCon(produto.Atualizar());
-                con.closeCon();
-                MessageBox.Show("Produto Atualizado com Sucesso");
-                            
-                DisplayData(produto.Pesquisar());
-                ClearData();
-                this.tbl_ProdutoTableAdapter.Fill(this.rulerDataSet.Tbl_Produto);
+                if (txt_nome.Text != "" && txt_valor.Text != "")
+                {
+                    produto = new ProdutoPst();
+                    produto.Id = int.Parse(txt_id_produto.Text);
+                    produto.Nome = txt_nome.Text;
+                    produto.Valor = txt_valor.Text.Replace(",", ".");
+                    produto.Valor_dolar = txt_valor_dolar.Text.Replace(",", ".");
+
+                    con.openCon(produto.Atualizar());
+                    con.closeCon();
+                    MessageBox.Show("Produto Atualizado com Sucesso");
+
+                    DisplayData(produto.Pesquisar());
+                    ClearData();
+                    this.tbl_ProdutoTableAdapter.Fill(this.rulerDataSet.Tbl_Produto);
+                }
+                else
+                {
+                    MessageBox.Show("Erro! Por favor informe algum valor e os informe corretamente");
+                }
             }
-            else
+            catch (Exception err)
             {
-                MessageBox.Show("Erro! Por favor informe algum valor e os informe corretamente");
+                MessageBox.Show(err.Message);
             }
         }
 
         public void CadastrarObjeto()
         {
-            if (!string.IsNullOrEmpty(txt_nome.Text) && !string.IsNullOrEmpty(txt_valor.Text))
+            ProdutoPst produto;
+            try
             {
-                //Caso o valor em dolar não seja digitado atribui 0.
-                if (string.IsNullOrEmpty(txt_valor_dolar.Text)) { txt_valor_dolar.Text = "0"; }
-
-                ProdutoPst produto = new ProdutoPst(txt_nome.Text, txt_valor.Text.Replace(",","."), txt_valor_dolar.Text.Replace(",","."));
-
-                //Consultar Objeto
-                Checar(txt_nome.Text);
-                if (table.Rows.Count > 0)
+                if (!string.IsNullOrEmpty(txt_nome.Text) && !string.IsNullOrEmpty(txt_valor.Text))
                 {
-                    aux = table.Rows[0]["nome"].ToString();
-                }
+                    //Caso o valor em dolar não seja digitado atribui 0.
+                    if (string.IsNullOrEmpty(txt_valor_dolar.Text)) { txt_valor_dolar.Text = "0"; }
 
-                //Condição para não haver produtos iguais.
-                if (aux == txt_nome.Text)
-                {
-                    MessageBox.Show("Erro! O produto já está cadastrado. ");
-                    ClearData();
+                    produto = new ProdutoPst();
+                    produto.Nome = txt_nome.Text;
+                    produto.Valor = txt_valor.Text.Replace(",", ".");
+                    produto.Valor_dolar = txt_valor_dolar.Text.Replace(",", ".");
+
+                    //Consultar Objeto
+                    Checar(txt_nome.Text);
+                    if (table.Rows.Count > 0)
+                    {
+                        aux = table.Rows[0]["nome"].ToString();
+                    }
+                    //Condição para não haver produtos iguais.
+                    if (aux == txt_nome.Text)
+                    {
+                        MessageBox.Show("Erro! O produto já está cadastrado. ");
+                        ClearData();
+                    }
+                    else
+                    {
+                        con.openCon(produto.Cadastrar());
+                        con.closeCon();
+                        MessageBox.Show("Produto Inserido com Sucesso");
+                    }
+                    PesquisarObjeto();
                 }
                 else
                 {
-                    con.openCon(produto.Cadastrar());
-                    con.closeCon();
-                    MessageBox.Show("Produto Inserido com Sucesso");
+                    MessageBox.Show("Erro!, Produto ou valor não foram informados.");
                 }
-
-                ClearData();
-                PesquisarObjeto();
-
             }
-            else
+            catch (Exception err)
             {
-                MessageBox.Show("Erro!, Produto ou valor não foram informados.");
+                MessageBox.Show(err.Message);
             }
+            ClearData();
         }
 
         public void DeletarObjeto()
         {
-            if (txt_id_produto.Text != "")
+            ProdutoPst produto;
+            try
             {
-                ProdutoPst produto = new ProdutoPst(int.Parse(txt_id_produto.Text));
-                                
-                con.openCon(produto.Deletar());
-                con.closeCon();
+                if (txt_id_produto.Text != "")
+                {
+                    produto = new ProdutoPst();
+                    produto.Id = int.Parse(txt_id_produto.Text);
 
-                MessageBox.Show("Produto Apagado com Sucesso");
-                
-                DisplayData(produto.Pesquisar());
-                ClearData();
+                    con.openCon(produto.Deletar());
+                    con.closeCon();
+
+                    MessageBox.Show("Produto Apagado com Sucesso");
+
+                    DisplayData(produto.Pesquisar());
+                    ClearData();
+                }
+                else
+                {
+                    MessageBox.Show("Erro! Por favor informe o ID corretamente");
+                }
             }
-            else
+            catch (Exception err)
             {
-                MessageBox.Show("Erro! Por favor informe o ID corretamente");
+                MessageBox.Show(err.Message);
             }
         }
 
         public void PesquisarObjeto()
         {
-            ProdutoPst produto = new ProdutoPst();
+            try
+            {
+                ProdutoPst produto = new ProdutoPst();
 
-            if (string.IsNullOrEmpty(txt_id_produto.Text))
-            {
-                DisplayData(produto.Pesquisar());
-            }
-            else
-            {
-                DisplayData(produto.PesquisarId(int.Parse(txt_id_produto.Text)));
-                if (table.Rows.Count > 0)
+                if (string.IsNullOrEmpty(txt_id_produto.Text))
                 {
-                    txt_nome.Text = table.Rows[0]["nome"].ToString();
-                    txt_valor.Text = table.Rows[0]["valor"].ToString();
-                    txt_valor_dolar.Text = table.Rows[0]["valor_dolar"].ToString();
-                    aux = "";
+                    DisplayData(produto.Pesquisar());
                 }
                 else
                 {
-                    MessageBox.Show("Cliente com o id " + txt_id_produto.Text + " não existe!");
-                    aux = "";
+                    DisplayData(produto.PesquisarId(int.Parse(txt_id_produto.Text)));
+                    if (table.Rows.Count > 0)
+                    {
+                        txt_nome.Text = table.Rows[0]["nome"].ToString();
+                        txt_valor.Text = table.Rows[0]["valor"].ToString();
+                        txt_valor_dolar.Text = table.Rows[0]["valor_dolar"].ToString();
+                        aux = "";
+                    }
+                    else
+                    {
+                        MessageBox.Show("Cliente com o id " + txt_id_produto.Text + " não existe!");
+                        aux = "";
+                    }
                 }
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
             }
         }
 
         private void btn_pesquisar_Click(object sender, EventArgs e)
         {
-            PesquisarObjeto();
+            try
+            {
+                PesquisarObjeto();
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+            }
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -157,13 +206,27 @@ namespace Ruler.Telas
 
         private void btn_voltar_Click(object sender, EventArgs e)
         {
-            inicio.Show();
-            this.Close();
+            try
+            {
+                inicio.Show();
+                this.Close();
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+            }
         }
 
         private void btn_cadastrar_Click(object sender, EventArgs e)
         {
-            CadastrarObjeto();
+            try
+            {
+                CadastrarObjeto();
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+            }
         } 
 
         public void ClearData()
@@ -182,23 +245,35 @@ namespace Ruler.Telas
 
         private void btn_apagar_Click(object sender, EventArgs e)
         {
-            DeletarObjeto();
+            try
+            {
+                DeletarObjeto();
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+            }
         }
 
 
         private void btn_atualizar_Click(object sender, EventArgs e)
         {
-            AtualizarObjeto();
+            try
+            {
+                AtualizarObjeto();
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+            }
         }
 
         private void dataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-
             txt_id_produto.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
             txt_nome.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
             txt_valor.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
             txt_valor_dolar.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
-            
         }
 
       
